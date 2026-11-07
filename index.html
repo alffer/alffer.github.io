@@ -118,6 +118,7 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
 .project h3{font-size:clamp(3rem,10vw,9rem);line-height:.92;letter-spacing:-.04em}
 .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,6vw,88px);align-items:start}
 .grid>*{min-width:0}
+.grid.solo{grid-template-columns:1fr;max-width:760px}
 .why{font-size:clamp(1.08rem,1.5vw,1.28rem);margin:0 0 34px;line-height:1.65}
 .why::before{content:"Por qué la hice";display:block;font:600 .78rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--p-label);margin-bottom:10px}
 .mine h4{font:600 .78rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--p-label);margin-bottom:14px}
@@ -513,11 +514,8 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
           <div class="p-head" data-reveal><img src="img/futari-logo.png" alt="" width="160" height="160" loading="lazy"><span class="tag">Web · PWA · <span class="collab">En colaboración con mi pareja</span></span></div>
           <h3 data-split>Futari ふたり</h3>
         </div>
-        <div class="ft-og-wrap" data-par=".04" data-reveal="float">
-          <img class="ft-og" src="img/futari-og.jpg" alt="Portada de Futari" width="800" height="420" loading="lazy">
-        </div>
       </div>
-      <div class="grid">
+      <div class="grid solo">
         <div>
           <p class="why" data-reveal>Mi pareja y yo llevábamos nuestras cuentas y ahorros en Notion, y actualizarlo era muy manual. Queríamos algo más visual e interactivo, así que mi pareja construyó Futari. Yo me encargué de reorganizar cómo funciona y de diseñarla, también con IA.</p>
           <div class="mine">
@@ -530,13 +528,6 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
           </div>
           <div class="decision" data-reveal><h4>Decisión clave</h4><p>Pasar de un Notion que había que actualizar a mano a cuatro espacios claros: gastos fijos, huchas, viajes y un cierre al mes.</p></div>
           <div class="chips" data-reveal><span class="role">Ideas de producto</span><span class="role">Diseño UI con IA</span><span>Next.js</span><span>Tailwind</span><span>Firebase</span></div>
-        </div>
-        <div class="collage">
-          <div class="tile t1" data-par=".03" data-reveal="float"><img src="img/futari-mascota.png" alt="Mascota de Futari" width="480" height="438" loading="lazy"></div>
-          <div class="tile t2" data-par="-.04" data-reveal="float" style="--d:.1s"><img src="img/futari-ahorro.png" alt="Ilustración de ahorro" width="480" height="438" loading="lazy"></div>
-          <div class="tile t3" data-par=".05" data-reveal="float"><img src="img/futari-plan.png" alt="Ilustración de planificación" width="480" height="438" loading="lazy"></div>
-          <div class="tile t4" data-par="-.03" data-reveal="float" style="--d:.1s"><img src="img/futari-trofeo.webp" alt="Conejitos celebrando con un trofeo" width="480" height="367" loading="lazy"></div>
-          <div class="tile t6" data-par="-.02" data-reveal="float"><img src="img/futari-conejitos-durmiendo.webp" alt="Los dos conejitos durmiendo" width="720" height="480" loading="lazy"></div>
         </div>
       </div>
       <div class="gallery" role="region" data-gallery data-reveal aria-label="Galería de capturas de Futari">
