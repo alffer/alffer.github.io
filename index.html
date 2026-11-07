@@ -3,66 +3,92 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cosillas de alffer</title>
-<meta name="description" content="Apps que he diseñado y construido con IA: Belladonna, Futari y Sandow.">
+<title>Alba Fernández · Diseño de producto</title>
+<meta name="description" content="Alba Fernández, diseñadora de producto UX/UI. No me adapto a las apps: diseño y construyo con IA las que necesito.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,600&family=Nunito:wght@800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Nunito:wght@800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f6f3ee; --surface:#fffdf9; --text:#1d1b19; --muted:#6b655d; --line:#e4ddd2; --accent:#d4552e;
+  --bg:#f6f3ee; --surface:#fffdf9; --sunk:#efe9e0; --text:#1d1b19; --muted:#6b655d; --line:#e2dacd; --accent:#c4471f; --accent-soft:#f6ddd2;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#121110; --surface:#1b1a18; --text:#f2eee8; --muted:#a39c92; --line:#2e2b27; --accent:#f07a52;
+    --bg:#121110; --surface:#1b1a18; --sunk:#171614; --text:#f2eee8; --muted:#a39c92; --line:#2e2b27; --accent:#f07a52; --accent-soft:#3a2219;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#121110; --surface:#1b1a18; --text:#f2eee8; --muted:#a39c92; --line:#2e2b27; --accent:#f07a52;
+  --bg:#121110; --surface:#1b1a18; --sunk:#171614; --text:#f2eee8; --muted:#a39c92; --line:#2e2b27; --accent:#f07a52; --accent-soft:#3a2219;
 }
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 a{color:inherit}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.display{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1.02}
+.eyebrow{font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+section{padding:96px 0 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(2rem,4.5vw,3.2rem);margin-top:8px}
+.sec-head p{max-width:46ch;color:var(--muted)}
+
+/* Nav */
+nav.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font:700 1.05rem "Bricolage Grotesque",sans-serif;text-decoration:none}
+.links{display:flex;gap:22px;align-items:center;font-size:.93rem}
+.links a{text-decoration:none;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-weight:600;text-decoration:none;font-size:.95rem;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--text);color:var(--bg)}
+.btn.ghost{border:1px solid var(--line);background:var(--surface)}
+.links .btn{padding:7px 14px;color:var(--bg)}
 
 /* Hero */
-header.hero{padding:88px 0 56px}
-.hello{font-weight:600;color:var(--accent);letter-spacing:.02em}
-h1{font:800 clamp(2.6rem,7vw,5rem)/1.02 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em;margin:14px 0 22px;max-width:14ch}
-.lede{font-size:1.15rem;color:var(--muted);max-width:58ch}
-.lede strong{color:var(--text);font-weight:600}
-.jump{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
-.jump a{display:flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-weight:500;background:var(--surface);transition:transform .15s}
-.jump a:hover{transform:translateY(-2px)}
-.jump img{width:30px;height:30px;border-radius:50%;object-fit:cover}
+.hero{padding:96px 0 0}
+.hero h1{font-size:clamp(2.7rem,7.4vw,5.6rem);margin:18px 0 26px;max-width:16ch}
+.hero h1 em{font-family:Fraunces,serif;font-style:italic;font-weight:500;color:var(--accent);letter-spacing:-.01em}
+.hero .lede{font-size:1.2rem;color:var(--muted);max-width:60ch}
+.hero .lede strong{color:var(--text);font-weight:600}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:64px;border-top:1px solid var(--line)}
+.stats div{padding:22px 20px 0 0}
+.stats b{display:block;font:800 clamp(1.9rem,3.6vw,2.6rem)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em}
+.stats span{display:block;color:var(--muted);font-size:.9rem;margin-top:8px;max-width:22ch}
 
-/* AI note */
-.how{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-bottom:72px}
-.how div{background:var(--surface);padding:22px}
-.how b{display:block;font:800 1.05rem "Bricolage Grotesque",sans-serif;margin-bottom:4px}
-.how span{color:var(--muted);font-size:.93rem}
-.how .n{color:var(--accent);font-weight:600;font-size:.8rem;letter-spacing:.08em}
+/* Manifesto */
+.manifesto{background:var(--text);color:var(--bg);border-radius:28px;padding:56px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.manifesto blockquote{font:500 clamp(1.5rem,3vw,2.1rem)/1.25 Fraunces,serif;font-style:italic}
+.manifesto p{opacity:.78;margin-bottom:14px}
+.manifesto p:last-child{margin-bottom:0}
 
 /* Project */
-.project{border-radius:28px;padding:56px;margin-bottom:40px;color:var(--p-text);background:var(--p-bg);overflow:hidden;position:relative}
-.p-head{display:flex;align-items:center;gap:16px;margin-bottom:18px}
-.p-head img{width:56px;height:56px;border-radius:16px;object-fit:cover}
-.tag{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--p-accent)}
-.project h2{font-size:clamp(2rem,4.5vw,3rem);line-height:1.05}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.pitch{font-size:1.12rem;margin:18px 0 24px;opacity:.92}
-ul.feat{list-style:none;padding:0;display:grid;gap:10px;margin-bottom:26px}
-ul.feat li{padding-left:26px;position:relative;opacity:.9}
-ul.feat li::before{content:"";position:absolute;left:4px;top:.6em;width:9px;height:9px;border-radius:3px;background:var(--p-accent);transform:rotate(45deg)}
+.project{border-radius:28px;padding:56px;margin-bottom:32px;color:var(--p-text);background:var(--p-bg);overflow:hidden}
+.p-head{display:flex;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap}
+.p-head img{width:52px;height:52px;border-radius:15px;object-fit:cover}
+.tag{font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--p-accent)}
+.project h3{font-size:clamp(2rem,4.5vw,3rem);line-height:1.05}
+.grid{display:grid;grid-template-columns:1.05fr 1fr;gap:52px;align-items:start}
+.grid>*{min-width:0}
+.why{font-size:1.14rem;margin:20px 0 26px;line-height:1.6}
+.why::before{content:"Por qué la hice";display:block;font:600 .76rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--p-accent);margin-bottom:8px}
+.mine h4{font:600 .76rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--p-accent);margin-bottom:12px}
+.mine ul{list-style:none;padding:0;display:grid;gap:12px;margin-bottom:28px}
+.mine li{padding-left:26px;position:relative;opacity:.92}
+.mine li::before{content:"";position:absolute;left:4px;top:.62em;width:9px;height:9px;border-radius:3px;background:var(--p-accent);transform:rotate(45deg)}
+.mine li b{font-weight:600}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--p-line);border:1px solid var(--p-line);border-radius:16px;overflow:hidden;margin-bottom:22px}
+.facts div{background:var(--p-fact);padding:14px 16px}
+.facts b{display:block;font:700 1.35rem "Bricolage Grotesque",sans-serif}
+.facts span{font-size:.8rem;opacity:.75}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips span{font-size:.82rem;padding:4px 12px;border-radius:999px;border:1px solid var(--p-line);opacity:.9}
-.meta{margin-top:22px;font-size:.9rem;opacity:.75}
+.chips span{font-size:.8rem;padding:4px 12px;border-radius:999px;border:1px solid var(--p-line);opacity:.9}
+.chips span.role{background:var(--p-accent);color:var(--p-on-accent);border-color:transparent;font-weight:600}
 
-/* Belladonna */
-#belladonna{--p-bg:radial-gradient(120% 90% at 85% 10%,#1F3A2E 0%,#0b1611 55%,#070F0B 100%);--p-text:#F9F6F0;--p-accent:#D4AF37;--p-line:#3E5A47}
-#belladonna h2{font-family:Fraunces,serif;color:#E6C875}
+#belladonna{--p-bg:radial-gradient(120% 90% at 85% 10%,#1F3A2E 0%,#0b1611 55%,#070F0B 100%);--p-text:#F9F6F0;--p-accent:#D4AF37;--p-on-accent:#070F0B;--p-line:#2d4637;--p-fact:#0d1913}
+#belladonna h3{font-family:Fraunces,serif;color:#E6C875}
 .bd-art{display:grid;gap:18px}
 .bd-logo{max-width:340px;margin:0 auto;filter:drop-shadow(0 10px 30px #0008)}
 .seals{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
@@ -70,149 +96,261 @@ ul.feat li::before{content:"";position:absolute;left:4px;top:.6em;width:9px;heig
 .seals img:hover{transform:scale(1.12) rotate(-4deg)}
 .caption{text-align:center;font-size:.85rem;opacity:.65}
 
-/* Futari */
-#futari{--p-bg:linear-gradient(160deg,#FFF8F1 0%,#FFF1DF 100%);--p-text:#4A2818;--p-accent:#C97868;--p-line:#E9B9A5}
-#futari h2{font-family:Nunito,sans-serif;font-weight:800}
-.ft-og{border-radius:18px;box-shadow:0 20px 50px #c9786833;margin-bottom:16px}
+#futari{--p-bg:linear-gradient(160deg,#FFF8F1 0%,#FFF1DF 100%);--p-text:#4A2818;--p-accent:#C97868;--p-on-accent:#fff;--p-line:#ecc9b8;--p-fact:#fffaf4}
+#futari h3{font-family:Nunito,sans-serif;font-weight:800}
+.ft-og{border-radius:18px;box-shadow:0 20px 50px #c9786833;margin-bottom:14px}
 .ft-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .ft-row img{background:#fff;border-radius:16px;padding:8px;aspect-ratio:1;object-fit:contain}
 
-/* Sandow */
-#sandow{--p-bg:radial-gradient(100% 80% at 10% 0%,#0E5753 0%,#0B1014 60%);--p-text:#F2F5F6;--p-accent:#27D6CC;--p-line:#2A3640}
-#sandow h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.02em}
-.phones{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;margin:0 -2px}
+#sandow{--p-bg:radial-gradient(100% 80% at 10% 0%,#0E5753 0%,#0B1014 60%);--p-text:#F2F5F6;--p-accent:#27D6CC;--p-on-accent:#0B1014;--p-line:#26323a;--p-fact:#10181d}
+#sandow h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.02em}
+.phones{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;min-width:0}
 .phone{flex:0 0 200px;scroll-snap-align:start;border-radius:26px;padding:6px;background:#1c252c;box-shadow:0 18px 40px #0009,inset 0 0 0 1px #2A3640}
 .phone img{border-radius:21px;aspect-ratio:9/19.5;object-fit:cover;object-position:top;width:100%}
-.phone p{font-size:.78rem;text-align:center;padding:8px 0 4px;opacity:.7}
+.phone figcaption{font-size:.78rem;text-align:center;padding:8px 0 4px;opacity:.7}
+.note{font-size:.82rem;opacity:.6;margin-top:10px}
 
-footer{padding:56px 0 72px;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;border-top:1px solid var(--line);margin-top:32px}
-footer a{color:var(--text);font-weight:500}
+/* About */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.about-intro p{font-size:1.1rem;margin-bottom:16px;color:var(--muted)}
+.about-intro p strong{color:var(--text);font-weight:600}
+.about-intro .life{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.about-intro .life span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.88rem}
+.traits{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.trait{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px}
+.trait b{display:block;font:800 1.35rem "Bricolage Grotesque",sans-serif;margin-bottom:6px}
+.trait p{color:var(--muted);font-size:.93rem;margin-bottom:12px}
+.trait small{display:block;font-size:.82rem;padding:10px 12px;border-radius:10px;background:var(--accent-soft);color:var(--text)}
+.honest{grid-column:1/-1;font-size:.88rem;color:var(--muted);border-left:3px solid var(--accent);padding-left:14px}
 
-@media (max-width:860px){
-  .grid{grid-template-columns:1fr;gap:32px}
-  .how{grid-template-columns:1fr 1fr}
-  .project{padding:32px 22px;border-radius:22px}
+/* Path */
+.path{display:grid;grid-template-columns:1.3fr 1fr;gap:48px}
+.timeline{list-style:none;padding:0;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 28px 26px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.timeline li.now::before{background:var(--accent)}
+.timeline time{font-size:.82rem;color:var(--muted);font-weight:500}
+.timeline b{display:block;font:700 1.15rem "Bricolage Grotesque",sans-serif}
+.timeline span{color:var(--muted);font-size:.93rem}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:14px}
+.box h4{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.box .chips span{border-color:var(--line);opacity:1}
+.box ul{padding-left:18px;color:var(--muted);font-size:.93rem;display:grid;gap:6px}
+
+/* Contact */
+.contact{margin:96px 0 0;border-radius:28px;padding:64px 56px;background:var(--accent);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
+.contact h2{font-size:clamp(2rem,4.5vw,3.2rem);max-width:16ch}
+.contact .btn{background:#fff;color:#1d1b19;font-size:1.05rem;padding:14px 24px}
+footer{padding:36px 0 56px;color:var(--muted);font-size:.9rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media (max-width:900px){
+  .grid,.about,.path,.manifesto{grid-template-columns:1fr;gap:32px}
+  .stats{grid-template-columns:1fr 1fr}
+  .project,.manifesto{padding:32px 22px;border-radius:22px}
+  .contact{padding:40px 24px;border-radius:22px}
+  .links a:not(.btn){display:none}
 }
-@media (max-width:480px){
+@media (max-width:520px){
   .wrap{padding:0 16px}
-  header.hero{padding:56px 0 40px}
-  .how{grid-template-columns:1fr}
+  section,.hero{padding-top:64px}
+  .traits{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr 1fr}
+  .facts b{font-size:1.1rem}
   .seals{grid-template-columns:repeat(3,1fr)}
   .phone{flex-basis:170px}
 }
 </style>
 </head>
 <body>
+
+<nav class="top"><div class="wrap">
+  <a class="brand" href="#">Alba Fernández</a>
+  <div class="links">
+    <a href="#proyectos">Proyectos</a>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#trayectoria">Trayectoria</a>
+    <a class="btn primary" href="https://www.linkedin.com/in/albaff/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</div></nav>
+
 <div class="wrap">
 
 <header class="hero">
-  <p class="hello">Hola, soy alffer 👋</p>
-  <h1>Cosillas que he ido haciendo</h1>
-  <p class="lede">Apps que se me ocurrieron para resolver problemas míos y de la gente que me rodea. <strong>Las he diseñado yo y las he construido con IA</strong>: yo pongo la idea, el diseño, las decisiones y muchas horas de probar y corregir. La IA escribe el código conmigo.</p>
-  <nav class="jump" aria-label="Proyectos">
-    <a href="#belladonna"><img src="img/belladonna-icon.png" alt="">Belladonna</a>
-    <a href="#futari"><img src="img/futari-logo.png" alt="">Futari</a>
-    <a href="#sandow"><img src="img/sandow-logo.png" alt="">Sandow</a>
-  </nav>
+  <p class="eyebrow">Diseño de producto · UX/UI · Gijón</p>
+  <h1 class="display">No me adapto a las apps. <em>Hago que se adapten a mí.</em></h1>
+  <p class="lede">Soy Alba. Llevo <strong>más de 8 años diseñando y maquetando interfaces</strong>. Cuando una app no encaja con cómo vivo, no me conformo: <strong>diseño la mía y la construyo con IA</strong>, desde la idea y la marca hasta la versión que uso cada día.</p>
+  <div class="cta">
+    <a class="btn primary" href="#proyectos">Ver lo que he hecho ↓</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/albaff/" target="_blank" rel="noopener">Hablemos en LinkedIn</a>
+  </div>
+  <div class="stats">
+    <div><b>8+</b><span>años entre UX/UI y frontend</span></div>
+    <div><b>2</b><span>apps propias, de la idea al uso diario (y una en pareja)</span></div>
+    <div><b>462</b><span>commits en dos meses</span></div>
+    <div><b>103</b><span>decisiones de diseño documentadas en una sola app</span></div>
+  </div>
 </header>
 
-<section class="how" aria-label="Cómo trabajo">
-  <div><span class="n">01</span><b>Una necesidad real</b><span>Algo que me molesta a mí o a mi gente.</span></div>
-  <div><span class="n">02</span><b>Diseño primero</b><span>Identidad, pantallas y qué entra y qué no.</span></div>
-  <div><span class="n">03</span><b>Construir con IA</b><span>Código, base de datos y despliegue, con Claude.</span></div>
-  <div><span class="n">04</span><b>Usar y pulir</b><span>Lo usamos de verdad y lo voy ajustando.</span></div>
-</section>
-
-<!-- BELLADONNA -->
-<section class="project" id="belladonna">
-  <div class="grid">
+<section aria-label="Cómo pienso">
+  <div class="manifesto">
+    <blockquote>«Las apps genéricas están hechas para todo el mundo. Las mías, para alguien concreto.»</blockquote>
     <div>
-      <div class="p-head"><img src="img/belladonna-icon.png" alt=""><span class="tag">App móvil · Android, iOS y web</span></div>
-      <h2>Belladonna Society</h2>
-      <p class="pitch">Un club de lectura con estética de orden secreta botánica. Leéis el mismo libro dentro de la app y dejáis notas en el texto que solo ven las demás cuando llegan a ese punto. Sin spoilers.</p>
-      <ul class="feat">
-        <li>Lector de EPUB con temas de día y de noche</li>
-        <li>Notas ancladas al texto, con respuestas y reacciones</li>
-        <li>Filtro antispoiler: lo que va por delante sale sellado hasta que llegas</li>
-        <li>Votaciones de la próxima lectura, valoraciones y metas</li>
-        <li>25 sellos para coleccionar y 6 grados dentro de la Orden</li>
-        <li>Sincroniza el progreso con e-readers Xteink</li>
-      </ul>
-      <div class="chips"><span>Expo / React Native</span><span>TypeScript</span><span>Supabase</span><span>epub.js</span><span>Cloudflare</span></div>
-    </div>
-    <div class="bd-art">
-      <img class="bd-logo" src="img/belladonna-logo.webp" alt="Logo de Belladonna Society">
-      <div class="seals">
-        <img src="img/bd-seal-1.png" alt="Sello"><img src="img/bd-seal-2.png" alt="Sello"><img src="img/bd-seal-3.png" alt="Sello">
-        <img src="img/bd-seal-4.png" alt="Sello"><img src="img/bd-seal-5.png" alt="Sello"><img src="img/bd-seal-6.png" alt="Sello">
-      </div>
-      <div class="seals">
-        <img src="img/bd-rank-1.png" alt="Grado 1"><img src="img/bd-rank-2.png" alt="Grado 2"><img src="img/bd-rank-3.png" alt="Grado 3">
-        <img src="img/bd-rank-4.png" alt="Grado 4"><img src="img/bd-rank-5.png" alt="Grado 5"><img src="img/bd-rank-6.png" alt="Grado 6">
-      </div>
-      <p class="caption">Algunos sellos y los seis grados de la Orden</p>
+      <p>Empiezo siempre por una necesidad real, mía o de mi gente. Después diseño: la identidad, las pantallas y qué entra y qué se queda fuera. Lo construyo con IA, pero el criterio lo pongo yo. Escribo las reglas que la IA debe seguir y reviso cada detalle.</p>
+      <p>Al final las usamos de verdad, y eso me obliga a pulirlas hasta que encajan.</p>
     </div>
   </div>
 </section>
 
-<!-- FUTARI -->
-<section class="project" id="futari">
-  <div class="grid">
-    <div>
-      <div class="p-head"><img src="img/futari-logo.png" alt=""><span class="tag">Web · PWA instalable</span></div>
-      <h2>Futari ふたり</h2>
-      <p class="pitch">Las finanzas de casa para dos. Gastos fijos, huchas y viajes compartidos con tu pareja, con un cierre cada mes y sin pelearse con hojas de cálculo. Con dos conejitos de mascota.</p>
-      <ul class="feat">
-        <li>Resumen del mes de un vistazo</li>
-        <li>Gastos fijos y cierres mensuales</li>
-        <li>Huchas con objetivos de ahorro</li>
-        <li>Viajes: gastos, retiradas y pegar gastos en bloque</li>
-        <li>Invitar a tu pareja y compartirlo todo</li>
-        <li>Modo claro y oscuro</li>
-      </ul>
-      <div class="chips"><span>Next.js</span><span>React</span><span>Tailwind</span><span>Firebase</span><span>Vercel</span></div>
-    </div>
-    <div>
-      <img class="ft-og" src="img/futari-og.jpg" alt="Portada de Futari">
-      <div class="ft-row">
-        <img src="img/futari-mascota.png" alt="Mascota de Futari">
-        <img src="img/futari-ahorro.png" alt="Ilustración de ahorro">
-        <img src="img/futari-plan.png" alt="Ilustración de planificación">
+<section id="proyectos">
+  <div class="sec-head">
+    <div><p class="eyebrow">Proyectos</p><h2 class="display">Problemas de mi vida, apps a medida</h2></div>
+    <p>No son encargos ni productos comerciales. Nacen de necesidades mías y de la gente que tengo cerca, y por eso cada decisión tiene un porqué.</p>
+  </div>
+
+  <!-- BELLADONNA -->
+  <article class="project" id="belladonna">
+    <div class="grid">
+      <div>
+        <div class="p-head"><img src="img/belladonna-icon.png" alt=""><span class="tag">App móvil · Android, iOS y web</span></div>
+        <h3>Belladonna Society</h3>
+        <p class="why">Tengo un club de lectura con amigas en Telegram. Repartimos cada libro en fases, pero siempre hay quien va por delante y quien se queda atrás, y no podíamos comentar sin destripárselo a nadie. Encima, en el mismo hilo hablamos de todo, así que los comentarios se perdían. Yo leo en el móvil y quería subrayar una línea, comentarla ahí mismo y que a las demás les llegara el aviso con lo que había escrito y en qué página.</p>
+        <div class="mine">
+          <h4>Lo que la hace nuestra</h4>
+          <ul>
+            <li><b>Comentarios sobre la línea exacta.</b> Las demás reciben el aviso con la página y el comentario.</li>
+            <li><b>Sin spoilers:</b> lo que va por delante de tu lectura se queda sellado hasta que llegas. Para leerlo hay que «romper el sello».</li>
+            <li><b>Todo el club en un sitio:</b> fases de lectura, debates y votación de la próxima lectura, separados de la charla del día a día.</li>
+            <li><b>Una identidad con personalidad:</b> una orden secreta botánica, con su lema en latín, 25 sellos de lacre y 6 grados.</li>
+            <li><b>Privacidad entre socias:</b> los emails no se ven entre usuarias y el acceso a los datos está protegido en 19 tablas.</li>
+          </ul>
+        </div>
+        <div class="facts"><div><b>385</b><span>commits</span></div><div><b>23</b><span>versiones</span></div><div><b>49</b><span>ficheros de tests</span></div></div>
+        <div class="chips"><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Marca</span><span>Expo / React Native</span><span>Supabase</span><span>epub.js</span></div>
       </div>
+      <div class="bd-art">
+        <img class="bd-logo" src="img/belladonna-logo.webp" alt="Logo de Belladonna Society">
+        <div class="seals">
+          <img src="img/bd-seal-1.png" alt="Sello"><img src="img/bd-seal-2.png" alt="Sello"><img src="img/bd-seal-3.png" alt="Sello">
+          <img src="img/bd-seal-4.png" alt="Sello"><img src="img/bd-seal-5.png" alt="Sello"><img src="img/bd-seal-6.png" alt="Sello">
+        </div>
+        <div class="seals">
+          <img src="img/bd-rank-1.png" alt="Grado 1"><img src="img/bd-rank-2.png" alt="Grado 2"><img src="img/bd-rank-3.png" alt="Grado 3">
+          <img src="img/bd-rank-4.png" alt="Grado 4"><img src="img/bd-rank-5.png" alt="Grado 5"><img src="img/bd-rank-6.png" alt="Grado 6">
+        </div>
+        <p class="caption">Algunos sellos y los seis grados de la Orden</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- FUTARI -->
+  <article class="project" id="futari">
+    <div class="grid">
+      <div>
+        <div class="p-head"><img src="img/futari-logo.png" alt=""><span class="tag">Web · PWA · En colaboración con mi pareja</span></div>
+        <h3>Futari ふたり</h3>
+        <p class="why">Mi pareja y yo llevábamos nuestras cuentas y ahorros en Notion, y actualizarlo era muy manual. Queríamos algo más visual e interactivo, así que mi pareja construyó Futari. Yo me encargué de reorganizar cómo funciona y de diseñarla, también con IA.</p>
+        <div class="mine">
+          <h4>Mi parte</h4>
+          <ul>
+            <li><b>Reorganizar el producto:</b> propuse cómo agrupar gastos fijos, huchas, viajes y cierres mensuales para que el día a día fuera más rápido.</li>
+            <li><b>El diseño:</b> una identidad cálida con dos conejitos de mascota, lejos de la estética de banco.</li>
+            <li><b>Una prioridad clara:</b> «la claridad financiera tiene prioridad sobre la decoración».</li>
+          </ul>
+        </div>
+        <div class="chips"><span class="role">Ideas de producto</span><span class="role">Diseño UI con IA</span><span>Next.js</span><span>Tailwind</span><span>Firebase</span></div>
+      </div>
+      <div>
+        <img class="ft-og" src="img/futari-og.jpg" alt="Portada de Futari">
+        <div class="ft-row">
+          <img src="img/futari-mascota.png" alt="Mascota de Futari">
+          <img src="img/futari-ahorro.png" alt="Ilustración de ahorro">
+          <img src="img/futari-plan.png" alt="Ilustración de planificación">
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- SANDOW -->
+  <article class="project" id="sandow">
+    <div class="grid">
+      <div>
+        <div class="p-head"><img src="img/sandow-logo.png" alt=""><span class="tag">App Android</span></div>
+        <h3>Sandow</h3>
+        <p class="why">Empezó en casa. Mi pareja comenzó un plan nutricional con un entrenador y el menú llegaba en PDF, así que cada día era un lío: qué toca comer hoy, si lo tenemos en la nevera, qué comprar, qué dejar preparado. Luego llegaron las revisiones mensuales y quisimos guardar también el peso, las medidas y las fotos. Y como no todos seguimos el mismo camino hacia un objetivo, la app creció para que cada perfil tuviera el suyo, todo en un mismo sitio.</p>
+        <div class="mine">
+          <h4>Lo que la hace nuestra</h4>
+          <ul>
+            <li><b>Del PDF a la cocina:</b> importa el menú del entrenador y lo convierte en menú del día, lista de la compra y avisos.</li>
+            <li><b>Cada perfil, su camino:</b> plan con entrenador, entrenos o un seguimiento médico. Cada uno ve solo lo suyo.</li>
+            <li><b>Progreso de verdad:</b> peso, medidas y fotos comparadas mes a mes. Los cambios se muestran en color neutro, sin juzgar.</li>
+            <li><b>Privacidad total:</b> sin cuentas ni nube. Las copias de seguridad son un archivo que guardas tú.</li>
+            <li><b>«No es una app de gimnasio»:</b> nada de mancuernas ni llamas, sino un tono friki y juguetón con logros y rachas.</li>
+          </ul>
+        </div>
+        <div class="facts"><div><b>15</b><span>versiones en 3 semanas</span></div><div><b>103</b><span>decisiones documentadas</span></div><div><b>22</b><span>checks de lógica</span></div></div>
+        <div class="chips"><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Marca</span><span>Expo / React Native</span><span>SQLite</span><span>Health Connect</span></div>
+      </div>
+      <div>
+        <div class="phones" tabindex="0" aria-label="Capturas de Sandow">
+          <figure class="phone"><img src="img/sandow-1.jpg" alt="Pantalla de bienvenida"><figcaption>Bienvenida</figcaption></figure>
+          <figure class="phone"><img src="img/sandow-2.jpg" alt="Menú del día"><figcaption>Menú del día</figcaption></figure>
+          <figure class="phone"><img src="img/sandow-3.jpg" alt="Progreso"><figcaption>Progreso</figcaption></figure>
+          <figure class="phone"><img src="img/sandow-4.jpg" alt="Logros"><figcaption>Logros</figcaption></figure>
+        </div>
+        <p class="note">Capturas con datos de demostración. Desliza para ver más →</p>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="sobre-mi">
+  <div class="sec-head">
+    <div><p class="eyebrow">Sobre mí</p><h2 class="display">Cómo soy trabajando</h2></div>
+  </div>
+  <div class="about">
+    <div class="about-intro">
+      <p>Estudié <strong>Ingeniería Informática</strong> y me cambié al diseño porque lo que más me gusta es cómo se <strong>siente</strong> usar algo. Llevo años entre Figma y el código, así que sé hablar con diseño y con desarrollo.</p>
+      <p>Ahora la IA me permite cerrar el círculo: <strong>de la idea al producto en marcha, sin depender de nadie.</strong> Pero que la IA escriba código no significa que decida. Las decisiones son mías.</p>
+      <p>Fuera del trabajo soy curiosa y muy de manualidades. Mis apps hablan de mí más de lo que parece:</p>
+      <div class="life"><span>📚 Leer (de ahí Belladonna)</span><span>🐈 Mis gatos (de ahí el de Sandow)</span><span>✈️ Viajar</span><span>✂️ Manualidades</span></div>
+    </div>
+    <div class="traits">
+      <div class="trait"><b>Metódica</b><p>Documento el porqué de las cosas, no solo el qué.</p><small>Sandow tiene un registro de 103 decisiones de diseño, cada una con su fecha y su motivo.</small></div>
+      <div class="trait"><b>Detallista</b><p>Me fijo en lo que casi nadie ve, pero todo el mundo nota.</p><small>Sustituí unas 90 alertas del sistema por un modal propio para que ninguna rompiera el tema oscuro.</small></div>
+      <div class="trait"><b>Exigente</b><p>Primero conmigo misma, y con la IA también.</p><small>Le pongo reglas a la IA, como «mantén la documentación al día en el mismo commit», y nada se publica sin mi aprobación.</small></div>
+      <div class="trait"><b>Perfeccionista, con criterio</b><p>Itero hasta que está bien, y sé cuándo parar.</p><small>Probé 17 versiones de los sellos de Belladonna y al final descarté el rediseño. El original era mejor.</small></div>
+      <p class="honest">Pienso en las personas que usan lo que hago: accesibilidad medida, privacidad por defecto y textos que no juzgan.</p>
     </div>
   </div>
 </section>
 
-<!-- SANDOW -->
-<section class="project" id="sandow">
-  <div class="grid">
+<section id="trayectoria">
+  <div class="sec-head">
+    <div><p class="eyebrow">Trayectoria</p><h2 class="display">De maquetar a diseñar producto</h2></div>
+  </div>
+  <div class="path">
+    <ol class="timeline">
+      <li class="now"><time>2026</time><b>Productos propios con IA</b><span>Belladonna y Sandow, de la idea a la app: marca, UX/UI y desarrollo con Claude Code. En Futari, ideas de producto y diseño.</span></li>
+      <li><time>2021 – actualidad</time><b>UI/UX Designer · Econocom Products &amp; Solutions</b><span>Interfaces para aplicaciones Angular, coherencia de marca con marketing y la web corporativa.</span></li>
+      <li><time>2018 – 2021</time><b>Front End Designer · Techpump</b><span>Maquetación HTML, CSS y JS y propuestas de diseño para nuevas funcionalidades.</span></li>
+      <li><time>2017 – 2018</time><b>Front End Developer · Vorago Tecnología</b><span>Del diseño al código: responsive y compatibilidad entre navegadores.</span></li>
+    </ol>
     <div>
-      <div class="p-head"><img src="img/sandow-logo.png" alt=""><span class="tag">App Android</span></div>
-      <h2>Sandow</h2>
-      <p class="pitch">Para seguir los cambios de tu cuerpo sin subir nada a la nube. Medidas, fotos de progreso y comparativas, todo guardado en el móvil. Los cambios se enseñan tal cual, sin juzgar si son buenos o malos.</p>
-      <ul class="feat">
-        <li>Registros con medidas y fotos por pose</li>
-        <li>Comparador de fotos superpuestas y timelapse</li>
-        <li>Gráficas de progreso y tendencia</li>
-        <li>Menús nutricionales importados desde PDF, con lista de la compra</li>
-        <li>Entrenos (Health Connect y Hevy) y logros con un gato de mascota</li>
-        <li>Varios perfiles, bloqueo con huella y copias de seguridad</li>
-      </ul>
-      <div class="chips"><span>Expo / React Native</span><span>TypeScript</span><span>SQLite</span><span>Health Connect</span></div>
-      <p class="meta">Capturas con datos de demostración.</p>
-    </div>
-    <div class="phones" tabindex="0" aria-label="Capturas de Sandow">
-      <figure class="phone"><img src="img/sandow-1.jpg" alt="Pantalla de bienvenida"><p>Bienvenida</p></figure>
-      <figure class="phone"><img src="img/sandow-2.jpg" alt="Menú del día"><p>Menú del día</p></figure>
-      <figure class="phone"><img src="img/sandow-3.jpg" alt="Progreso"><p>Progreso</p></figure>
-      <figure class="phone"><img src="img/sandow-4.jpg" alt="Logros"><p>Logros</p></figure>
+      <div class="box"><h4>Herramientas</h4><div class="chips"><span>Figma</span><span>Claude Code</span><span>HTML / CSS</span><span>React / React Native</span><span>Next.js</span><span>Angular</span><span>Tailwind</span><span>Supabase</span><span>Firebase</span><span>Git</span></div></div>
+      <div class="box"><h4>Formación</h4><ul><li>Google UX Design Professional Certificate (2021)</li><li>UX Writing: diseño de contenido (2023)</li><li>Ingeniería Informática, Universidad de Oviedo</li></ul></div>
+      <div class="box"><h4>Archivo</h4><p style="color:var(--muted);font-size:.93rem;margin-bottom:10px">Mi Behance recoge trabajos de una etapa anterior. Lo dejo por si te pica la curiosidad, pero hoy lo que me representa es lo que ves en esta web.</p><a href="https://www.behance.net/albaff" target="_blank" rel="noopener" style="font-weight:600;font-size:.93rem">Ver Behance (etapa anterior) →</a></div>
     </div>
   </div>
 </section>
+
+<div class="contact">
+  <h2 class="display">¿Te encaja cómo trabajo?</h2>
+  <a class="btn" href="https://www.linkedin.com/in/albaff/" target="_blank" rel="noopener">Escríbeme en LinkedIn →</a>
+</div>
 
 <footer>
-  <span>Hecho por alffer, con ayuda de IA (como todo lo de aquí).</span>
-  <a href="https://github.com/alffer">GitHub →</a>
+  <span>© 2026 Alba Fernández · Diseñada por mí y construida con IA, como todo lo de aquí.</span>
+  <span>Gijón, Asturias</span>
 </footer>
 
 </div>
