@@ -152,6 +152,9 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
 .seal{--r:0deg;rotate:var(--r);transition:rotate .5s var(--pop),scale .5s var(--pop),filter .4s,opacity .7s var(--ease);cursor:default;filter:drop-shadow(0 10px 14px #0007)}
 .seal:nth-child(1){--r:-7deg}.seal:nth-child(2){--r:4deg}.seal:nth-child(3){--r:-3deg}.seal:nth-child(4){--r:6deg}.seal:nth-child(5){--r:-5deg}.seal:nth-child(6){--r:3deg}
 .seal img{width:100%;aspect-ratio:1;object-fit:contain}
+.bd-mini{margin:26px 0 22px}
+.seals.mini{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}
+.seals.mini .seal{flex:0 0 56px;width:56px}
 .seal:hover{rotate:0deg;scale:1.16;filter:drop-shadow(0 0 22px rgba(212,175,55,.65)) drop-shadow(0 12px 16px #000a);z-index:2;position:relative}
 .ranks{position:relative;display:flex;align-items:flex-end;gap:clamp(2px,1vw,10px);padding-bottom:30px}
 .ranks::after{content:"";position:absolute;left:0;right:0;bottom:22px;height:2px;background:linear-gradient(90deg,transparent,#D4AF37 60%,#E6C875)}
@@ -455,11 +458,8 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
           <div class="p-head" data-reveal><img src="img/belladonna-icon.png" alt="" width="160" height="160" loading="lazy"><span class="tag">App móvil · Android, iOS y web</span></div>
           <h3 data-split>Belladonna Society</h3>
         </div>
-        <div class="bd-logo-wrap" data-par=".05" data-reveal="float">
-          <img class="bd-logo" src="img/belladonna-logo.webp" alt="Logo de Belladonna Society" width="940" height="313" loading="lazy">
-        </div>
       </div>
-      <div class="grid">
+      <div class="grid solo">
         <div>
           <p class="why" data-reveal>Tengo un club de lectura con amigas en Telegram. Repartimos cada libro en fases, pero siempre hay quien va por delante y quien se queda atrás, y no podíamos comentar sin destripárselo a nadie. Encima, en el mismo hilo hablamos de todo, así que los comentarios se perdían. Yo leo en el móvil y quería subrayar una línea, comentarla ahí mismo y que a las demás les llegara el aviso con lo que había escrito y en qué página.</p>
           <div class="mine">
@@ -473,19 +473,14 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
             </ul>
           </div>
           <div class="decision" data-reveal><h4>Decisión clave</h4><p>El spoiler se resuelve con diseño, no pidiendo cuidado: cada comentario queda anclado a su línea y sellado hasta que llegas. Romper el sello es una decisión tuya.</p></div>
+          <div class="bd-mini">
+            <div class="seals mini" data-seq>
+              <div class="seal"><img src="img/bd-seal-1.png" alt="Sello de la Orden 1" width="200" height="200" loading="lazy"></div><div class="seal"><img src="img/bd-seal-2.png" alt="Sello de la Orden 2" width="200" height="200" loading="lazy"></div><div class="seal"><img src="img/bd-seal-3.png" alt="Sello de la Orden 3" width="200" height="200" loading="lazy"></div><div class="seal"><img src="img/bd-seal-4.png" alt="Sello de la Orden 4" width="200" height="200" loading="lazy"></div><div class="seal"><img src="img/bd-seal-5.png" alt="Sello de la Orden 5" width="200" height="200" loading="lazy"></div><div class="seal"><img src="img/bd-seal-6.png" alt="Sello de la Orden 6" width="200" height="200" loading="lazy"></div>
+            </div>
+            <p class="caption">Algunos de los 25 sellos que se ganan leyendo</p>
+          </div>
           <div class="facts" data-stagger><div><b>4</b><span>socias</span></div><div><b class="txt">nov 2026</b><span>en uso desde</span></div><div><b>23</b><span>versiones publicadas</span></div></div>
           <div class="chips" data-reveal><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Marca</span><span>Expo / React Native</span><span>Supabase</span><span>epub.js</span></div>
-        </div>
-        <div class="bd-art">
-          <div class="seals" data-seq>
-            <div class="seal"><img src="img/bd-seal-1.png" alt="Sello de la Orden 1" width="200" height="200" loading="lazy"></div><div class="seal"><img src="img/bd-seal-2.png" alt="Sello de la Orden 2" width="200" height="200" loading="lazy"></div><div class="seal"><img src="img/bd-seal-3.png" alt="Sello de la Orden 3" width="200" height="200" loading="lazy"></div>
-            <div class="seal"><img src="img/bd-seal-4.png" alt="Sello de la Orden 4" width="200" height="200" loading="lazy"></div><div class="seal"><img src="img/bd-seal-5.png" alt="Sello de la Orden 5" width="200" height="200" loading="lazy"></div><div class="seal"><img src="img/bd-seal-6.png" alt="Sello de la Orden 6" width="200" height="200" loading="lazy"></div>
-          </div>
-          <div class="ranks" data-seq>
-            <div class="rank"><img src="img/bd-rank-1.png" alt="Grado 1" width="180" height="208" loading="lazy"><span aria-hidden="true">1</span></div><div class="rank"><img src="img/bd-rank-2.png" alt="Grado 2" width="180" height="212" loading="lazy"><span aria-hidden="true">2</span></div><div class="rank"><img src="img/bd-rank-3.png" alt="Grado 3" width="180" height="212" loading="lazy"><span aria-hidden="true">3</span></div>
-            <div class="rank"><img src="img/bd-rank-4.png" alt="Grado 4" width="180" height="209" loading="lazy"><span aria-hidden="true">4</span></div><div class="rank"><img src="img/bd-rank-5.png" alt="Grado 5" width="180" height="210" loading="lazy"><span aria-hidden="true">5</span></div><div class="rank"><img src="img/bd-rank-6.png" alt="Grado 6" width="180" height="211" loading="lazy"><span aria-hidden="true">6</span></div>
-          </div>
-          <p class="caption">Algunos sellos y los seis grados de la Orden</p>
         </div>
       </div>
       <div class="gallery" role="region" data-gallery data-mode="night" data-reveal aria-label="Galería de capturas de Belladonna Society">
@@ -551,7 +546,6 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
           <div class="p-head" data-reveal><img src="img/sandow-logo.png" alt="" width="160" height="160" loading="lazy"><span class="tag">App Android</span></div>
           <h3 data-split>Sandow</h3>
         </div>
-        <div class="cat-wrap" data-par=".05" data-reveal="float"><img src="img/gato-hola.webp" alt="El gato de Sandow saludando" width="600" height="548" loading="lazy"></div>
       </div>
       <p class="why" data-reveal style="max-width:72ch">Empezó en casa. Mi pareja comenzó un plan nutricional con un entrenador y el menú llegaba en PDF, así que cada día era un lío: qué toca comer hoy, si lo tenemos en la nevera, qué comprar, qué dejar preparado. Luego llegaron las revisiones mensuales y quisimos guardar también el peso, las medidas y las fotos. Y como no todos seguimos el mismo camino hacia un objetivo, la app creció para que cada perfil tuviera el suyo, todo en un mismo sitio.</p>
 
@@ -585,6 +579,7 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
             <div class="shots" role="region" tabindex="0" aria-label="Capturas de Sandow: perfiles">
               <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-perfiles.jpg" alt="Selección de perfiles" width="412" height="890" loading="lazy"></div></div><figcaption>Perfiles</figcaption></figure>
               <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-1.jpg" alt="Pantalla de bienvenida" width="412" height="915" loading="lazy"></div></div><figcaption>Bienvenida</figcaption></figure>
+              <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-4.jpg" alt="Vitrina de logros" width="412" height="890" loading="lazy"></div></div><figcaption>Logros</figcaption></figure>
               <span class="hint" aria-hidden="true">Desliza</span>
             </div>
           </li>
@@ -597,13 +592,7 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
         </div>
       </div>
 
-      <div class="gallery" role="region" data-gallery data-reveal aria-label="Más capturas de Sandow">
-        <p class="gal-label">Más pantallas</p>
-        <div class="gal-track">
-          <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-4.jpg" alt="Logros" width="412" height="890" loading="lazy"></div></div><figcaption>Logros</figcaption></figure>
-        </div>
-        <p class="note">Capturas con datos de demostración.</p>
-      </div>
+      <p class="note">Capturas con datos de demostración.</p>
 
       <div class="sandow-foot">
         <div class="mine extras">
