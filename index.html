@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alba Fernández · Diseño de producto</title>
 <meta name="description" content="Alba Fernández, diseñadora de producto UX/UI. Algunas ideas merecen salir de la cabeza: las diseño y las construyo con IA.">
+<link rel="canonical" href="https://alffer.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alffer.github.io/">
+<meta property="og:title" content="Alba Fernández · Product Designer">
+<meta property="og:description" content="Diseñadora de producto con más de 8 años en UX/UI y frontend. Algunas ideas merecen salir de la cabeza: las diseño y las construyo con IA.">
+<meta property="og:image" content="https://alffer.github.io/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Alba Fernández. Algunas ideas merecen salir de la cabeza. Product Designer / UX/UI / AI-assisted workflows & Design QA">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Alba Fernández","jobTitle":"Product Designer","url":"https://alffer.github.io/","email":"mailto:ffernandezalba@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Gijón","addressRegion":"Asturias","addressCountry":"ES"},"worksFor":{"@type":"Organization","name":"Econocom Products & Solutions"},"knowsLanguage":["es","en"],"sameAs":["https://www.linkedin.com/in/albaff/","https://www.behance.net/albaff"]}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%23171717'/%3E%3Ctext x='32' y='41' font-family='Gloock,Georgia,serif' font-size='30' text-anchor='middle' fill='%23FFFFFF'%3EAF%3C/text%3E%3Cpath d='M12 49H52' stroke='%23FFFFFF' stroke-width='1.5'/%3E%3C/svg%3E">
 <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}setTimeout(function(){if(!window.__ok)document.documentElement.classList.remove('js');},2500);</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,7 +86,11 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
 .brand svg{width:44px;height:32px;flex:0 0 auto}
 .links{display:flex;gap:26px;align-items:center;font-size:.93rem}
 .links a{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:2px;transition:background-size .3s var(--ease)}
-.links a:hover{background-size:100% 1px}
+.links a:hover,.links a[aria-current="true"]{background-size:100% 1px}
+.links a[aria-current="true"]{font-weight:600}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;padding:10px 16px;background:var(--text);color:var(--bg);text-decoration:none;font-weight:600;border-radius:var(--r-sm)}
+.skip:focus{top:12px}
+main:focus{outline:none}
 .theme-btn{display:inline-grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);border-radius:var(--r-sm);background:transparent;color:var(--text);cursor:pointer;transition:background-color .25s,border-color .25s}
 .theme-btn:hover{border-color:var(--text)}
 .theme-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5}
@@ -393,13 +409,14 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
 </style>
 </head>
 <body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="af-mark" viewBox="0 0 72 52"><text x="36" y="38" text-anchor="middle" font-family="Gloock,Georgia,serif" font-size="40" fill="currentColor">AF</text><path d="M7 46.5H65" stroke="currentColor" stroke-width="1.2" fill="none"/></symbol></defs></svg>
 <div id="progress" aria-hidden="true"></div>
 
 <nav class="top" aria-label="Principal"><div class="wrap">
   <a class="brand" href="#" aria-label="Alba Fernández, inicio"><svg viewBox="0 0 72 52" aria-hidden="true" focusable="false"><use href="#af-mark"/></svg><span>Alba Fernández</span></a>
   <div class="links">
-    <a href="#">Inicio</a>
+    <a href="#contenido">Inicio</a>
     <a href="#proyectos">Proyectos</a>
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#contacto">Contacto</a>
@@ -407,12 +424,13 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
   <button class="theme-btn" id="theme-toggle" type="button" aria-label="Modo oscuro" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z"/></svg></button>
 </div></nav>
 
+<main id="contenido" tabindex="-1">
 <header class="hero">
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-copy">
         <p class="hero-name">ALBA FERNÁNDEZ</p>
-        <p class="eyebrow">PRODUCT DESIGNER / UX/UI / AI-ASSISTED WORKFLOWS &amp; DESIGN QA</p>
+        <p class="eyebrow" lang="en">PRODUCT DESIGNER / UX/UI / AI-ASSISTED WORKFLOWS &amp; DESIGN QA</p>
         <h1 class="display" data-split>Algunas ideas merecen <em>salir de la cabeza.</em></h1>
         <p class="lede" data-reveal style="--d:.5s">Soy Alba. Llevo <strong>más de 8 años diseñando y dando forma a interfaces</strong>, combinando diseño de producto, UX/UI y desarrollo frontend.</p>
         <p class="lede" data-reveal style="--d:.55s">Me gusta explorar ideas, encontrar soluciones y llevarlas más allá del papel. Por eso, cuando imagino algo que todavía no existe, no siempre espero a que alguien lo construya: <strong>me pongo manos a la obra y utilizo la IA como parte del proceso</strong>, desde los primeros bocetos y la identidad visual hasta el producto que termina formando parte de mi día a día.</p>
@@ -481,7 +499,7 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
               <li><b>Sin spoilers:</b> lo que va por delante de tu lectura se queda sellado hasta que llegas. Para leerlo hay que «romper el sello».</li>
               <li><b>Todo el club en un sitio:</b> fases de lectura, debates y votación de la próxima lectura, separados de la charla del día a día.</li>
               <li><b>Una identidad con personalidad:</b> una orden secreta botánica, con su lema en latín, 25 sellos de lacre y 6 grados.</li>
-              <li><b>Privacidad entre socias:</b> los emails no se ven entre usuarias y el acceso a los datos está protegido en 19 tablas.</li>
+              <li><b>Privacidad entre socias:</b> lo que compartes solo lo ven las socias de tu club, y los emails no se ven entre usuarias.</li>
             </ul>
           </div>
           <div class="decision" data-reveal><h4>Decisión clave</h4><p>El spoiler se resuelve con diseño, no pidiendo cuidado: cada comentario queda anclado a su línea y sellado hasta que llegas. Romper el sello es una decisión tuya.</p></div>
@@ -610,7 +628,7 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
             <li><b>Privacidad total:</b> sin cuentas ni nube. Las copias de seguridad son un archivo que guardas tú.</li>
             <li><b>«No es una app de gimnasio»:</b> nada de mancuernas ni llamas, sino un tono friki y juguetón con logros y rachas.</li>
           </ul>
-          <div class="facts" data-stagger><div><b>2</b><span>personas a diario</span></div><div><b>15</b><span>versiones en 3 semanas</span></div><div><b>103</b><span>decisiones documentadas</span></div></div>
+          <div class="facts" data-stagger><div><b>2</b><span>personas la usan</span></div><div><b>15</b><span>versiones en 3 semanas</span></div><div><b>103</b><span>decisiones documentadas</span></div></div>
           <div class="chips" data-reveal><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Marca</span><span>Expo / React Native</span><span>SQLite</span><span>Health Connect</span></div>
         </div>
         <div class="decision" data-reveal><h4>Decisión clave</h4><p>Los cambios del cuerpo se muestran en un color neutro, nunca en verde o rojo: el progreso no es "bueno" o "malo", es tuyo.</p></div>
@@ -679,13 +697,15 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
       </ol>
       <div data-stagger>
         <div class="box"><h4>Herramientas</h4><div class="chips"><span>Figma</span><span>Claude Code</span><span>HTML / CSS</span><span>React / React Native</span><span>Next.js</span><span>Angular</span><span>Tailwind</span><span>Supabase</span><span>Firebase</span><span>Git</span></div></div>
-        <div class="box"><h4>Formación</h4><ul><li>Google UX Design Professional Certificate (2021)</li><li>UX Writing: diseño de contenido (2023)</li><li>Ingeniería Informática, Universidad de Oviedo</li></ul></div>
+        <div class="box"><h4>Formación</h4><ul><li>Google UX Design Professional Certificate (2021)</li><li>UX Writing: diseño de contenido (2023)</li><li>Ingeniería Informática, Universidad de Oviedo (a falta del último semestre)</li></ul></div>
         <div class="box"><h4>Idiomas</h4><ul><li>Español: nativo</li><li>Inglés: nivel medio</li></ul></div>
         <div class="box"><h4>Archivo</h4><a href="https://www.behance.net/albaff" target="_blank" rel="noopener">Trabajos de una etapa anterior en Behance →<span class="sr-only">, se abre en otra pestaña</span></a></div>
       </div>
     </div>
   </div>
 </section>
+
+</main>
 
 <div class="contact-wrap">
   <section class="contact" id="contacto">
@@ -906,6 +926,20 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
   window.addEventListener('resize',onScroll);
   frame();
   window.__ok=1;
+})();
+</script>
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.links a[href^="#"]'));
+  var map=links.map(function(a){var id=a.getAttribute('href').slice(1);return {a:a,el:id==='contenido'?document.querySelector('.hero'):document.getElementById(id)};}).filter(function(m){return m.el;});
+  function upd(){
+    var y=window.innerHeight*0.35, cur=null;
+    map.forEach(function(m){var r=m.el.getBoundingClientRect(); if(r.top<=y) cur=m;});
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4) cur=map[map.length-1];
+    map.forEach(function(m){ if(m===cur) m.a.setAttribute('aria-current','true'); else m.a.removeAttribute('aria-current'); });
+  }
+  var t=false; window.addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(function(){t=false;upd();});}},{passive:true});
+  window.addEventListener('resize',upd); upd();
 })();
 </script>
 </body>
