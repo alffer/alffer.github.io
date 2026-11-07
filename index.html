@@ -272,6 +272,31 @@ main:focus{outline:none}
 .trait small{display:block;font-size:.84rem;padding:12px 14px;background:var(--alt);color:var(--text);border-left:2px solid var(--line-strong)}
 .honest{grid-column:1/-1;font-size:.95rem;color:var(--text-2);border-left:2px solid var(--line-strong);padding-left:14px}
 
+/* Cómo uso la IA */
+.ai{margin-top:clamp(56px,7vw,100px);padding-top:clamp(28px,3.5vw,44px);border-top:1px solid var(--line-strong)}
+.ai h3{font-size:clamp(1.9rem,3.4vw,2.8rem);margin-bottom:clamp(24px,3vw,36px)}
+.ai h4{font:500 .74rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.ai-intro{font-size:clamp(1.08rem,1.4vw,1.22rem);line-height:1.6;color:var(--text);max-width:62ch;margin:14px 0 30px}
+.ai-flow{list-style:none;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.ai-flow li{padding:14px 16px 0 0;border-top:1px solid var(--line-strong);display:flex;flex-direction:column;gap:4px}
+.ai-flow li span{font:500 .78rem/1 var(--font-mono);letter-spacing:.08em;color:var(--muted)}
+.ai-flow li b{font-weight:600;line-height:1.3}
+.ai-flow li small{font-size:.86rem;line-height:1.45;color:var(--text-2)}
+.ai-cols{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(28px,5vw,72px);margin-top:clamp(28px,4vw,48px);align-items:start}
+.ai-cols>*{min-width:0}
+.rule{margin:0 0 14px;padding:2px 0 2px 16px;border-left:2px solid var(--line-strong)}
+.rule p,.rule code{font:400 .86rem/1.6 var(--font-mono);color:var(--text)}
+.rule cite{display:block;margin-top:4px;font:400 .72rem/1.5 var(--font-mono);letter-spacing:.04em;font-style:normal;color:var(--muted)}
+.ai ul{list-style:none;padding:0;display:grid;gap:12px}
+.ai ul li{color:var(--text-2);font-size:.96rem}
+.ai ul li b{display:block;font-weight:600;color:var(--text)}
+.ai-craft-t{margin-top:30px}
+.ai-craft{color:var(--text-2);font-size:.97rem;line-height:1.65}
+.ai-tools{margin-top:clamp(24px,3vw,36px);font:400 .8rem/1.5 var(--font-mono);letter-spacing:.06em;color:var(--text)}
+.case-link{margin:0 0 28px}
+.conf-note{margin-top:6px;font:400 .76rem/1.6 var(--font-mono);letter-spacing:.04em;color:var(--muted)}
+.timeline span+span{display:block;margin-top:6px}
+
 /* Trayectoria */
 .path-sec{padding:clamp(72px,10vw,140px) 0 clamp(80px,12vw,160px);background:var(--alt);color:var(--text);border-top:1px solid var(--line)}
 .path{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(32px,6vw,80px)}
@@ -368,6 +393,7 @@ main:focus{outline:none}
   .about-notes{margin-top:0}
   .frag:nth-of-type(even){margin-left:0}
   .manifesto{grid-template-columns:1fr}
+  .ai-cols{grid-template-columns:1fr}
   .manifesto .cols{padding-left:0;border-left:0;padding-top:22px;border-top:1px solid var(--block-line)}
   .stats{grid-template-columns:1fr 1fr;row-gap:26px}
   html{scroll-padding-top:110px}
@@ -381,6 +407,12 @@ main:focus{outline:none}
   .hero-collage{justify-self:center;max-width:440px;margin-top:12px}
   .story .device-col{display:none}
   .mock{--mw:290px}
+}
+@media (max-width:700px){
+  .ai-flow{grid-template-columns:1fr}
+  .ai-flow li{flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:12px 0}
+  .ai-flow li span{flex:0 0 1.2rem}
+  .ai-flow li small{flex:0 0 100%;padding-left:calc(1.2rem + 12px)}
 }
 @media (max-width:520px){
   .traits{grid-template-columns:1fr}
@@ -423,6 +455,7 @@ main:focus{outline:none}
   <div class="links">
     <a href="#contenido">Inicio</a>
     <a href="#proyectos">Proyectos</a>
+    <a href="#trayectoria">Experiencia</a>
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#contacto">Contacto</a>
   </div>
@@ -467,7 +500,7 @@ main:focus{outline:none}
   <div class="wrap manifesto">
     <blockquote data-split>«Las apps genéricas están hechas para todo el mundo. Las mías, para alguien concreto.»</blockquote>
     <div class="cols" data-stagger>
-      <p>Empiezo siempre por una necesidad real, mía o de mi gente. Después diseño: la identidad, las pantallas y qué entra y qué se queda fuera. Lo construyo con IA, pero el criterio lo pongo yo. Escribo las reglas que la IA debe seguir y reviso cada detalle.</p>
+      <p>Empiezo siempre por una necesidad real, mía o de mi gente. Después diseño: la identidad, las pantallas y qué entra y qué se queda fuera. Lo construyo con IA, pero el criterio lo pongo yo. Escribo las reglas que la IA debe seguir y reviso cada detalle del resultado.</p>
       <p>Al final las usamos de verdad, y eso me obliga a pulirlas hasta que encajan.</p>
     </div>
   </div>
@@ -526,7 +559,7 @@ main:focus{outline:none}
           <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot night" src="img/belladonna-app-3.jpg" alt="Ficha de libro: seguir leyendo (tema oscuro)" width="600" height="1208" loading="lazy"><img class="shot day" src="img/belladonna-app-6.jpg" alt="Ficha de libro: seguir leyendo (tema claro)" width="600" height="1208" loading="lazy"></div></div><figcaption>Ficha de libro</figcaption></figure>
         </div>
       </div>
-      <p class="ia-note"><b>Mi parte:</b> idea, producto, UX/UI, marca y las reglas que sigue la IA · <b>La IA:</b> escribe el código bajo esas reglas; yo lo reviso.</p>
+      <p class="ia-note"><b>Mi parte:</b> idea, producto, UX/UI, marca y las reglas que sigue la IA · <b>La IA:</b> escribe el código bajo esas reglas; yo pruebo y valido el resultado.</p>
     </div>
   </article>
 
@@ -548,7 +581,7 @@ main:focus{outline:none}
             <h4>Mi parte</h4>
             <ul data-stagger>
               <li><b>Reorganizar el producto:</b> propuse cómo agrupar gastos fijos, huchas, viajes y cierres mensuales para que el día a día fuera más rápido.</li>
-              <li><b>El diseño:</b> una identidad cálida con dos conejitos de mascota, lejos de la estética de banco.</li>
+              <li><b>El diseño y su mascota:</b> buscaba algo que evocara el dinero, como un gato de la suerte. En un viaje a Japón pasamos por un templo con conejitos de la abundancia y nos compramos las figuritas: los convertí en la mascota, un recuerdo de ese viaje y lejos de la estética de banco.</li>
               <li><b>Una prioridad clara:</b> «la claridad financiera tiene prioridad sobre la decoración».</li>
             </ul>
           </div>
@@ -636,17 +669,45 @@ main:focus{outline:none}
           <div class="facts" data-stagger><div><b>2</b><span>personas la usan</span></div><div><b>15</b><span>versiones en 3 semanas</span></div><div><b>103</b><span>decisiones documentadas</span></div></div>
           <div class="chips" data-reveal><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Marca</span><span>Expo / React Native</span><span>SQLite</span><span>Health Connect</span></div>
         </div>
-        <div class="decision" data-reveal><h4>Decisión clave</h4><p>Los cambios del cuerpo se muestran en un color neutro, nunca en verde o rojo: el progreso no es "bueno" o "malo", es tuyo.</p></div>
+        <div>
+          <div class="decision" data-reveal><h4>Decisión clave</h4><p>Los cambios del cuerpo se muestran en un color neutro, nunca en verde o rojo: el progreso no es "bueno" o "malo", es tuyo.</p></div>
+          <p class="case-link" data-reveal><a class="btn ghost" href="sandow.html">Ver caso de estudio de Sandow →</a></p>
+        </div>
       </div>
-      <p class="ia-note"><b>Mi parte:</b> idea, producto, UX/UI, marca y las reglas que sigue la IA · <b>La IA:</b> escribe el código bajo esas reglas; yo lo reviso.</p>
+      <p class="ia-note"><b>Mi parte:</b> idea, producto, UX/UI, marca y las reglas que sigue la IA · <b>La IA:</b> escribe el código bajo esas reglas; yo pruebo y valido el resultado.</p>
     </div>
   </article>
+</section>
+
+<section id="trayectoria" class="path-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow rule"><span class="sec-n">§ 2</span>Experiencia</p><h2 class="display" data-split>Experiencia</h2></div>
+    </div>
+    <div class="path">
+      <div class="path-main">
+      <ol class="timeline" data-stagger>
+        <li class="now"><time>2026</time><b>Productos propios con IA</b><span>Belladonna y Sandow, de la idea a la app: marca, UX/UI y desarrollo con Claude Code. En Futari, ideas de producto y diseño.</span></li>
+        <li><time>jul 2021 – actualidad</time><b>Product Designer · Econocom Products &amp; Solutions</b><span>Defino y diseño herramientas internas, desde la necesidad hasta la interfaz. Reviso que el desarrollo del equipo cumpla el diseño y la funcionalidad (Design QA), defino tareas, propongo mejoras de producto y colaboro en definir procesos, sobre todo en qué mejorar con IA.</span><span>Antes, en la misma empresa: interfaces para aplicaciones Angular, coherencia de marca con marketing (RRSS, banners, documentación) y la web corporativa en WordPress.</span></li>
+        <li><time>jun 2018 – jul 2021</time><b>Front End Designer · Techpump</b><span>Maquetación HTML, CSS y JS, y propuestas de diseño para nuevas funcionalidades y productos.</span></li>
+        <li><time>abr 2017 – may 2018</time><b>Front End Developer · Vorago Tecnología / Talento Corporativo</b><span>Del diseño al código: responsive y compatibilidad entre navegadores.</span></li>
+      </ol>
+      <p class="conf-note">Mi trabajo en empresa es confidencial; encantada de contarlo en una conversación.</p>
+      </div>
+      <div data-stagger>
+        <div class="box"><h4>Herramientas</h4><div class="chips"><span>Figma</span><span>Claude Code</span><span>HTML / CSS</span><span>React / React Native</span><span>Next.js</span><span>Angular</span><span>Tailwind</span><span>Supabase</span><span>Firebase</span><span>Git</span></div></div>
+        <div class="box"><h4>Formación</h4><ul><li>Google UX Design Professional Certificate (2021)</li><li>UX Writing: diseño de contenido (2023)</li><li>Ingeniería Informática, Universidad de Oviedo (a falta del último semestre)</li></ul></div>
+        <div class="box"><h4>Idiomas</h4><ul><li>Español: nativo</li><li>Inglés: nivel medio</li></ul></div>
+        <div class="box"><h4>Archivo</h4><a href="https://www.behance.net/albaff" target="_blank" rel="noopener">Trabajos de una etapa anterior en Behance →<span class="sr-only">, se abre en otra pestaña</span></a></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="sobre-mi" class="about-sec">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow rule"><span class="sec-n">§ 2</span>Sobre mí</p><h2 class="display" data-split>Cómo trabajo</h2></div>
+      <div><p class="eyebrow rule"><span class="sec-n">§ 3</span>Sobre mí</p><h2 class="display" data-split>Cómo trabajo</h2></div>
     </div>
     <div class="about">
       <div class="about-intro">
@@ -654,7 +715,7 @@ main:focus{outline:none}
           <p>Soy Alba, diseñadora de producto y una persona con más ideas de las que caben en una lista.</p>
           <p>Llevo <strong>más de 8 años diseñando y dando forma a interfaces</strong>, explorando cómo hacer que los productos digitales sean más claros, útiles y agradables de utilizar.</p>
           <p>Soy curiosa por naturaleza, bastante detallista y me cuesta dejar una idea sin explorar. Me gusta entender cómo funcionan las cosas, preguntarme por qué funcionan así y experimentar con distintas herramientas hasta encontrar la forma de convertir una idea en algo tangible.</p>
-          <p>Combino UX/UI, diseño visual y frontend, y utilizo la IA para ampliar lo que puedo crear y llevar mis proyectos más lejos: desde una primera intuición hasta un producto que puedo utilizar de verdad. Vengo del frontend, así que leo y reviso el código que escribe la IA.</p>
+          <p>Combino UX/UI, diseño visual y frontend, y utilizo la IA para ampliar lo que puedo crear y llevar mis proyectos más lejos: desde una primera intuición hasta un producto que puedo utilizar de verdad. No necesito entender cada línea de código: sé exactamente qué tiene que hacer, cómo tiene que verse y por qué.</p>
           <p><strong>Me gusta imaginar lo que podría existir y tener las herramientas para hacerlo realidad.</strong></p>
         </div>
       </div>
@@ -672,31 +733,38 @@ main:focus{outline:none}
         <p class="honest">Pienso en las personas que utilizan lo que diseño: accesibilidad desde el principio, privacidad por defecto y textos que acompañan, nunca juzgan.</p>
       </div>
     </div>
-  </div>
-</section>
 
-<section id="trayectoria" class="path-sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><p class="eyebrow rule"><span class="sec-n">§ 3</span>Trayectoria</p><h2 class="display" data-split>De maquetar a diseñar producto</h2></div>
-    </div>
-    <div class="path">
-      <ol class="timeline" data-stagger>
-        <li class="now"><time>2026</time><b>Productos propios con IA</b><span>Belladonna y Sandow, de la idea a la app: marca, UX/UI y desarrollo con Claude Code. En Futari, ideas de producto y diseño.</span></li>
-        <li><time>2021 – actualidad</time><b>Product Designer · Econocom Products &amp; Solutions</b><span>Defino y diseño herramientas internas, reviso el desarrollo del equipo (Design QA), defino tareas, propongo mejoras y colaboro en definir procesos, sobre todo en qué podemos mejorar con IA.</span></li>
-        <li><time>2018 – 2021</time><b>Front End Designer · Techpump</b><span>Maquetación HTML, CSS y JS y propuestas de diseño para nuevas funcionalidades.</span></li>
-        <li><time>2017 – 2018</time><b>Front End Developer · Vorago Tecnología</b><span>Del diseño al código: responsive y compatibilidad entre navegadores.</span></li>
+    <div class="ai" aria-labelledby="ia-t">
+      <h3 id="ia-t" class="display" data-split>Cómo uso la IA</h3>
+      <p class="ai-intro" data-reveal>Lo confieso: soy un poco mandona. Y con la IA eso es una virtud. No escribo el código ni entiendo cada línea, pero sé exactamente qué tiene que hacer, cómo tiene que verse y por qué. Pido, pruebo, corrijo y vuelvo a pedir, hasta que encaja con mi vida.</p>
+      <ol class="ai-flow" data-stagger>
+        <li><span>1</span><b>Necesidad real</b></li>
+        <li><span>2</span><b>Diseño</b><small>identidad, pantallas, qué entra y qué no</small></li>
+        <li><span>3</span><b>Reglas para la IA</b></li>
+        <li><span>4</span><b>La IA construye</b></li>
+        <li><span>5</span><b>Reviso, pruebo y uso</b></li>
       </ol>
-      <div data-stagger>
-        <div class="box"><h4>Herramientas</h4><div class="chips"><span>Figma</span><span>Claude Code</span><span>HTML / CSS</span><span>React / React Native</span><span>Next.js</span><span>Angular</span><span>Tailwind</span><span>Supabase</span><span>Firebase</span><span>Git</span></div></div>
-        <div class="box"><h4>Formación</h4><ul><li>Google UX Design Professional Certificate (2021)</li><li>UX Writing: diseño de contenido (2023)</li><li>Ingeniería Informática, Universidad de Oviedo (a falta del último semestre)</li></ul></div>
-        <div class="box"><h4>Idiomas</h4><ul><li>Español: nativo</li><li>Inglés: nivel medio</li></ul></div>
-        <div class="box"><h4>Archivo</h4><a href="https://www.behance.net/albaff" target="_blank" rel="noopener">Trabajos de una etapa anterior en Behance →<span class="sr-only">, se abre en otra pestaña</span></a></div>
+      <div class="ai-cols">
+        <div data-reveal>
+          <h4>Las reglas que le pongo</h4>
+          <blockquote class="rule"><p>«Nada de <code>git push</code> ni compilaciones sin aprobación expresa.»</p><cite>— CLAUDE.md de Sandow</cite></blockquote>
+          <blockquote class="rule"><p>«Mantén esta documentación al día en el mismo commit que cualquier cambio de comportamiento, estructura o decisión.»</p><cite>— CLAUDE.md de Sandow</cite></blockquote>
+          <blockquote class="rule"><p>«Antes de dar algo por terminado: <code>tsc</code>, <code>lint</code> y que el bundle de Android compile.»</p><cite>— CLAUDE.md de Sandow</cite></blockquote>        </div>
+        <div data-reveal>
+          <h4>Lo que no delego</h4>
+          <ul>
+            <li><b>Las decisiones de producto y diseño.</b> Qué se hace y qué se queda fuera lo decido yo.</li>
+            <li><b>El visto bueno.</b> Pruebo cada cambio en mi día a día y no doy nada por bueno hasta que hace exactamente lo que pedí.</li>
+            <li><b>Los textos y el tono.</b> Que suenen a mí y acompañen, nunca juzguen.</li>
+          </ul>
+          <h4 class="ai-craft-t">La IA no sustituye el oficio</h4>
+          <p class="ai-craft">Siempre me han encantado las manualidades y aprender a hacer cosas, pero me gustan tantas que no me daría la vida para dominarlas todas. La IA me deja crear lo que no sabría hacer a mano, como un logo o una ilustración, sin quitarle valor a quien sí sabe: lo admiro. Lo que pongo yo es el criterio. Nunca me quedo con la primera propuesta: la refino una y otra vez hasta que es exactamente lo que buscaba.</p>
+        </div>
       </div>
+      <p class="ai-tools">Herramientas: Claude Code · ChatGPT (imagen y logos) · Figma · Git</p>
     </div>
   </div>
 </section>
-
 </main>
 
 <div class="contact-wrap">
