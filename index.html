@@ -123,48 +123,55 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
 .hero-end{height:clamp(56px,8vw,110px)}
 
 /* Manifiesto */
-.manifesto-sec{padding:clamp(80px,12vw,170px) 0;color:var(--on-block);background:var(--block)}
-.manifesto blockquote{font:400 clamp(2rem,4.6vw,4.2rem)/1.1 var(--font-display);letter-spacing:-.01em;max-width:20ch;margin-bottom:clamp(40px,6vw,80px)}
-.manifesto .cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);margin-left:auto;max-width:900px;padding-top:28px;border-top:1px solid var(--block-line)}
+.manifesto-sec{padding:clamp(56px,7vw,100px) 0;color:var(--on-block);background:var(--block)}
+.manifesto{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.manifesto blockquote{font:400 clamp(1.9rem,3.6vw,3.4rem)/1.1 var(--font-display);letter-spacing:-.01em;max-width:20ch;margin:0}
+.manifesto .cols{display:grid;gap:18px;padding-left:clamp(20px,3vw,40px);border-left:1px solid var(--block-line)}
 .manifesto p{color:var(--on-block-muted);font-size:1.08rem}
 
 /* Proyectos: contenedor neutro; el color lo aportan las capturas */
 .proj-intro{padding:clamp(72px,10vw,130px) 0 clamp(40px,6vw,80px);background:var(--bg);color:var(--text)}
-.project{position:relative;color:var(--text);background:var(--bg);padding:clamp(96px,14vw,200px) 0;overflow-x:clip;border-top:1px solid var(--line)}
+.project{position:relative;color:var(--text);background:var(--bg);padding:clamp(64px,8vw,112px) 0;overflow-x:clip;border-top:1px solid var(--line)}
 .project:nth-of-type(even){background:var(--alt)}
 .p-num{display:flex;align-items:center;gap:12px;margin-bottom:clamp(24px,3.4vw,40px);font:500 .78rem/1.4 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .p-num::before{content:"";flex:0 0 auto;width:9px;height:9px;border-radius:50%;background:var(--p-accent)}
 .p-num::after{content:"";flex:1 1 40px;max-width:220px;height:1px;background:var(--line-strong);opacity:.35}
-.p-top{display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center;margin-bottom:clamp(56px,8vw,112px)}
+.p-top{display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center;margin-bottom:clamp(28px,4vw,48px)}
 .p-top>*{min-width:0}
 .p-head{display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap}
 .p-head img{width:56px;height:56px;border-radius:10px;object-fit:cover;border:1px solid var(--line)}
 .tag{font:500 .74rem/1.5 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.project h3{font-size:clamp(3rem,10vw,9rem);line-height:.92;letter-spacing:-.04em;color:var(--text)}
+.tagline{font:400 clamp(1.25rem,2vw,1.7rem)/1.3 var(--font-display);color:var(--text-2);max-width:34ch;margin-top:14px}
+.project h3{font-size:clamp(2.6rem,6.2vw,5.6rem);line-height:.92;letter-spacing:-.04em;color:var(--text)}
 .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,6vw,88px);align-items:start}
 .grid>*{min-width:0}
-.grid.solo{grid-template-columns:1fr;max-width:760px;margin-left:clamp(0px,14vw,200px)}
-.why{font-size:clamp(1.08rem,1.5vw,1.25rem);margin:0 0 clamp(40px,5vw,56px);line-height:1.7;color:var(--text-2)}
+.grid.solo{grid-template-columns:1fr}
+.grid.solo>div{display:grid;grid-template-columns:1.1fr 1fr;column-gap:clamp(32px,5vw,80px);align-items:start}
+.grid.solo>div>*{grid-column:1}
+.grid.solo>div>.mine{grid-column:2;grid-row:1/span 2}
+.grid.solo>div>.bd-mini{grid-column:2;grid-row:3/span 2;margin-top:0}
+.grid.solo .mine ul{margin-bottom:0}
+.why{font-size:clamp(1.05rem,1.35vw,1.18rem);margin:0 0 28px;line-height:1.65;color:var(--text-2)}
 .why::before{content:"Por qué la hice";display:block;font:500 .74rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 .mine h4{font:500 .74rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.mine ul{list-style:none;padding:0;display:grid;gap:16px;margin-bottom:clamp(40px,5vw,56px)}
+.mine ul{list-style:none;padding:0;display:grid;gap:12px;margin-bottom:28px}
 .mine li{padding-left:24px;position:relative}
 .mine li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;background:var(--p-accent)}
 .mine li b{font-weight:600}
 /* Datos */
-.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:clamp(40px,5vw,56px) 0 clamp(32px,4vw,44px);padding:22px 0;border-block:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:0 0 24px;padding:18px 0;border-block:1px solid var(--line)}
 .facts div{border-left:1px solid var(--line);padding:2px 14px 2px 20px}
 .facts div:first-child{border-left:0;padding-left:0}
 .facts b{display:block;font:var(--p-dw,600) clamp(2rem,4vw,3.2rem)/1 var(--p-display,inherit);letter-spacing:-.03em}
 .facts b.txt{font-size:clamp(1.5rem,2.5vw,2rem);line-height:1.5;letter-spacing:-.02em;white-space:nowrap}
 .facts span{font:400 .7rem/1.4 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block;margin-top:8px}
 /* Decisión clave */
-.decision{margin:0 0 clamp(40px,5vw,56px);padding:22px 26px 24px;border-left:2px solid var(--line-strong);background:var(--alt)}
+.decision{margin:0 0 28px;padding:18px 22px 20px;border-left:2px solid var(--line-strong);background:var(--alt)}
 .project:nth-of-type(even) .decision{background:var(--bg)}
 .decision h4{font:500 .74rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
 .decision p{font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.6}
 /* Mi parte / La IA */
-.ia-note{margin-top:clamp(48px,6vw,80px);padding:16px 0 0;border-top:1px solid var(--line-strong);font-size:.88rem;line-height:1.7;max-width:90ch;color:var(--text-2)}
+.ia-note{margin-top:clamp(28px,3.5vw,44px);padding:16px 0 0;border-top:1px solid var(--line-strong);font-size:.88rem;line-height:1.7;max-width:90ch;color:var(--text-2)}
 .ia-note b{font:500 .72rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--text)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chips span{font-size:.82rem;padding:4px 11px;border-radius:var(--r-sm);border:1px solid var(--line-strong)}
@@ -189,7 +196,7 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
 
 #sandow{--sb:#0B1014;--p-accent:#27D6CC;--p-line:var(--line);--p-display:"Bricolage Grotesque",sans-serif;--p-dw:800}
 #sandow h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.045em}
-.story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.75fr);gap:clamp(32px,6vw,96px);margin:clamp(56px,7vw,100px) 0 clamp(48px,6vw,90px)}
+.story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.75fr);gap:clamp(32px,6vw,96px);margin:clamp(28px,4vw,48px) 0 clamp(32px,4vw,56px)}
 .story>*{min-width:0}
 .story-label{margin-top:clamp(40px,6vw,80px)}
 .step{padding:clamp(32px,5vw,56px) 0;position:relative;border-top:1px solid var(--line)}
@@ -207,8 +214,9 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
 .device-col{display:none}
 .story.scrolly .device-col{display:flex;position:sticky;top:64px;height:calc(100vh - 64px);align-self:start;align-items:center;justify-content:center}
 .story.scrolly .shots{display:none}
-.story.scrolly .step{min-height:80vh;display:flex;flex-direction:column;justify-content:center;opacity:.28;transition:opacity .5s ease}
+.story.scrolly .step{min-height:72vh;display:flex;flex-direction:column;justify-content:center;opacity:.28;transition:opacity .5s ease}
 .story.scrolly .step.on{opacity:1}
+.story.scrolly .step:first-child{justify-content:flex-start;padding-top:clamp(24px,8vh,80px)}
 .device{position:relative;width:calc(min(74vh,680px)*.48)}
 .screen>img{position:absolute;left:0;top:40px;width:100%;height:calc(100% - 40px);object-fit:contain;object-position:top;opacity:0;scale:1.03;transition:opacity .55s ease,scale .8s var(--ease)}
 .screen img.on{opacity:1;scale:1}
@@ -286,7 +294,7 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
 .foot-small{font-size:.84rem;color:var(--on-block-muted)}
 
 /* Galería de móviles (componente reutilizable): marcos sobrios */
-.gallery{margin-top:clamp(80px,11vw,150px);padding-top:22px;border-top:1px solid var(--line)}
+.gallery{margin-top:clamp(44px,5.5vw,72px);padding-top:22px;border-top:1px solid var(--line)}
 .gal-label{font:500 .74rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
 .gal-track{display:flex;align-items:center;gap:clamp(18px,3vw,44px);overflow-x:auto;scroll-snap-type:x proximity;padding:52px clamp(16px,4vw,48px) 64px;margin:0 calc(-1*clamp(16px,4vw,48px));scrollbar-width:thin;scrollbar-color:var(--mid) transparent}
 .gal-track>:first-child{margin-left:auto}.gal-track>:last-child{margin-right:auto}
@@ -333,12 +341,13 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
 }
 @media (max-width:900px){
   .grid,.path,.p-top,.story,.sandow-foot,.hero-grid{grid-template-columns:1fr}
-  .grid.solo{margin-left:0}
+  .grid.solo>div{display:block}
   .about{grid-template-columns:1fr}
   .about-intro,.about-notes{grid-column:1/-1}
   .about-notes{margin-top:0}
   .frag:nth-of-type(even){margin-left:0}
-  .manifesto .cols{grid-template-columns:1fr}
+  .manifesto{grid-template-columns:1fr}
+  .manifesto .cols{padding-left:0;border-left:0;padding-top:22px;border-top:1px solid var(--block-line)}
   .stats{grid-template-columns:1fr 1fr;row-gap:26px}
   html{scroll-padding-top:110px}
   nav.top .wrap{flex-wrap:wrap;height:auto;gap:0 12px;padding-top:6px}
@@ -457,8 +466,9 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
       <div class="p-top">
         <div>
           <p class="p-num" data-reveal>01 / READING &amp; COMMUNITY</p>
-          <div class="p-head" data-reveal><img src="img/belladonna-icon.png" alt="" width="160" height="160" loading="lazy"><span class="tag">App móvil · Android, iOS y web</span></div>
+          <div class="p-head" data-reveal><img src="img/belladonna-icon.png" alt="" width="160" height="160" loading="lazy"><span class="tag">App móvil · Android y web</span></div>
           <h3 data-split>Belladonna Society</h3>
+          <p class="tagline" data-reveal>Diseñé el spoiler como un sello: tú decides cuándo romperlo.</p>
         </div>
       </div>
       <div class="grid solo">
@@ -475,12 +485,6 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
             </ul>
           </div>
           <div class="decision" data-reveal><h4>Decisión clave</h4><p>El spoiler se resuelve con diseño, no pidiendo cuidado: cada comentario queda anclado a su línea y sellado hasta que llegas. Romper el sello es una decisión tuya.</p></div>
-          <div class="bd-mini">
-            <div class="seals mini" data-seq>
-              <div class="seal"><img src="img/bd-seal-1.png" alt="Sello de la Orden 1" width="200" height="200" loading="lazy"></div><div class="seal"><img src="img/bd-seal-2.png" alt="Sello de la Orden 2" width="200" height="200" loading="lazy"></div><div class="seal"><img src="img/bd-seal-3.png" alt="Sello de la Orden 3" width="200" height="200" loading="lazy"></div><div class="seal"><img src="img/bd-seal-4.png" alt="Sello de la Orden 4" width="200" height="200" loading="lazy"></div><div class="seal"><img src="img/bd-seal-5.png" alt="Sello de la Orden 5" width="200" height="200" loading="lazy"></div><div class="seal"><img src="img/bd-seal-6.png" alt="Sello de la Orden 6" width="200" height="200" loading="lazy"></div>
-            </div>
-            <p class="caption">Algunos de los 25 sellos que se ganan leyendo</p>
-          </div>
           <div class="facts" data-stagger><div><b>4</b><span>socias</span></div><div><b class="txt">nov 2026</b><span>en uso desde</span></div><div><b>23</b><span>versiones publicadas</span></div></div>
           <div class="chips" data-reveal><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Marca</span><span>Expo / React Native</span><span>Supabase</span><span>epub.js</span></div>
         </div>
@@ -511,6 +515,7 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
           <p class="p-num" data-reveal>02 / PERSONAL FINANCE</p>
           <div class="p-head" data-reveal><img src="img/futari-logo.png" alt="" width="160" height="160" loading="lazy"><span class="tag">Web · PWA · <span class="collab">En colaboración con mi pareja</span></span></div>
           <h3 data-split>Futari ふたり</h3>
+          <p class="tagline" data-reveal>De una hoja que había que cuadrar a mano a un mes que se cierra con un gesto.</p>
         </div>
       </div>
       <div class="grid solo">
@@ -549,6 +554,7 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
           <p class="p-num" data-reveal>03 / HEALTH &amp; ROUTINES</p>
           <div class="p-head" data-reveal><img src="img/sandow-logo.png" alt="" width="160" height="160" loading="lazy"><span class="tag">App Android</span></div>
           <h3 data-split>Sandow</h3>
+          <p class="tagline" data-reveal>Hice que el progreso se cuente sin juzgar: qué cambia de verdad y qué es solo ruido.</p>
         </div>
       </div>
       <p class="why" data-reveal style="max-width:72ch">Empezó en casa. Mi pareja comenzó un plan nutricional con un entrenador y el menú llegaba en PDF, así que cada día era un lío: qué toca comer hoy, si lo tenemos en la nevera, qué comprar, qué dejar preparado. Luego llegaron las revisiones mensuales y quisimos guardar también el peso, las medidas y las fotos. Y como no todos seguimos el mismo camino hacia un objetivo, la app creció para que cada perfil tuviera el suyo, todo en un mismo sitio.</p>
@@ -622,9 +628,11 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
     <div class="about">
       <div class="about-intro">
         <div data-stagger>
-          <p>Estudié <strong>Ingeniería Informática</strong> y me cambié al diseño porque lo que más me gusta es cómo se <strong>siente</strong> usar algo. Llevo años entre Figma y el código, así que sé hablar con diseño y con desarrollo.</p>
-          <p>Ahora la IA me permite cerrar el círculo: <strong>de la idea al producto en marcha, sin depender de nadie.</strong> Pero que la IA escriba código no significa que decida. Las decisiones son mías.</p>
-          <p>Vengo del frontend, así que leo y reviso el código que escribe la IA: yo decido el qué y el porqué; ella acelera el cómo.</p>
+          <p>Soy Alba, diseñadora de producto y una persona con más ideas de las que caben en una lista.</p>
+          <p>Llevo <strong>más de 8 años diseñando y dando forma a interfaces</strong>, explorando cómo hacer que los productos digitales sean más claros, útiles y agradables de utilizar.</p>
+          <p>Soy curiosa por naturaleza, bastante detallista y me cuesta dejar una idea sin explorar. Me gusta entender cómo funcionan las cosas, preguntarme por qué funcionan así y experimentar con distintas herramientas hasta encontrar la forma de convertir una idea en algo tangible.</p>
+          <p>Combino UX/UI, diseño visual y frontend, y utilizo la IA para ampliar lo que puedo crear y llevar mis proyectos más lejos: desde una primera intuición hasta un producto que puedo utilizar de verdad. Vengo del frontend, así que leo y reviso el código que escribe la IA.</p>
+          <p><strong>Me gusta imaginar lo que podría existir y tener las herramientas para hacerlo realidad.</strong></p>
         </div>
       </div>
       <div class="about-notes">
@@ -650,7 +658,7 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
         <div class="trait"><b>Curiosa</b><p>Me gusta entender cómo funcionan las cosas y descubrir cómo podrían funcionar mejor.</p><small>Quería leer en mi e-reader Xteink sin perder el hilo del club, así que investigué qué protocolos habla ya (KOReader Sync y OPDS) y estoy conectándolo con Belladonna sin tocar su firmware.</small></div>
         <div class="trait"><b>Metódica</b><p>Las buenas decisiones no deberían depender de la memoria ni de la intuición.</p><small>Sandow tiene un registro de 103 decisiones de diseño, cada una documentada con su fecha y su motivo.</small></div>
         <div class="trait"><b>Detallista</b><p>Me fijo en lo que casi nadie ve, pero que cambia cómo se siente un producto.</p><small>Sustituí unas 90 alertas del sistema por un modal propio para mantener la coherencia visual, también en modo oscuro.</small></div>
-        <div class="trait"><b>Inquieta</b><p>No suelo quedarme en la idea. Me gusta investigar, probar y construir.</p><small>Belladonna empezó como un problema en un chat de Telegram. Dos meses después es una app para Android, iOS y web que usamos cuatro socias, con su identidad, su lector y sus sellos.</small></div>
+        <div class="trait"><b>Inquieta</b><p>No suelo quedarme en la idea. Me gusta investigar, probar y construir.</p><small>Belladonna empezó como un problema en un chat de Telegram. Dos meses después es una app para Android y web que usamos cuatro socias, con su identidad, su lector y sus sellos.</small></div>
         <p class="honest">Pienso en las personas que utilizan lo que diseño: accesibilidad desde el principio, privacidad por defecto y textos que acompañan, nunca juzgan.</p>
       </div>
     </div>
