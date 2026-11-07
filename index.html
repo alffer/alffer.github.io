@@ -248,6 +248,11 @@ main:focus{outline:none}
 .about-intro p{font-size:clamp(1.1rem,1.5vw,1.25rem);margin-bottom:18px;color:var(--text-2)}
 .about-intro p strong{color:var(--text);font-weight:600}
 .about-notes{grid-column:8/13;margin-top:clamp(0px,7vw,110px)}
+.about-art{margin:0}
+.about-art img{width:100%;height:auto;display:block;border-radius:var(--r-sm)}
+:root[data-theme="dark"] .about-art img{background:#F4F3F0;padding:4%}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .about-art img{background:#F4F3F0;padding:4%}}
+.about-art figcaption{font:400 .72rem/1.5 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:12px}
 .about-notes .lead{font-size:clamp(1.1rem,1.5vw,1.25rem);color:var(--text-2);margin-bottom:10px}
 .frag{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 20px;align-items:center;padding:22px 0 24px;border-top:1px solid var(--line)}
 .frag:nth-of-type(even){margin-left:clamp(0px,3.2vw,48px)}
@@ -654,23 +659,10 @@ main:focus{outline:none}
         </div>
       </div>
       <div class="about-notes">
-        <p class="lead" data-reveal>Fuera del trabajo soy curiosa y muy de manualidades. Mis apps hablan de mí más de lo que parece:</p>
-        <!--
-          FOTOS DE "SOBRE MÍ" (opcionales)
-          Cada fragmento tiene un hueco <figure class="snap" data-slot="..."> para una foto.
-          Ahora no tienen imagen, así que NO se muestran (el CSS oculta cualquier .snap sin <img>).
-          Para activar uno, añade un <img> dentro de su <figure>, antes del <figcaption>, por ejemplo:
-            <img src="img/about-lectura.jpg" alt="Descripción de la foto" width="600" height="750" loading="lazy">
-          Nombres sugeridos: about-lectura.jpg, about-viajes.jpg, about-ilustracion.jpg, about-gatos.jpg
-          (mejor verticales 4:5, ~600x750 px, en la carpeta img/). Se muestran solas en blanco y negro.
-          Edita el <figcaption> si quieres otro pie de foto.
-        -->
-        <div class="frags" data-stagger>
-          <article class="frag"><div><h3><i>i.</i>Lectura</h3><p>Leo, y de ahí viene Belladonna.</p></div><figure class="snap" data-slot="lectura"><figcaption>Lectura</figcaption></figure></article>
-          <article class="frag"><div><h3><i>ii.</i>Fotografía y viajes</h3><p>Me gusta viajar y fotografiarlo.</p></div><figure class="snap" data-slot="viajes"><figcaption>Viajes</figcaption></figure></article>
-          <article class="frag"><div><h3><i>iii.</i>Ilustración y manualidades</h3><p>Ilustro y soy muy de manualidades.</p></div><figure class="snap" data-slot="ilustracion"><figcaption>Ilustración</figcaption></figure></article>
-          <article class="frag"><div><h3><i>iv.</i>Los gatos</h3><p>Mis gatos, y de ahí el de Sandow.</p></div><figure class="snap" data-slot="gatos"><figcaption>Gatos</figcaption></figure></article>
-        </div>
+        <figure class="about-art" data-reveal>
+          <img src="img/about-dibujo.png" alt="Dibujo a lápiz de Alba abrazando a su gato negro, con un pequeño corazón" width="1000" height="667" loading="lazy">
+          <figcaption>Fuera del trabajo: leer, fotografiar, viajar, dibujar y mis gatos.</figcaption>
+        </figure>
       </div>
       <div class="traits" data-stagger>
         <div class="trait"><b>Curiosa</b><p>Me gusta entender cómo funcionan las cosas y descubrir cómo podrían funcionar mejor.</p><small>Quería leer en mi e-reader Xteink sin perder el hilo del club, así que investigué qué protocolos habla ya (KOReader Sync y OPDS) y estoy conectándolo con Belladonna sin tocar su firmware.</small></div>
