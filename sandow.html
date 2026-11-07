@@ -164,11 +164,31 @@ main:focus{outline:none}
 .dated time{font:400 .78rem/1.8 var(--font-mono);letter-spacing:.04em;color:var(--muted)}
 .ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,3vw,40px);justify-items:center;max-width:640px;margin:0 auto}
 .ba .mock{--mw:100%;max-width:250px}
-.icons{display:flex;gap:clamp(16px,4vw,40px);align-items:center;justify-content:center;margin-top:clamp(32px,5vw,56px);flex-wrap:wrap}
-.icons figure{text-align:center}
-.icons img{width:120px;height:120px;border-radius:24px;margin:0 auto}
-.icons figcaption{font:400 .72rem/1.4 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;margin-top:12px;color:var(--muted)}
-.icons .arrow{font:400 1.6rem var(--font-display);color:var(--muted)}
+/* Identidad */
+.idn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.55fr);gap:clamp(24px,5vw,72px);align-items:center;padding:clamp(28px,4vw,48px) 0;border-top:1px solid var(--line)}
+.idn:first-of-type{border-top:1px solid var(--line-strong)}
+.idn>*{min-width:0}
+.idn.solo{grid-template-columns:minmax(0,1fr)}
+.idn h3{font:400 clamp(1.6rem,2.6vw,2.2rem)/1.12 var(--font-display);letter-spacing:-.01em;margin-bottom:14px;max-width:24ch}
+.idn p{color:var(--text-2);font-size:clamp(1rem,1.2vw,1.08rem);max-width:68ch}
+.idn p+p{margin-top:1em}
+.idn .quote{max-width:68ch}
+.idn-fig{text-align:center;justify-self:center;width:100%;max-width:240px}
+.idn-fig img{border-radius:24px;margin:0 auto;width:100%;height:auto}
+.idn-fig figcaption{font:400 .72rem/1.4 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;margin-top:14px;color:var(--muted)}
+.traits{list-style:none;padding:0;margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;max-width:68ch}
+.traits li{font-size:.82rem;padding:4px 11px;border-radius:var(--r-sm);border:1px solid var(--line-strong);color:var(--text)}
+.poses{margin-top:clamp(8px,2vw,20px);padding-top:clamp(28px,4vw,48px);border-top:1px solid var(--line)}
+.poses h3{font:400 clamp(1.6rem,2.6vw,2.2rem)/1.12 var(--font-display);letter-spacing:-.01em;margin-bottom:14px;max-width:24ch}
+.poses>p{color:var(--text-2);font-size:clamp(1rem,1.2vw,1.08rem);max-width:68ch;margin-bottom:clamp(20px,3vw,32px)}
+.pose-band{list-style:none;margin:0;padding:clamp(14px,2.5vw,28px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,2vw,20px);background:#0B1014;border-radius:var(--r-md)}
+.pose-band li{display:flex;flex-direction:column;justify-content:space-between;align-items:center;gap:12px;padding:12px 8px 14px;border:1px solid #2A343B;border-radius:var(--r-sm);background:#0B1014}
+.pose-band .img{display:grid;place-items:center;width:100%;aspect-ratio:1}
+.pose-band img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.pose-band span{font:400 .72rem/1.4 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:#E6E6E6;text-align:center}
+.idn-how{margin-top:clamp(28px,4vw,48px);padding-top:16px;border-top:1px solid var(--line-strong);max-width:68ch;color:var(--text-2);font-size:clamp(1rem,1.2vw,1.08rem)}
+.idn-how .lab{margin-bottom:8px}
+.idn-how a{color:var(--text);font-weight:600;text-underline-offset:4px;text-decoration-thickness:1px}
 @media (max-width:620px){.dated li{grid-template-columns:1fr;gap:0}}
 /* Sistema */
 .sys{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,80px);align-items:start}
@@ -275,7 +295,9 @@ main:focus{outline:none}
   .learn{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:860px){
-  .hero-grid,.sys,.path,.method{grid-template-columns:1fr}
+  .hero-grid,.sys,.path,.method,.idn{grid-template-columns:1fr}
+  .idn-fig{justify-self:start}
+  .pose-band{grid-template-columns:repeat(2,minmax(0,1fr))}
   .learn{grid-template-columns:1fr}
   .dec{grid-template-columns:1fr}
   .hero-mock{justify-self:start}
@@ -503,18 +525,68 @@ main:focus{outline:none}
       <figure class="mock sm"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/cs-sandow-antes-progreso.jpg" alt="Antes: Progreso de la v1.5.0, una lista plana con el peso, un gráfico y un historial de registros" width="412" height="890" loading="lazy"></div></div><figcaption>Antes · v1.5.0, 17 oct</figcaption></figure>
       <figure class="mock sm"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-3.jpg" alt="Después: Progreso actual con tu fase, tu enfoque, la tendencia por semana y un enlace a cómo se calcula" width="412" height="890" loading="lazy"></div></div><figcaption>Ahora · fase, enfoque y tendencia</figcaption></figure>
     </div>
-    <div class="icons">
-      <figure><img src="img/cs-sandow-antes-icono.png" alt="Icono antiguo de Sandow: una «S» metálica con reflejos turquesa sobre fondo oscuro" width="240" height="240" loading="lazy"><figcaption>Antes · «S» metálica</figcaption></figure>
-      <span class="arrow" aria-hidden="true">→</span>
-      <figure><img src="img/sandow-logo.png" alt="Icono actual de Sandow: el gato con sudadera blanca y auriculares turquesa" width="160" height="160" loading="lazy"><figcaption>Ahora · el gato</figcaption></figure>
-    </div>
     <p class="lab" style="text-align:center;margin-top:18px">Capturas con datos de demostración</p>
   </div>
 </section>
 
-<section class="sec alt" id="sistema" aria-labelledby="h-sistema">
+<section class="sec alt" id="identidad" aria-labelledby="h-identidad">
   <div class="wrap">
-    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 6</span>El sistema</p><h2 class="display" id="h-sistema">Un sistema con el contraste medido</h2></div>
+    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 6</span>Identidad</p><h2 class="display" id="h-identidad">De una letra a un personaje</h2></div>
+
+    <article class="idn solo">
+      <div>
+        <h3>El territorio</h3>
+        <p>Quería que Sandow se sintiera tecnológica, que hablara de transformación y que tuviera fuerza y carácter. Y que no pareciera una app de dietas ni cayera en los tópicos del fitness: pesas, bíceps, siluetas.</p>
+      </div>
+    </article>
+
+    <article class="idn">
+      <div>
+        <h3>Primero, una S</h3>
+        <p>Dibujé una S geométrica, como una cinta tridimensional que se pliega y cambia de dirección. Era mi forma de hablar de transformación continua y de progreso acumulativo.</p>
+        <p>Pedí una cosa: que se reconociera a 24 × 24 px.</p>
+      </div>
+      <figure class="idn-fig"><img src="img/cs-sandow-antes-icono.png" alt="Icono antiguo de Sandow: una «S» metálica en forma de cinta plegada, con reflejos turquesa sobre fondo oscuro" width="240" height="240" loading="lazy"><figcaption>Antes · la «S» metálica</figcaption></figure>
+    </article>
+
+    <article class="idn">
+      <div>
+        <h3>Después, un personaje</h3>
+        <p>Me di cuenta de que una letra no acompañaba. Propuse una mascota que fuera el identificador: un felino robótico, tecnológico pero cercano, para que seguir tu cuerpo fuera menos frío.</p>
+        <ul class="traits" aria-label="Rasgos del personaje">
+          <li>Compacto</li><li>Cabeza grande</li><li>Ojos ámbar</li><li>Casco y armadura blancos</li><li>Detalles de cobre</li><li>Cola turquesa de energía</li>
+        </ul>
+        <div class="quote"><p>Probé también a fusionar la S con el gato; en la app me quedé con el gato solo.</p></div>
+        <p style="margin-top:1em">Solo se recorta y se escala, nunca se redibuja. Y no tiene icono monocromo de Android porque el gato no tiene una silueta limpia que se pueda tintar.</p>
+      </div>
+      <figure class="idn-fig"><img src="img/cs-sandow-icono-gato.png" alt="Icono actual de Sandow: un gato negro robótico con casco blanco y cobre, ojos ámbar y cola turquesa, en una baldosa oscura con borde turquesa" width="360" height="360" loading="lazy"><figcaption>Ahora · el gato</figcaption></figure>
+    </article>
+
+    <div class="poses">
+      <h3>Un personaje para cada momento</h3>
+      <p>El gato no es solo el icono: cambia de pose según lo que pasa en la app. Estas son ocho de las que ya la acompañan.</p>
+      <ul class="pose-band" aria-label="Poses de la mascota">
+        <li><div class="img"><img src="img/cs-sandow-mascota-hola.webp" alt="El gato saluda alegre con una pata levantada, rodeado de burbujas y una estela turquesa" width="600" height="547" loading="lazy"></div><span>Bienvenida</span></li>
+        <li><div class="img"><img src="img/cs-sandow-mascota-escaner.webp" alt="El gato mira a través de una lupa grande mientras una cinta métrica de cobre se enrosca a su alrededor" width="600" height="537" loading="lazy"></div><span>Medidas</span></li>
+        <li><div class="img"><img src="img/cs-sandow-mascota-fotos.webp" alt="El gato guiña un ojo mientras sujeta una cámara de fotos negra con detalles turquesa" width="600" height="600" loading="lazy"></div><span>Fotos</span></li>
+        <li><div class="img"><img src="img/cs-sandow-mascota-compra.webp" alt="El gato camina contento con una cesta de la compra con una manzana, un huevo y una botella de leche" width="600" height="547" loading="lazy"></div><span>Compra</span></li>
+        <li><div class="img"><img src="img/cs-sandow-mascota-importar.webp" alt="El gato lee con gesto de curiosidad un papel largo con gráficas, como un informe" width="600" height="547" loading="lazy"></div><span>Importar menú</span></li>
+        <li><div class="img"><img src="img/cs-sandow-mascota-durmiendo.webp" alt="El gato duerme hecho un ovillo sobre su cola de energía, con burbujas turquesa en espiral" width="600" height="527" loading="lazy"></div><span>Sin datos todavía</span></li>
+        <li><div class="img"><img src="img/cs-sandow-mascota-duda.webp" alt="El gato se rasca la cabeza con cara de confusión y un signo de interrogación turquesa flotando" width="600" height="547" loading="lazy"></div><span>Errores y avisos</span></li>
+        <li><div class="img"><img src="img/cs-sandow-mascota-logro.webp" alt="El gato levanta un trofeo de cobre con los ojos cerrados de alegría, entre chispas doradas y turquesas" width="600" height="567" loading="lazy"></div><span>Logro</span></li>
+      </ul>
+    </div>
+
+    <div class="idn-how">
+      <p class="lab">Cómo trabajé la identidad</p>
+      <p>Las imágenes las generé y refiné con ChatGPT, sin quedarme con la primera propuesta. La dirección la puse yo: el territorio, los criterios y qué se descarta. Es la idea de siempre: <a href="index.html#ia-t">la IA no sustituye el oficio</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sistema" aria-labelledby="h-sistema">
+  <div class="wrap">
+    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 7</span>El sistema</p><h2 class="display" id="h-sistema">Un sistema con el contraste medido</h2></div>
     <div class="sys">
       <div>
         <div class="sys-block">
@@ -576,9 +648,9 @@ main:focus{outline:none}
   </div>
 </section>
 
-<section class="sec" id="evolucion" aria-labelledby="h-evolucion">
+<section class="sec alt" id="evolucion" aria-labelledby="h-evolucion">
   <div class="wrap">
-    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 7</span>Cómo evolucionó</p><h2 class="display" id="h-evolucion">Tres semanas, de un comparador a un menú</h2></div>
+    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 8</span>Cómo evolucionó</p><h2 class="display" id="h-evolucion">Tres semanas, de un comparador a un menú</h2></div>
     <div class="path">
       <ol class="timeline">
         <li><time datetime="2026-10-16">16 oct 2026</time><b>Fase 1: perfiles, medidas y comparador</b><span>Perfiles, medidas, cámara con silueta guía y comparador de fotos. Ese día quedó también la marca, con el objetivo de accesibilidad AAA.</span></li>
@@ -597,9 +669,9 @@ main:focus{outline:none}
   </div>
 </section>
 
-<section class="sec alt" id="metodo" aria-labelledby="h-metodo">
+<section class="sec" id="metodo" aria-labelledby="h-metodo">
   <div class="wrap">
-    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 8</span>Método</p><h2 class="display" id="h-metodo">Cómo documento, y cómo dirijo a la IA</h2></div>
+    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 9</span>Método</p><h2 class="display" id="h-metodo">Cómo documento, y cómo dirijo a la IA</h2></div>
     <div class="prose" style="margin-bottom:clamp(24px,3vw,36px)"><p><strong>Soy un poco mandona, y con la IA eso es una virtud: sé exactamente qué quiero, por qué y cuándo está bien.</strong> Yo pruebo la app y valido el resultado. Cada decisión se anota con su fecha y su motivo, la más reciente arriba. Así no depende de mi memoria ni de la de la IA. Esto es un extracto real del registro.</p></div>
     <div class="method">
       <table class="log">
@@ -624,9 +696,9 @@ main:focus{outline:none}
   </div>
 </section>
 
-<section class="sec" id="resultado" aria-labelledby="h-resultado">
+<section class="sec alt" id="resultado" aria-labelledby="h-resultado">
   <div class="wrap">
-    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 9</span>Resultado</p><h2 class="display" id="h-resultado">Una app que ya se usa</h2></div>
+    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 10</span>Resultado</p><h2 class="display" id="h-resultado">Una app que ya se usa</h2></div>
     <div class="stats">
       <div><b>2</b><span>personas la usan: mi pareja y yo</span></div>
       <div><b>15</b><span>versiones en 3 semanas</span></div>
@@ -639,9 +711,9 @@ main:focus{outline:none}
   </div>
 </section>
 
-<section class="sec alt" id="aprendizajes" aria-labelledby="h-aprendizajes">
+<section class="sec" id="aprendizajes" aria-labelledby="h-aprendizajes">
   <div class="wrap">
-    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 10</span>Aprendizajes</p><h2 class="display" id="h-aprendizajes">Lo que me llevo</h2></div>
+    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 11</span>Aprendizajes</p><h2 class="display" id="h-aprendizajes">Lo que me llevo</h2></div>
     <ul class="learn">
       <li><b>Escribir el porqué, ahí mismo</b><p>Cada decisión, con su motivo el día que la tomo.</p></li>
       <li><b>Usarla cambia el diseño</b><p>Los mejores cambios salieron de usarla cada día.</p></li>
