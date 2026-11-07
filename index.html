@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cosillas de alffer</title>
+<meta name="description" content="Apps que he diseñado y construido con IA: Belladonna, Futari y Sandow.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,600&family=Nunito:wght@800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f3ee; --surface:#fffdf9; --text:#1d1b19; --muted:#6b655d; --line:#e4ddd2; --accent:#d4552e;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121110; --surface:#1b1a18; --text:#f2eee8; --muted:#a39c92; --line:#2e2b27; --accent:#f07a52;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121110; --surface:#1b1a18; --text:#f2eee8; --muted:#a39c92; --line:#2e2b27; --accent:#f07a52;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* Hero */
+header.hero{padding:88px 0 56px}
+.hello{font-weight:600;color:var(--accent);letter-spacing:.02em}
+h1{font:800 clamp(2.6rem,7vw,5rem)/1.02 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em;margin:14px 0 22px;max-width:14ch}
+.lede{font-size:1.15rem;color:var(--muted);max-width:58ch}
+.lede strong{color:var(--text);font-weight:600}
+.jump{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.jump a{display:flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-weight:500;background:var(--surface);transition:transform .15s}
+.jump a:hover{transform:translateY(-2px)}
+.jump img{width:30px;height:30px;border-radius:50%;object-fit:cover}
+
+/* AI note */
+.how{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-bottom:72px}
+.how div{background:var(--surface);padding:22px}
+.how b{display:block;font:800 1.05rem "Bricolage Grotesque",sans-serif;margin-bottom:4px}
+.how span{color:var(--muted);font-size:.93rem}
+.how .n{color:var(--accent);font-weight:600;font-size:.8rem;letter-spacing:.08em}
+
+/* Project */
+.project{border-radius:28px;padding:56px;margin-bottom:40px;color:var(--p-text);background:var(--p-bg);overflow:hidden;position:relative}
+.p-head{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.p-head img{width:56px;height:56px;border-radius:16px;object-fit:cover}
+.tag{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--p-accent)}
+.project h2{font-size:clamp(2rem,4.5vw,3rem);line-height:1.05}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.pitch{font-size:1.12rem;margin:18px 0 24px;opacity:.92}
+ul.feat{list-style:none;padding:0;display:grid;gap:10px;margin-bottom:26px}
+ul.feat li{padding-left:26px;position:relative;opacity:.9}
+ul.feat li::before{content:"";position:absolute;left:4px;top:.6em;width:9px;height:9px;border-radius:3px;background:var(--p-accent);transform:rotate(45deg)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:.82rem;padding:4px 12px;border-radius:999px;border:1px solid var(--p-line);opacity:.9}
+.meta{margin-top:22px;font-size:.9rem;opacity:.75}
+
+/* Belladonna */
+#belladonna{--p-bg:radial-gradient(120% 90% at 85% 10%,#1F3A2E 0%,#0b1611 55%,#070F0B 100%);--p-text:#F9F6F0;--p-accent:#D4AF37;--p-line:#3E5A47}
+#belladonna h2{font-family:Fraunces,serif;color:#E6C875}
+.bd-art{display:grid;gap:18px}
+.bd-logo{max-width:340px;margin:0 auto;filter:drop-shadow(0 10px 30px #0008)}
+.seals{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.seals img{width:100%;aspect-ratio:1;object-fit:contain;transition:transform .2s}
+.seals img:hover{transform:scale(1.12) rotate(-4deg)}
+.caption{text-align:center;font-size:.85rem;opacity:.65}
+
+/* Futari */
+#futari{--p-bg:linear-gradient(160deg,#FFF8F1 0%,#FFF1DF 100%);--p-text:#4A2818;--p-accent:#C97868;--p-line:#E9B9A5}
+#futari h2{font-family:Nunito,sans-serif;font-weight:800}
+.ft-og{border-radius:18px;box-shadow:0 20px 50px #c9786833;margin-bottom:16px}
+.ft-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ft-row img{background:#fff;border-radius:16px;padding:8px;aspect-ratio:1;object-fit:contain}
+
+/* Sandow */
+#sandow{--p-bg:radial-gradient(100% 80% at 10% 0%,#0E5753 0%,#0B1014 60%);--p-text:#F2F5F6;--p-accent:#27D6CC;--p-line:#2A3640}
+#sandow h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.02em}
+.phones{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;margin:0 -2px}
+.phone{flex:0 0 200px;scroll-snap-align:start;border-radius:26px;padding:6px;background:#1c252c;box-shadow:0 18px 40px #0009,inset 0 0 0 1px #2A3640}
+.phone img{border-radius:21px;aspect-ratio:9/19.5;object-fit:cover;object-position:top;width:100%}
+.phone p{font-size:.78rem;text-align:center;padding:8px 0 4px;opacity:.7}
+
+footer{padding:56px 0 72px;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;border-top:1px solid var(--line);margin-top:32px}
+footer a{color:var(--text);font-weight:500}
+
+@media (max-width:860px){
+  .grid{grid-template-columns:1fr;gap:32px}
+  .how{grid-template-columns:1fr 1fr}
+  .project{padding:32px 22px;border-radius:22px}
+}
+@media (max-width:480px){
+  .wrap{padding:0 16px}
+  header.hero{padding:56px 0 40px}
+  .how{grid-template-columns:1fr}
+  .seals{grid-template-columns:repeat(3,1fr)}
+  .phone{flex-basis:170px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <p class="hello">Hola, soy alffer 👋</p>
+  <h1>Cosillas que he ido haciendo</h1>
+  <p class="lede">Apps que se me ocurrieron para resolver problemas míos y de la gente que me rodea. <strong>Las he diseñado yo y las he construido con IA</strong>: yo pongo la idea, el diseño, las decisiones y muchas horas de probar y corregir. La IA escribe el código conmigo.</p>
+  <nav class="jump" aria-label="Proyectos">
+    <a href="#belladonna"><img src="img/belladonna-icon.png" alt="">Belladonna</a>
+    <a href="#futari"><img src="img/futari-logo.png" alt="">Futari</a>
+    <a href="#sandow"><img src="img/sandow-logo.png" alt="">Sandow</a>
+  </nav>
+</header>
+
+<section class="how" aria-label="Cómo trabajo">
+  <div><span class="n">01</span><b>Una necesidad real</b><span>Algo que me molesta a mí o a mi gente.</span></div>
+  <div><span class="n">02</span><b>Diseño primero</b><span>Identidad, pantallas y qué entra y qué no.</span></div>
+  <div><span class="n">03</span><b>Construir con IA</b><span>Código, base de datos y despliegue, con Claude.</span></div>
+  <div><span class="n">04</span><b>Usar y pulir</b><span>Lo usamos de verdad y lo voy ajustando.</span></div>
+</section>
+
+<!-- BELLADONNA -->
+<section class="project" id="belladonna">
+  <div class="grid">
+    <div>
+      <div class="p-head"><img src="img/belladonna-icon.png" alt=""><span class="tag">App móvil · Android, iOS y web</span></div>
+      <h2>Belladonna Society</h2>
+      <p class="pitch">Un club de lectura con estética de orden secreta botánica. Leéis el mismo libro dentro de la app y dejáis notas en el texto que solo ven las demás cuando llegan a ese punto. Sin spoilers.</p>
+      <ul class="feat">
+        <li>Lector de EPUB con temas de día y de noche</li>
+        <li>Notas ancladas al texto, con respuestas y reacciones</li>
+        <li>Filtro antispoiler: lo que va por delante sale sellado hasta que llegas</li>
+        <li>Votaciones de la próxima lectura, valoraciones y metas</li>
+        <li>25 sellos para coleccionar y 6 grados dentro de la Orden</li>
+        <li>Sincroniza el progreso con e-readers Xteink</li>
+      </ul>
+      <div class="chips"><span>Expo / React Native</span><span>TypeScript</span><span>Supabase</span><span>epub.js</span><span>Cloudflare</span></div>
+    </div>
+    <div class="bd-art">
+      <img class="bd-logo" src="img/belladonna-logo.webp" alt="Logo de Belladonna Society">
+      <div class="seals">
+        <img src="img/bd-seal-1.png" alt="Sello"><img src="img/bd-seal-2.png" alt="Sello"><img src="img/bd-seal-3.png" alt="Sello">
+        <img src="img/bd-seal-4.png" alt="Sello"><img src="img/bd-seal-5.png" alt="Sello"><img src="img/bd-seal-6.png" alt="Sello">
+      </div>
+      <div class="seals">
+        <img src="img/bd-rank-1.png" alt="Grado 1"><img src="img/bd-rank-2.png" alt="Grado 2"><img src="img/bd-rank-3.png" alt="Grado 3">
+        <img src="img/bd-rank-4.png" alt="Grado 4"><img src="img/bd-rank-5.png" alt="Grado 5"><img src="img/bd-rank-6.png" alt="Grado 6">
+      </div>
+      <p class="caption">Algunos sellos y los seis grados de la Orden</p>
+    </div>
+  </div>
+</section>
+
+<!-- FUTARI -->
+<section class="project" id="futari">
+  <div class="grid">
+    <div>
+      <div class="p-head"><img src="img/futari-logo.png" alt=""><span class="tag">Web · PWA instalable</span></div>
+      <h2>Futari ふたり</h2>
+      <p class="pitch">Las finanzas de casa para dos. Gastos fijos, huchas y viajes compartidos con tu pareja, con un cierre cada mes y sin pelearse con hojas de cálculo. Con dos conejitos de mascota.</p>
+      <ul class="feat">
+        <li>Resumen del mes de un vistazo</li>
+        <li>Gastos fijos y cierres mensuales</li>
+        <li>Huchas con objetivos de ahorro</li>
+        <li>Viajes: gastos, retiradas y pegar gastos en bloque</li>
+        <li>Invitar a tu pareja y compartirlo todo</li>
+        <li>Modo claro y oscuro</li>
+      </ul>
+      <div class="chips"><span>Next.js</span><span>React</span><span>Tailwind</span><span>Firebase</span><span>Vercel</span></div>
+    </div>
+    <div>
+      <img class="ft-og" src="img/futari-og.jpg" alt="Portada de Futari">
+      <div class="ft-row">
+        <img src="img/futari-mascota.png" alt="Mascota de Futari">
+        <img src="img/futari-ahorro.png" alt="Ilustración de ahorro">
+        <img src="img/futari-plan.png" alt="Ilustración de planificación">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SANDOW -->
+<section class="project" id="sandow">
+  <div class="grid">
+    <div>
+      <div class="p-head"><img src="img/sandow-logo.png" alt=""><span class="tag">App Android</span></div>
+      <h2>Sandow</h2>
+      <p class="pitch">Para seguir los cambios de tu cuerpo sin subir nada a la nube. Medidas, fotos de progreso y comparativas, todo guardado en el móvil. Los cambios se enseñan tal cual, sin juzgar si son buenos o malos.</p>
+      <ul class="feat">
+        <li>Registros con medidas y fotos por pose</li>
+        <li>Comparador de fotos superpuestas y timelapse</li>
+        <li>Gráficas de progreso y tendencia</li>
+        <li>Menús nutricionales importados desde PDF, con lista de la compra</li>
+        <li>Entrenos (Health Connect y Hevy) y logros con un gato de mascota</li>
+        <li>Varios perfiles, bloqueo con huella y copias de seguridad</li>
+      </ul>
+      <div class="chips"><span>Expo / React Native</span><span>TypeScript</span><span>SQLite</span><span>Health Connect</span></div>
+      <p class="meta">Capturas con datos de demostración.</p>
+    </div>
+    <div class="phones" tabindex="0" aria-label="Capturas de Sandow">
+      <figure class="phone"><img src="img/sandow-1.jpg" alt="Pantalla de bienvenida"><p>Bienvenida</p></figure>
+      <figure class="phone"><img src="img/sandow-2.jpg" alt="Menú del día"><p>Menú del día</p></figure>
+      <figure class="phone"><img src="img/sandow-3.jpg" alt="Progreso"><p>Progreso</p></figure>
+      <figure class="phone"><img src="img/sandow-4.jpg" alt="Logros"><p>Logros</p></figure>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Hecho por alffer, con ayuda de IA (como todo lo de aquí).</span>
+  <a href="https://github.com/alffer">GitHub →</a>
+</footer>
+
+</div>
+</body>
+</html>
