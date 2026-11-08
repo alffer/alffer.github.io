@@ -85,12 +85,14 @@ nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
 .brand{display:inline-flex;align-items:center;gap:12px;font:600 .98rem var(--font-body);text-decoration:none;min-height:44px;margin-right:auto}
 .brand .af-sig{flex:0 0 auto;font-size:1.3rem}
 /* Firma "___ AF.": adjetivo (Gloock) rotando en una celda de grid cuyo ancho fija la palabra más larga; "AF." fijo detrás */
-.af-sig{display:inline-flex;align-items:baseline;gap:.3em;line-height:1;white-space:nowrap}
-.af-words{display:inline-grid;justify-items:start;font-family:var(--font-display);font-weight:400;letter-spacing:-.01em}
-.af-w{grid-area:1/1;opacity:0;translate:0 .3em}
+.af-sig{display:inline-flex;align-items:baseline;line-height:1;white-space:nowrap}
+.af-words{display:inline-grid;justify-items:start}
+.af-w{display:inline-flex;align-items:baseline;gap:4px}
+.af-adj{font:italic 400 1em/1 var(--font-display);letter-spacing:-.01em}
+.af-af{font:500 1em/1 var(--font-mono);letter-spacing:.04em;text-transform:uppercase}
+.af-w{grid-area:1/1;justify-self:start;opacity:0;translate:0 .3em}
 .af-w.is-on{opacity:1;translate:none;transition:opacity .45s var(--ease) .3s,translate .45s var(--ease) .3s}
 .af-w.is-out{opacity:0;translate:0 -.3em;transition:opacity .3s ease,translate .3s ease}
-.af-af{font:500 .62em/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase}
 .links{display:flex;gap:26px;align-items:center;font-size:.93rem}
 .links a{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:2px;transition:background-size .3s var(--ease)}
 .links a:hover,.links a[aria-current="true"]{background-size:100% 1px}
@@ -456,7 +458,7 @@ main:focus{outline:none}
 <div id="progress" aria-hidden="true"></div>
 
 <nav class="top" aria-label="Principal"><div class="wrap">
-  <a class="brand" href="#" aria-label="Alba Fernández, inicio"><span class="af-sig" data-af><span class="sr-only">Creative AF.</span><span class="af-words" aria-hidden="true"><span class="af-w is-on">Creative</span><span class="af-w">Curious</span><span class="af-w">Inventive</span><span class="af-w">Nerdy</span><span class="af-w">Hands-on</span><span class="af-w">Thoughtful</span><span class="af-w">Resourceful</span><span class="af-w">Restless</span></span><span class="af-af" aria-hidden="true">AF.</span></span><span>Alba Fernández</span></a>
+  <a class="brand" href="#" aria-label="Alba Fernández, inicio"><span class="af-sig" data-af><span class="sr-only">Creative AF.</span><span class="af-words" aria-hidden="true"><span class="af-w is-on"><span class="af-adj">Creative</span><span class="af-af">AF.</span></span><span class="af-w"><span class="af-adj">Curious</span><span class="af-af">AF.</span></span><span class="af-w"><span class="af-adj">Inventive</span><span class="af-af">AF.</span></span><span class="af-w"><span class="af-adj">Nerdy</span><span class="af-af">AF.</span></span><span class="af-w"><span class="af-adj">Hands-on</span><span class="af-af">AF.</span></span><span class="af-w"><span class="af-adj">Thoughtful</span><span class="af-af">AF.</span></span><span class="af-w"><span class="af-adj">Resourceful</span><span class="af-af">AF.</span></span><span class="af-w"><span class="af-adj">Restless</span><span class="af-af">AF.</span></span></span></span></a>
   <div class="links">
     <a href="#contenido">Inicio</a>
     <a href="#proyectos">Proyectos</a>
@@ -809,7 +811,7 @@ main:focus{outline:none}
   <footer class="foot">
     <div class="wrap foot-inner">
       <div class="foot-top">
-        <a class="foot-mark" href="#" aria-label="Alba Fernández, volver arriba"><span class="af-sig" data-af><span class="sr-only">Creative AF.</span><span class="af-words" aria-hidden="true"><span class="af-w is-on">Creative</span><span class="af-w">Curious</span><span class="af-w">Inventive</span><span class="af-w">Nerdy</span><span class="af-w">Hands-on</span><span class="af-w">Thoughtful</span><span class="af-w">Resourceful</span><span class="af-w">Restless</span></span><span class="af-af" aria-hidden="true">AF.</span></span></a>
+        <a class="foot-mark" href="#" aria-label="Alba Fernández, volver arriba"><span class="af-sig" data-af><span class="sr-only">Creative AF.</span><span class="af-words" aria-hidden="true"><span class="af-w is-on"><span class="af-adj">Creative</span><span class="af-af">AF.</span></span><span class="af-w"><span class="af-adj">Curious</span><span class="af-af">AF.</span></span><span class="af-w"><span class="af-adj">Inventive</span><span class="af-af">AF.</span></span><span class="af-w"><span class="af-adj">Nerdy</span><span class="af-af">AF.</span></span><span class="af-w"><span class="af-adj">Hands-on</span><span class="af-af">AF.</span></span><span class="af-w"><span class="af-adj">Thoughtful</span><span class="af-af">AF.</span></span><span class="af-w"><span class="af-adj">Resourceful</span><span class="af-af">AF.</span></span><span class="af-w"><span class="af-adj">Restless</span><span class="af-af">AF.</span></span></span></span></a>
         <nav class="foot-links" aria-label="Contacto">
           <a href="mailto:ffernandezalba@gmail.com">Email</a>
           <a href="https://www.linkedin.com/in/albaff/" target="_blank" rel="noopener">LinkedIn<span class="sr-only">, se abre en otra pestaña</span></a>
