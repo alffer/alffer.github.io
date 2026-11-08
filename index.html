@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alba Fernández · Diseño de producto</title>
-<meta name="description" content="Alba Fernández, diseñadora de producto UX/UI. Algunas ideas merecen salir de la cabeza: las diseño y las construyo con IA.">
+<meta name="description" content="Alba Fernández, Product Designer UX/UI. Algunas ideas merecen salir de la cabeza: las diseño y las construyo con IA.">
 <link rel="canonical" href="https://alffer.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://alffer.github.io/">
@@ -95,7 +95,7 @@ main:focus{outline:none}
 .theme-btn:hover{border-color:var(--text)}
 .theme-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5}
 .theme-btn svg path{fill:currentColor;stroke:none}
-.theme-btn[aria-pressed="true"] svg{transform:scaleX(-1)}
+.theme-btn[data-dark="true"] svg{transform:scaleX(-1)}
 
 /* Botones: sin sombras ni gradientes */
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:var(--r-sm);font:500 .95rem var(--font-body);text-decoration:none;border:1px solid var(--text);transition:background-color .25s,color .25s,transform .25s var(--ease)}
@@ -114,11 +114,9 @@ main:focus{outline:none}
 .hero h1 em{font-style:normal;font-weight:400;color:var(--muted)}
 .hero .lede{font-size:clamp(1.05rem,1.5vw,1.2rem);color:var(--text-2);max-width:54ch}
 .hero .lede strong{color:var(--text);font-weight:600}
-.hero .lede+.lede{margin-top:.8em}
 .avail{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:6px 14px 6px 12px;border-radius:var(--r-sm);border:1px solid var(--line);color:var(--text);font-size:.88rem;font-weight:500;line-height:1.4}
 .avail::before{content:"";flex:0 0 auto;width:8px;height:8px;border-radius:50%;background:currentColor}
 .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-.hero .sig{margin-top:clamp(28px,4vw,44px);color:var(--muted)}
 
 /* Collage editorial: capturas reales recortadas, distintas escalas */
 .hero-collage{position:relative;width:100%;max-width:540px;justify-self:end;aspect-ratio:1/1.1}
@@ -132,18 +130,8 @@ main:focus{outline:none}
 .hc-link:hover img{border-color:var(--text)}
 .hc-tag{position:absolute;left:0;bottom:0;padding:3px 9px;background:var(--bg);color:var(--text);font:500 .7rem/1.4 var(--font-mono);letter-spacing:.08em;border-top-right-radius:var(--r-md)}
 
-.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(56px,8vw,104px)}
-.stats div{padding:20px 20px 0 0;border-top:1px solid var(--line-strong)}
-.stats b{display:block;font:400 clamp(3rem,6vw,5.2rem)/.95 var(--font-display);letter-spacing:-.015em}
-.stats span{display:block;color:var(--muted);font-size:.92rem;margin-top:12px;max-width:22ch}
 .hero-end{height:clamp(56px,8vw,110px)}
 
-/* Manifiesto */
-.manifesto-sec{padding:clamp(56px,7vw,100px) 0;color:var(--on-block);background:var(--block)}
-.manifesto{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
-.manifesto blockquote{font:400 clamp(1.9rem,3.6vw,3.4rem)/1.1 var(--font-display);letter-spacing:-.01em;max-width:20ch;margin:0}
-.manifesto .cols{display:grid;gap:18px;padding-left:clamp(20px,3vw,40px);border-left:1px solid var(--block-line)}
-.manifesto p{color:var(--on-block-muted);font-size:1.08rem}
 
 /* Proyectos: contenedor neutro; el color lo aportan las capturas */
 .proj-intro{padding:clamp(72px,10vw,130px) 0 clamp(40px,6vw,80px);background:var(--bg);color:var(--text)}
@@ -174,21 +162,16 @@ main:focus{outline:none}
 .mine li{padding-left:24px;position:relative}
 .mine li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;background:var(--p-accent)}
 .mine li b{font-weight:600}
-/* Datos */
-.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:0 0 24px;padding:18px 0;border-block:1px solid var(--line)}
-.facts div{border-left:1px solid var(--line);padding:2px 14px 2px 20px}
-.facts div:first-child{border-left:0;padding-left:0}
-.facts b{display:block;font:var(--p-dw,600) clamp(2rem,4vw,3.2rem)/1 var(--p-display,inherit);letter-spacing:-.03em}
-.facts b.txt{font-size:clamp(1.5rem,2.5vw,2rem);line-height:1.5;letter-spacing:-.02em;white-space:nowrap}
-.facts span{font:400 .7rem/1.4 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block;margin-top:8px}
+/* Dato de uso (una línea, no una métrica) y reparto de autoría */
+.fact-line{margin:0 0 24px;padding:14px 0;border-block:1px solid var(--line);font-size:.95rem;line-height:1.6;color:var(--text-2);max-width:62ch}
+.role-line{margin:0 0 28px;font-size:1rem;line-height:1.65;color:var(--text-2);max-width:62ch}
+.role-line b{display:block;margin-bottom:4px;font:500 .72rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--text)}
+.role-line.credit{padding:14px 0 14px 18px;border-left:2px solid var(--line-strong);font-size:1.05rem;color:var(--text)}
 /* Decisión clave */
 .decision{margin:0 0 28px;padding:18px 22px 20px;border-left:2px solid var(--line-strong);background:var(--alt)}
 .project:nth-of-type(even) .decision{background:var(--bg)}
 .decision h4{font:500 .74rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
 .decision p{font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.6}
-/* Mi parte / La IA */
-.ia-note{margin-top:clamp(28px,3.5vw,44px);padding:16px 0 0;border-top:1px solid var(--line-strong);font-size:.88rem;line-height:1.7;max-width:90ch;color:var(--text-2)}
-.ia-note b{font:500 .72rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--text)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chips span{font-size:.82rem;padding:4px 11px;border-radius:var(--r-sm);border:1px solid var(--line-strong)}
 .chips span.role{background:var(--text);color:var(--on-text);font-weight:600}
@@ -212,9 +195,11 @@ main:focus{outline:none}
 
 #sandow{--sb:#0B1014;--p-accent:#27D6CC;--p-line:var(--line);--p-display:"Bricolage Grotesque",sans-serif;--p-dw:800}
 #sandow h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.045em}
-.story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.75fr);gap:clamp(32px,6vw,96px);margin:clamp(28px,4vw,48px) 0 clamp(32px,4vw,56px)}
+.story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.75fr);gap:clamp(32px,6vw,96px);margin:0 0 clamp(32px,4vw,56px)}
 .story>*{min-width:0}
-.story-label{margin-top:clamp(40px,6vw,80px)}
+.story-main{min-width:0}
+.story-main .p-top{margin-bottom:clamp(24px,3vw,36px)}
+.story-label{margin-top:clamp(8px,1.5vw,16px)}
 .step{padding:clamp(32px,5vw,56px) 0;position:relative;border-top:1px solid var(--line)}
 .step:first-child{border-top:0}
 #sandow .step .n{display:block;font:800 clamp(4.5rem,11vw,9rem)/.9 "Bricolage Grotesque",sans-serif;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.5px var(--text);margin-bottom:10px}
@@ -230,89 +215,112 @@ main:focus{outline:none}
 .device-col{display:none}
 .story.scrolly .device-col{display:flex;position:sticky;top:64px;height:calc(100vh - 64px);align-self:start;align-items:center;justify-content:center}
 .story.scrolly .shots{display:none}
-.story.scrolly .step{min-height:72vh;display:flex;flex-direction:column;justify-content:center;opacity:.28;transition:opacity .5s ease}
+.story.scrolly .step{min-height:62vh;display:flex;flex-direction:column;justify-content:center;opacity:.28;transition:opacity .5s ease}
 .story.scrolly .step.on{opacity:1}
-.story.scrolly .step:first-child{justify-content:flex-start;padding-top:clamp(24px,8vh,80px)}
+.story.scrolly .step:first-child{justify-content:flex-start;padding-top:clamp(12px,3vh,32px)}
 .device{position:relative;width:calc(min(74vh,680px)*.48)}
 .screen>img{position:absolute;left:0;top:40px;width:100%;height:calc(100% - 40px);object-fit:contain;object-position:top;opacity:0;scale:1.03;transition:opacity .55s ease,scale .8s var(--ease)}
 .screen img.on{opacity:1;scale:1}
 .device-cap{position:absolute;left:50%;bottom:-44px;translate:-50% 0;white-space:nowrap;font:400 .74rem var(--font-mono);letter-spacing:.06em;padding:5px 12px;border-radius:var(--r-sm);background:var(--bg);color:var(--text);border:1px solid var(--line)}
 .sandow-foot{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,6vw,88px);align-items:start}
 .sandow-foot>*{min-width:0}
+.note+.sandow-foot{margin-top:32px}
 .note{font:400 .76rem var(--font-mono);letter-spacing:.04em;color:var(--muted);margin-top:10px}
 
-/* Sobre mí: retícula editorial */
+/* Sobre mí: texto breve e ilustración con presencia */
 .about-sec{position:relative;padding:clamp(88px,12vw,170px) 0 clamp(72px,10vw,140px);background:var(--bg);color:var(--text);overflow-x:clip;border-top:1px solid var(--line)}
-.about{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(20px,3vw,44px);row-gap:clamp(56px,7vw,100px);align-items:start}
-.about-intro{grid-column:1/8}
-.about-intro p{font-size:clamp(1.1rem,1.5vw,1.25rem);margin-bottom:18px;color:var(--text-2)}
-.about-intro p strong{color:var(--text);font-weight:600}
-.about-notes{grid-column:8/13;margin-top:clamp(0px,7vw,110px)}
+.about{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(20px,3vw,44px);align-items:center}
+.about-intro{grid-column:1/6}
+.about-intro p{font-size:clamp(1.15rem,1.6vw,1.35rem);line-height:1.6;margin-bottom:22px;color:var(--text-2)}
+.about-intro p:last-child{margin-bottom:0}
+.about-notes{grid-column:6/13}
 .about-art{margin:0}
 .about-art img{width:100%;height:auto;display:block;border-radius:var(--r-sm)}
 :root[data-theme="dark"] .about-art img{background:#F4F3F0;padding:4%}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .about-art img{background:#F4F3F0;padding:4%}}
 .about-art figcaption{font:400 .72rem/1.5 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:12px}
-.about-notes .lead{font-size:clamp(1.1rem,1.5vw,1.25rem);color:var(--text-2);margin-bottom:10px}
-.frag{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 20px;align-items:center;padding:22px 0 24px;border-top:1px solid var(--line)}
-.frag:nth-of-type(even){margin-left:clamp(0px,3.2vw,48px)}
-.frag h3{font:500 .72rem/1.4 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.frag h3 i{font-style:normal;color:var(--text);margin-right:8px}
-.frag p{font:400 clamp(1.75rem,1.9vw,1.9rem)/1.15 var(--font-display);letter-spacing:-.01em}
-.snap{margin:0;width:clamp(108px,11vw,140px)}
-.snap img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1);border:1px solid var(--line);border-radius:var(--r-sm);background:var(--alt)}
-.snap figcaption{font:400 .68rem/1.3 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:8px}
-/* Los huecos de foto sin imagen no se muestran */
-.snap:not(:has(img)){display:none}
-@supports not selector(:has(*)){.snap{display:none}}
-.traits{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px clamp(20px,3vw,40px)}
-.trait{border-top:1px solid var(--line-strong);padding-top:16px}
-.trait b{display:block;font:400 clamp(1.75rem,2.4vw,2.1rem)/1.08 var(--font-display);letter-spacing:-.01em;margin-bottom:10px}
-.trait p{color:var(--text-2);font-size:.96rem;margin-bottom:14px}
-.trait small{display:block;font-size:.84rem;padding:12px 14px;background:var(--alt);color:var(--text);border-left:2px solid var(--line-strong)}
-.honest{grid-column:1/-1;font-size:.95rem;color:var(--text-2);border-left:2px solid var(--line-strong);padding-left:14px}
 
-/* Cómo uso la IA */
-.ai{margin-top:clamp(56px,7vw,100px);padding-top:clamp(28px,3.5vw,44px);border-top:1px solid var(--line-strong)}
-.ai h3{font-size:clamp(1.9rem,3.4vw,2.8rem);margin-bottom:clamp(24px,3vw,36px)}
-.ai h4{font:500 .74rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-.ai-intro{font-size:clamp(1.08rem,1.4vw,1.22rem);line-height:1.6;color:var(--text);max-width:62ch;margin:14px 0 30px}
-.ai-flow{list-style:none;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
-.ai-flow li{padding:14px 16px 0 0;border-top:1px solid var(--line-strong);display:flex;flex-direction:column;gap:4px}
-.ai-flow li span{font:500 .78rem/1 var(--font-mono);letter-spacing:.08em;color:var(--muted)}
-.ai-flow li b{font-weight:600;line-height:1.3}
-.ai-flow li small{font-size:.86rem;line-height:1.45;color:var(--text-2)}
-.ai-cols{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(28px,5vw,72px);margin-top:clamp(28px,4vw,48px);align-items:start}
-.ai-cols>*{min-width:0}
-.rule{margin:0 0 14px;padding:2px 0 2px 16px;border-left:2px solid var(--line-strong)}
-.rule p,.rule code{font:400 .86rem/1.6 var(--font-mono);color:var(--text)}
-.rule cite{display:block;margin-top:4px;font:400 .72rem/1.5 var(--font-mono);letter-spacing:.04em;font-style:normal;color:var(--muted)}
-.ai ul{list-style:none;padding:0;display:grid;gap:12px}
-.ai ul li{color:var(--text-2);font-size:.96rem}
-.ai ul li b{display:block;font-weight:600;color:var(--text)}
-.ai-craft-t{margin-top:30px}
-.ai-craft{color:var(--text-2);font-size:.97rem;line-height:1.65}
-.ai-tools{margin-top:clamp(24px,3vw,36px);font:400 .8rem/1.5 var(--font-mono);letter-spacing:.06em;color:var(--text)}
 .case-link{margin:0 0 28px}
-.conf-note{margin-top:6px;font:400 .76rem/1.6 var(--font-mono);letter-spacing:.04em;color:var(--muted)}
-.timeline span+span{display:block;margin-top:6px}
+.chips+.case-link,.decision+.case-link,.fact-line+.case-link{margin-top:28px}
 
-/* Trayectoria */
+/* Experiencia */
 .path-sec{padding:clamp(72px,10vw,140px) 0 clamp(80px,12vw,160px);background:var(--alt);color:var(--text);border-top:1px solid var(--line)}
-.path{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(32px,6vw,80px)}
-.timeline{list-style:none;padding:0;border-left:1px solid var(--line-strong)}
-.timeline li{position:relative;padding:0 0 34px 28px}
-.timeline li::before{content:"";position:absolute;left:-6px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--alt);border:1px solid var(--line-strong)}
-.timeline li.now::before{background:var(--text)}
-.timeline time{font:400 .78rem var(--font-mono);letter-spacing:.06em;color:var(--muted)}
-.timeline b{display:block;font:600 clamp(1.1rem,1.8vw,1.35rem)/1.25 var(--font-body);margin:3px 0 5px}
-.timeline span{color:var(--text-2);font-size:.96rem}
-.box{border-top:1px solid var(--line-strong);padding:16px 0 0;margin-bottom:34px}
-.box h4{font:500 .74rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.box .chips span{border-color:var(--line-strong)}
-.box ul{padding-left:18px;color:var(--text-2);font-size:.96rem;display:grid;gap:6px}
-.box a{color:var(--text);font-weight:600;font-size:.96rem;text-underline-offset:4px;text-decoration-thickness:1px;transition:opacity .25s}
-.box a:hover{opacity:.65}
+.path{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(32px,6vw,80px);align-items:start}
+.now-role{border-top:2px solid var(--line-strong);padding-top:20px}
+.now-role time,.prev time{font:400 .78rem/1.5 var(--font-mono);letter-spacing:.06em;color:var(--muted)}
+.now-role h3{font:600 clamp(1.5rem,2.6vw,2.1rem)/1.15 var(--font-body);letter-spacing:-.01em;margin:6px 0 20px}
+.now-role p{font-size:clamp(1.02rem,1.3vw,1.12rem);color:var(--text-2);max-width:62ch}
+.now-role p+p{margin-top:1em}
+.resp{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px}
+.resp li{position:relative;padding-left:20px;font-size:.95rem;line-height:1.55;color:var(--text-2)}
+.resp li::before{content:"";position:absolute;left:2px;top:.6em;width:7px;height:7px;background:var(--text)}
+.prev{list-style:none;padding:0;margin-top:clamp(32px,4vw,48px);display:grid;gap:0}
+.prev li{display:grid;grid-template-columns:minmax(130px,.38fr) minmax(0,1fr);gap:4px 20px;padding:14px 0;border-top:1px solid var(--line)}
+.prev b{display:block;font-weight:600;font-size:.98rem;line-height:1.35}
+.prev span{display:block;margin-top:2px;font-size:.9rem;color:var(--text-2)}
+.free-role{margin-top:clamp(56px,7vw,96px);padding-top:clamp(32px,4vw,56px);border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,5vw,72px);align-items:center}
+.free-role>*{min-width:0}
+.free-role time{font:400 .74rem var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.free-role h3{font:400 clamp(1.5rem,2.4vw,2rem)/1.15 var(--font-display);margin:6px 0 12px}
+.free-role p{color:var(--text-2);margin-bottom:12px;max-width:68ch}
+.free-role .fr-cta{margin:24px 0 0}
+/* Visor de Molorramo: marco de navegador con pestañas */
+.mv{min-width:0}
+.mv-tabs{display:flex;flex-wrap:wrap;gap:0 4px;margin-bottom:12px;border-bottom:1px solid var(--line)}
+.mv-tab{appearance:none;background:transparent;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;padding:10px 14px;min-height:44px;font:500 .74rem/1.2 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:color .25s,border-color .25s}
+.mv-tab:hover{color:var(--text)}
+.mv-tab[aria-selected="true"]{color:var(--text);border-bottom-color:var(--text)}
+.mv-stage{position:relative;transform:perspective(1400px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .35s ease-out}
+.mv-frame{border:1px solid var(--line-strong);border-radius:var(--r-md);background:var(--bg);overflow:hidden}
+.mv-bar{display:flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-bottom:1px solid var(--line);background:var(--alt)}
+.mv-bar i{flex:0 0 auto;width:9px;height:9px;border-radius:50%;border:1px solid var(--mid)}
+.mv-url{flex:0 1 260px;min-width:0;margin-left:10px;padding:2px 12px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--bg);font:400 .72rem/1.6 var(--font-mono);letter-spacing:.04em;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mv-screen{position:relative;aspect-ratio:16/9;background:var(--alt);overflow:hidden}
+.mv-panel{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .6s ease,visibility 0s .6s}
+.mv-panel.is-active{opacity:1;visibility:visible;transition:opacity .6s ease,visibility 0s}
+.mv-panel>img{width:100%;height:100%;object-fit:cover;object-position:top}
+#mv-p-figma>img{object-fit:contain;object-position:center}
+.mv-panel.scroll{overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--mid) transparent}
+.mv-panel.scroll>img{width:min(100%,496px);height:auto;margin:0 auto}
+[data-pending="figma-publico"]{display:none!important}
+.mv-live{position:absolute;left:50%;bottom:16px;translate:-50% 0;appearance:none;padding:10px 20px;min-height:44px;border:1px solid var(--text);border-radius:var(--r-sm);background:var(--bg);color:var(--text);font:500 .9rem var(--font-body);cursor:pointer;white-space:nowrap;transition:background-color .25s,color .25s}
+.mv-live:hover{background:var(--text);color:var(--on-text)}
+.mv-panel.live>img,.mv-panel.live>.mv-live{display:none}
+.mv-iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:var(--bg)}
+.mv-phone{position:absolute;right:-14px;bottom:-30px;width:clamp(78px,17%,116px);margin:0;transition:opacity .5s ease,translate .5s var(--ease)}
+.mv-phone .mock-frame{padding:5px;border-radius:18px}
+.mv-phone .mock-frame .mock-screen{border-radius:14px;aspect-ratio:412/892;background:#111}
+.mv-phone .mock-screen>img.shot{top:0;height:100%;object-fit:cover}
+.mv.is-figma .mv-phone{opacity:0;translate:16px 0;pointer-events:none}
+.mv-foot{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px 20px;padding:20px 64px 0 0;min-height:56px}
+.mv-cap{margin:0;font:400 .72rem/1.5 var(--font-mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.mv-open{display:none;font:500 .74rem/1.5 var(--font-mono);letter-spacing:.05em;color:var(--text);text-underline-offset:4px;text-decoration-thickness:1px}
+.mv.is-figma .mv-open{display:inline}
+@media (max-width:900px){.free-role{grid-template-columns:1fr;align-items:start}}
+@media (max-width:700px){.mv-live{display:none}.mv-phone{right:-6px}.mv-foot{padding-right:56px}}
+.enmarcha{margin-top:clamp(36px,5vw,56px);padding:18px 0 0;border-top:1px solid var(--line);color:var(--text-2);max-width:80ch}
+.ruvak{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.ruvak img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:var(--r-sm);background:#fff}
+.ruvak .r-wide{grid-column:1/-1;background:#111}
+@media (max-width:600px){.ruvak{grid-template-columns:1fr 1fr}.ruvak img:last-child{grid-column:1/-1}}
+.enmarcha p{margin:0}
+.enmarcha b{font:500 .78rem var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--text);margin-right:6px}
+.conf-note{margin-top:18px;font:400 .76rem/1.6 var(--font-mono);letter-spacing:.04em;color:var(--muted)}
+.side{display:grid;gap:clamp(28px,3.5vw,40px)}
+.ai-mini{border-top:1px solid var(--line-strong);padding-top:16px}
+.ai-mini h3{font:500 .74rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.ai-mini p{font-size:.97rem;color:var(--text-2)}
+.ai-mini p+p{margin-top:.9em}
+.mini-dl{border-top:1px solid var(--line);display:grid}
+.mini-dl>div{display:grid;grid-template-columns:minmax(86px,.3fr) minmax(0,1fr);gap:4px 16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.mini-dl dt{font:500 .68rem/1.6 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.mini-dl dd{font-size:.88rem;line-height:1.55;color:var(--text-2)}
+.mini-dl ul{list-style:none;padding:0;display:grid;gap:4px}
+.mini-dl .chips{gap:6px}
+.mini-dl .chips span{font-size:.76rem;padding:2px 8px;border-color:var(--line-strong)}
+.mini-dl .chips span.minor{border-style:dashed;color:var(--text-2)}
+.mini-dl a{color:var(--text);font-weight:600;text-underline-offset:4px;text-decoration-thickness:1px}
+.mini-dl a:hover{opacity:.65}
 
 /* Contacto + footer: bloque monocromo */
 .contact-wrap{background:var(--block);color:var(--on-block)}
@@ -325,7 +333,8 @@ main:focus{outline:none}
 .contact .btn:hover{background:#E6E6E6}
 .contact .btn.alt{background:transparent;color:#fff}
 .contact .btn.alt:hover{background:#fff;color:#171717}
-.contact-mail{margin-top:20px;font-size:1rem;color:var(--on-block-muted)}
+.contact .lede{max-width:46ch;margin-bottom:22px;font-size:1.12rem;color:var(--on-block-muted)}
+.contact-mail{margin-top:22px;font-size:1rem;color:var(--on-block-muted)}
 .contact-mail a,.foot a{color:var(--on-block);text-underline-offset:4px;text-decoration-thickness:1px;transition:opacity .25s}
 .contact-mail a{font-weight:600}
 .contact-mail a:hover,.foot a:hover{opacity:.7}
@@ -342,6 +351,7 @@ main:focus{outline:none}
 /* Galería de móviles (componente reutilizable): marcos sobrios */
 .gallery{margin-top:clamp(44px,5.5vw,72px);padding-top:22px;border-top:1px solid var(--line)}
 .gal-label{font:500 .74rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.gal-hint{letter-spacing:.03em;text-transform:none;font-weight:400}
 .gal-track{display:flex;align-items:center;gap:clamp(18px,3vw,44px);overflow-x:auto;scroll-snap-type:x proximity;padding:52px clamp(16px,4vw,48px) 64px;margin:0 calc(-1*clamp(16px,4vw,48px));scrollbar-width:thin;scrollbar-color:var(--mid) transparent}
 .gal-track>:first-child{margin-left:auto}.gal-track>:last-child{margin-right:auto}
 .mock{--mw:350px;flex:0 0 auto;width:var(--mw);scroll-snap-align:center;position:relative;margin:0;outline:none;
@@ -382,20 +392,11 @@ main:focus{outline:none}
 .js .in .seal.done{transition-delay:0s}
 .js .in .seal:hover{rotate:0deg;scale:1.12}
 
-@media (max-width:1100px){
-  .traits{grid-template-columns:1fr 1fr}
-}
 @media (max-width:900px){
   .grid,.path,.p-top,.story,.sandow-foot,.hero-grid{grid-template-columns:1fr}
   .grid.solo>div{display:block}
-  .about{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr;row-gap:36px}
   .about-intro,.about-notes{grid-column:1/-1}
-  .about-notes{margin-top:0}
-  .frag:nth-of-type(even){margin-left:0}
-  .manifesto{grid-template-columns:1fr}
-  .ai-cols{grid-template-columns:1fr}
-  .manifesto .cols{padding-left:0;border-left:0;padding-top:22px;border-top:1px solid var(--block-line)}
-  .stats{grid-template-columns:1fr 1fr;row-gap:26px}
   html{scroll-padding-top:110px}
   nav.top .wrap{flex-wrap:wrap;height:auto;gap:0 12px;padding-top:6px}
   .brand{font-size:.95rem}
@@ -403,33 +404,25 @@ main:focus{outline:none}
   .theme-btn{order:2}
   .links{order:3;width:100%;gap:0;font-size:.9rem;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .links::-webkit-scrollbar{display:none}
-  .links a{display:inline-flex;align-items:center;flex:0 0 auto;min-height:44px;padding:0 14px 0 0;white-space:nowrap;background-image:none}
+  .links a{display:inline-flex;align-items:center;flex:0 0 auto;min-height:44px;padding:0 10px 0 0;font-size:.84rem;white-space:nowrap;background-image:none}
   .hero-collage{justify-self:center;max-width:440px;margin-top:12px}
   .story .device-col{display:none}
   .mock{--mw:290px}
 }
 @media (max-width:700px){
-  .ai-flow{grid-template-columns:1fr}
-  .ai-flow li{flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:12px 0}
-  .ai-flow li span{flex:0 0 1.2rem}
-  .ai-flow li small{flex:0 0 100%;padding-left:calc(1.2rem + 12px)}
+  .resp{grid-template-columns:1fr}
+  .prev li{grid-template-columns:1fr}
 }
 @media (max-width:520px){
-  .traits{grid-template-columns:1fr}
-  .facts div{padding-left:12px;padding-right:6px}
-  .facts b{font-size:1.8rem}
-  .facts b.txt{font-size:1.2rem}
-  .facts span{font-size:.64rem}
   .mock{--mw:250px}
   .mock-frame{border-radius:38px;padding:8px}
   .mock-frame .mock-screen{border-radius:30px}
   .island{top:16px}
   .shots figure{flex-basis:180px}
-  .stats span{font-size:.85rem}
   .hero h1{font-size:clamp(2.6rem,12.5vw,3.4rem)}
   .eyebrow{font-size:.7rem}
-  .hero .sig,.foot .sig{font-size:.66rem;letter-spacing:.04em}
-  .foot .sig::before,.hero .sig::before{display:none}
+  .foot .sig{font-size:.66rem;letter-spacing:.04em}
+  .foot .sig::before{display:none}
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -441,6 +434,7 @@ main:focus{outline:none}
   .mock,.mock.active,.mock:hover,.mock:focus-within{transform:none!important;scale:1!important;translate:none!important}
   .btn:hover,.hc-link:hover,.hc-link:focus-visible{transform:none!important;translate:none!important}
   [data-par]{transform:none!important}
+  .mv-stage{transform:none!important}
   #progress{display:none}
 }
 </style>
@@ -459,7 +453,7 @@ main:focus{outline:none}
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#contacto">Contacto</a>
   </div>
-  <button class="theme-btn" id="theme-toggle" type="button" aria-label="Modo oscuro" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z"/></svg></button>
+  <button class="theme-btn" id="theme-toggle" type="button" aria-label="Cambiar a modo oscuro" data-dark="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z"/></svg></button>
 </div></nav>
 
 <main id="contenido" tabindex="-1">
@@ -470,15 +464,11 @@ main:focus{outline:none}
         <p class="hero-name">ALBA FERNÁNDEZ</p>
         <p class="eyebrow" lang="en">PRODUCT DESIGNER / UX/UI / AI-ASSISTED WORKFLOWS &amp; DESIGN QA</p>
         <h1 class="display" data-split>Algunas ideas merecen <em>salir de la cabeza.</em></h1>
-        <p class="lede" data-reveal style="--d:.5s">Soy Alba. Llevo <strong>más de 8 años diseñando y dando forma a interfaces</strong>, combinando diseño de producto, UX/UI y desarrollo frontend.</p>
-        <p class="lede" data-reveal style="--d:.55s">Me gusta explorar ideas, encontrar soluciones y llevarlas más allá del papel. Por eso, cuando imagino algo que todavía no existe, no siempre espero a que alguien lo construya: <strong>me pongo manos a la obra y utilizo la IA como parte del proceso</strong>, desde los primeros bocetos y la identidad visual hasta el producto que termina formando parte de mi día a día.</p>
-        <p class="avail" data-reveal style="--d:.58s">Abierta a nuevos retos · Solo en remoto 100%</p>
-        <div class="cta" data-reveal style="--d:.65s">
+        <p class="lede" data-reveal style="--d:.5s">Soy Alba, Product Designer. Me gusta entender cómo funcionan las cosas, detectar qué podría hacerse mejor y encontrar la manera de llevarlo a la práctica. Tengo más de ocho años de experiencia en UX/UI y frontend, y utilizo IA para explorar y construir mis propias ideas.</p>
+        <div class="cta" data-reveal style="--d:.6s">
           <a class="btn primary" href="#proyectos">Ver proyectos</a>
-          <a class="btn ghost" href="https://www.linkedin.com/in/albaff/" target="_blank" rel="noopener">Hablemos en LinkedIn<span class="sr-only">, se abre en otra pestaña</span></a>
           <a class="btn ghost" href="Alba-Fernandez-CV.pdf" download>Descargar CV<span class="sr-only"> (PDF)</span></a>
         </div>
-        <p class="sig" data-reveal style="--d:.72s">HECHO A MANO (Y CON IA) · GIJÓN · EN REMOTO</p>
       </div>
       <div class="hero-collage" role="group" aria-label="Capturas reales de mis tres apps">
         <div class="hc hc1" data-reveal="float" style="--d:.2s">
@@ -496,22 +486,12 @@ main:focus{outline:none}
   </div>
 </header>
 
-<section class="manifesto-sec" aria-label="Cómo pienso">
-  <div class="wrap manifesto">
-    <blockquote data-split>«Las apps genéricas están hechas para todo el mundo. Las mías, para alguien concreto.»</blockquote>
-    <div class="cols" data-stagger>
-      <p>Empiezo siempre por una necesidad real, mía o de mi gente. Después diseño: la identidad, las pantallas y qué entra y qué se queda fuera. Lo construyo con IA, pero el criterio lo pongo yo. Escribo las reglas que la IA debe seguir y reviso cada detalle del resultado.</p>
-      <p>Al final las usamos de verdad, y eso me obliga a pulirlas hasta que encajan.</p>
-    </div>
-  </div>
-</section>
-
 <section id="proyectos">
   <div class="proj-intro">
     <div class="wrap">
       <div class="sec-head">
         <div><p class="eyebrow rule"><span class="sec-n">§ 1</span>Proyectos</p><h2 class="display" data-split>Problemas de mi vida, apps a medida</h2></div>
-        <p data-reveal>No son encargos ni productos comerciales. Nacen de necesidades mías y de la gente que tengo cerca, y por eso cada decisión tiene un porqué.</p>
+        <p data-reveal>«Las apps genéricas están hechas para todo el mundo. Las mías, para alguien concreto.»</p>
       </div>
     </div>
   </div>
@@ -529,37 +509,34 @@ main:focus{outline:none}
       </div>
       <div class="grid solo">
         <div>
-          <p class="why" data-reveal>Tengo un club de lectura con amigas en Telegram. Repartimos cada libro en fases, pero siempre hay quien va por delante y quien se queda atrás, y no podíamos comentar sin destripárselo a nadie. Encima, en el mismo hilo hablamos de todo, así que los comentarios se perdían. Yo leo en el móvil y quería subrayar una línea, comentarla ahí mismo y que a las demás les llegara el aviso con lo que había escrito y en qué página.</p>
+          <p class="why" data-reveal>Mi club de lectura con amigas vive en Telegram. Repartimos cada libro en fases, pero siempre hay quien va por delante y quien se queda atrás: no podíamos comentar sin destripárselo a nadie, y los comentarios se perdían entre el resto de la charla.</p>
+          <p class="role-line" data-reveal><b>Mi papel</b>Idea, producto, UX/UI y marca. La construí con IA y valido cada versión.</p>
           <div class="mine">
-            <h4>Lo que la hace nuestra</h4>
+            <h4>Decisiones</h4>
             <ul data-stagger>
-              <li><b>Comentarios sobre la línea exacta.</b> Las demás reciben el aviso con la página y el comentario.</li>
-              <li><b>Sin spoilers:</b> lo que va por delante de tu lectura se queda sellado hasta que llegas. Para leerlo hay que «romper el sello».</li>
-              <li><b>Todo el club en un sitio:</b> fases de lectura, debates y votación de la próxima lectura, separados de la charla del día a día.</li>
-              <li><b>Una identidad con personalidad:</b> una orden secreta botánica, con su lema en latín, 25 sellos de lacre y 6 grados.</li>
-              <li><b>Privacidad entre socias:</b> lo que compartes solo lo ven las socias de tu club, y los emails no se ven entre usuarias.</li>
+              <li><b>Comentarios sobre la línea exacta.</b> Yo leo en el móvil y quería subrayar una línea, comentarla ahí mismo y que las demás recibieran el aviso con la página y lo que había escrito.</li>
+              <li><b>Todo el club en un sitio.</b> Fases de lectura, debates y votación de la próxima lectura, aparte de la charla del día a día. Lo que compartes solo lo ven las socias de tu club.</li>
             </ul>
           </div>
-          <div class="decision" data-reveal><h4>Decisión clave</h4><p>El spoiler se resuelve con diseño, no pidiendo cuidado: cada comentario queda anclado a su línea y sellado hasta que llegas. Romper el sello es una decisión tuya.</p></div>
-          <div class="facts" data-stagger><div><b>4</b><span>socias</span></div><div><b class="txt">nov 2026</b><span>en uso desde</span></div><div><b>23</b><span>versiones publicadas</span></div></div>
-          <div class="chips" data-reveal><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Marca</span><span>Expo / React Native</span><span>Supabase</span><span>epub.js</span></div>
+          <div class="decision" data-reveal><h4>Decisión clave · los spoilers</h4><p>No quería que las socias tuvieran que acordarse de no hacer spoilers; quería que la app les ayudara a evitarlos. Lo que va por delante de tu lectura se queda sellado, como con lacre, hasta que llegas. Romper el sello es decisión tuya.</p></div>
+          <p class="fact-line" data-reveal>Desde nov 2026 la usamos las 4 socias del club, y llevamos 23 versiones publicadas.</p>
+          <div class="chips" data-reveal><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Marca</span><span>Construida con IA</span></div>
         </div>
       </div>
       <div class="gallery" role="region" data-gallery data-mode="night" data-reveal aria-label="Galería de capturas de Belladonna Society">
         <div class="gal-bar">
-          <p class="gal-label">Capturas</p>
+          <p class="gal-label">Capturas <span class="gal-hint">· se desplazan con ratón, dedo o teclado (Tab y flechas)</span></p>
           <div class="theme-toggle" role="group" aria-label="Tema de las capturas">
             <button type="button" data-mode="night" aria-pressed="true">Noche</button>
             <button type="button" data-mode="day" aria-pressed="false">Día</button>
           </div>
         </div>
-        <div class="gal-track">
-          <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot night" src="img/belladonna-app-1.jpg" alt="Inicio de Belladonna: libros en curso (tema oscuro)" width="600" height="1208" loading="lazy"><img class="shot day" src="img/belladonna-app-4.jpg" alt="Inicio de Belladonna: libros en curso (tema claro)" width="600" height="1208" loading="lazy"></div></div><figcaption>Inicio</figcaption></figure>
-          <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot night" src="img/belladonna-app-2.jpg" alt="Club: próximas lecturas y votación (tema oscuro)" width="600" height="1208" loading="lazy"><img class="shot day" src="img/belladonna-app-5.jpg" alt="Club: próximas lecturas y votación (tema claro)" width="600" height="1208" loading="lazy"></div></div><figcaption>Club: próximas lecturas</figcaption></figure>
-          <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot night" src="img/belladonna-app-3.jpg" alt="Ficha de libro: seguir leyendo (tema oscuro)" width="600" height="1208" loading="lazy"><img class="shot day" src="img/belladonna-app-6.jpg" alt="Ficha de libro: seguir leyendo (tema claro)" width="600" height="1208" loading="lazy"></div></div><figcaption>Ficha de libro</figcaption></figure>
+        <div class="gal-track" tabindex="0" role="group" aria-label="Capturas de Belladonna: se desplazan con ratón, dedo o teclado">
+          <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot night" src="img/belladonna-app-1.jpg" alt="Inicio de Belladonna: libros en curso (tema oscuro)" width="600" height="1208" loading="lazy"><img class="shot day" aria-hidden="true" src="img/belladonna-app-4.jpg" alt="Inicio de Belladonna: libros en curso (tema claro)" width="600" height="1208" loading="lazy"></div></div><figcaption>Inicio</figcaption></figure>
+          <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot night" src="img/belladonna-app-2.jpg" alt="Club: próximas lecturas y votación (tema oscuro)" width="600" height="1208" loading="lazy"><img class="shot day" aria-hidden="true" src="img/belladonna-app-5.jpg" alt="Club: próximas lecturas y votación (tema claro)" width="600" height="1208" loading="lazy"></div></div><figcaption>Club: próximas lecturas</figcaption></figure>
+          <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot night" src="img/belladonna-app-3.jpg" alt="Ficha de libro: seguir leyendo (tema oscuro)" width="600" height="1208" loading="lazy"><img class="shot day" aria-hidden="true" src="img/belladonna-app-6.jpg" alt="Ficha de libro: seguir leyendo (tema claro)" width="600" height="1208" loading="lazy"></div></div><figcaption>Ficha de libro</figcaption></figure>
         </div>
       </div>
-      <p class="ia-note"><b>Mi parte:</b> idea, producto, UX/UI, marca y las reglas que sigue la IA · <b>La IA:</b> escribe el código bajo esas reglas; yo pruebo y valido el resultado.</p>
     </div>
   </article>
 
@@ -569,59 +546,62 @@ main:focus{outline:none}
       <div class="p-top">
         <div>
           <p class="p-num" data-reveal>02 / PERSONAL FINANCE</p>
-          <div class="p-head" data-reveal><img src="img/futari-logo.png" alt="" width="160" height="160" loading="lazy"><span class="tag">Web · PWA · <span class="collab">En colaboración con mi pareja</span></span></div>
+          <div class="p-head" data-reveal><img src="img/futari-logo.png" alt="" width="160" height="160" loading="lazy"><span class="tag">Web · PWA · <span class="collab">En pareja: la base es suya</span></span></div>
           <h3 data-split>Futari ふたり</h3>
           <p class="tagline" data-reveal>De una hoja que había que cuadrar a mano a un mes que se cierra con un gesto.</p>
         </div>
       </div>
       <div class="grid solo">
         <div>
-          <p class="why" data-reveal>Mi pareja y yo llevábamos nuestras cuentas y ahorros en Notion, y actualizarlo era muy manual. Queríamos algo más visual e interactivo, así que mi pareja construyó Futari. Yo me encargué de reorganizar cómo funciona y de diseñarla, también con IA.</p>
+          <p class="why" data-reveal>Mi pareja y yo llevábamos las cuentas y los ahorros en Notion, y actualizarlo era muy manual. Queríamos algo más visual e interactivo.</p>
+          <p class="role-line credit" data-reveal><b>Quién hizo qué</b>La base la construyó mi pareja. Yo hice la reorganización, el rediseño y las ilustraciones, y construí con IA la sección de Viajes.</p>
           <div class="mine">
-            <h4>Mi parte</h4>
+            <h4>Decisiones</h4>
             <ul data-stagger>
-              <li><b>Reorganizar el producto:</b> propuse cómo agrupar gastos fijos, huchas, viajes y cierres mensuales para que el día a día fuera más rápido.</li>
-              <li><b>El diseño y su mascota:</b> buscaba algo que evocara el dinero, como un gato de la suerte. En un viaje a Japón pasamos por un templo con conejitos de la abundancia y nos compramos las figuritas: los convertí en la mascota, un recuerdo de ese viaje y lejos de la estética de banco.</li>
-              <li><b>Una prioridad clara:</b> «la claridad financiera tiene prioridad sobre la decoración».</li>
+              <li><b>Reorganizar lo que ya había.</b> La app ya hacía mucho, pero sin un orden claro de importancia. Propuse cómo agrupar gastos fijos, huchas, viajes y cierres mensuales para que consultar y cerrar el mes fuera más rápido.</li>
+              <li><b>Una mascota que no parece de banco.</b> Los conejitos de la abundancia que compramos en un templo de Japón, ilustrados también para los estados vacíos y los logros.</li>
+              <li><b>Viajes, de principio a fin.</b> Presupuesto por partidas, diario y dinero que sale de una hucha.</li>
             </ul>
           </div>
-          <div class="decision" data-reveal><h4>Decisión clave</h4><p>Pasar de un Notion que había que actualizar a mano a cuatro espacios claros: gastos fijos, huchas, viajes y un cierre al mes.</p></div>
-          <div class="chips" data-reveal><span class="role">Ideas de producto</span><span class="role">Diseño UI con IA</span><span>Next.js</span><span>Tailwind</span><span>Firebase</span></div>
+          <div class="decision" data-reveal><h4>Decisión clave</h4><p>Pasar de un Notion que había que actualizar a mano a una app que agrupa gastos, huchas, viajes y el cierre de cada mes. «La claridad financiera tiene prioridad sobre la decoración.»</p></div>
+          <div class="chips" data-reveal><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Ilustración</span><span>Viajes construida con IA</span></div>
+          <p class="case-link" data-reveal><a class="btn ghost" href="futari.html">Ver caso de estudio de Futari →</a></p>
         </div>
       </div>
       <div class="gallery" role="region" data-gallery data-reveal aria-label="Galería de capturas de Futari">
-        <p class="gal-label">Capturas</p>
-        <div class="gal-track">
+        <p class="gal-label">Capturas <span class="gal-hint">· se desplazan con ratón, dedo o teclado (Tab y flechas)</span></p>
+        <div class="gal-track" tabindex="0" role="group" aria-label="Capturas de Futari: se desplazan con ratón, dedo o teclado">
           <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot " src="img/futari-app-1.jpg" alt="Inicio de Futari: así van nuestras finanzas" width="600" height="1208" loading="lazy"></div></div><figcaption>Inicio</figcaption></figure>
           <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot " src="img/futari-app-2.jpg" alt="Gastos y movimientos" width="600" height="1208" loading="lazy"></div></div><figcaption>Gastos y movimientos</figcaption></figure>
           <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot " src="img/futari-app-3.jpg" alt="Partidas de un viaje" width="600" height="1208" loading="lazy"></div></div><figcaption>Partidas de un viaje</figcaption></figure>
           <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot " src="img/futari-app-4.jpg" alt="Menú lateral de Futari" width="600" height="1208" loading="lazy"></div></div><figcaption>Menú lateral</figcaption></figure>
         </div>
       </div>
-      <p class="ia-note"><b>Mi parte:</b> reorganización del producto y diseño · <b>El desarrollo:</b> mi pareja, con IA.</p>
     </div>
   </article>
 
   <!-- SANDOW -->
   <article class="project" id="sandow">
     <div class="wrap">
-      <div class="p-top">
-        <div>
-          <p class="p-num" data-reveal>03 / HEALTH &amp; ROUTINES</p>
-          <div class="p-head" data-reveal><img src="img/sandow-logo.png" alt="" width="160" height="160" loading="lazy"><span class="tag">App Android</span></div>
-          <h3 data-split>Sandow</h3>
-          <p class="tagline" data-reveal>Hice que el progreso se cuente sin juzgar: qué cambia de verdad y qué es solo ruido.</p>
-        </div>
-      </div>
-      <p class="why" data-reveal style="max-width:72ch">Empezó en casa. Mi pareja comenzó un plan nutricional con un entrenador y el menú llegaba en PDF, así que cada día era un lío: qué toca comer hoy, si lo tenemos en la nevera, qué comprar, qué dejar preparado. Luego llegaron las revisiones mensuales y quisimos guardar también el peso, las medidas y las fotos. Y como no todos seguimos el mismo camino hacia un objetivo, la app creció para que cada perfil tuviera el suyo, todo en un mismo sitio.</p>
-
-      <div class="mine story-label"><h4>Lo que la hace nuestra</h4></div>
       <div class="story">
+        <div class="story-main">
+          <div class="p-top">
+            <div>
+              <p class="p-num" data-reveal>03 / HEALTH &amp; ROUTINES</p>
+              <div class="p-head" data-reveal><img src="img/sandow-logo.png" alt="" width="160" height="160" loading="lazy"><span class="tag">App Android</span></div>
+              <h3 data-split>Sandow</h3>
+              <p class="tagline" data-reveal>Hice que el progreso se cuente sin juzgar: qué cambia de verdad y qué es solo ruido.</p>
+            </div>
+          </div>
+          <p class="why" data-reveal style="max-width:72ch">Empezó en casa. Mi pareja comenzó un plan nutricional con un entrenador y el menú llegaba en PDF, así que cada día era un lío: qué toca comer, si lo tenemos, qué comprar, qué dejar preparado. Luego llegaron las revisiones mensuales (peso, medidas y fotos) y, como no todos seguimos el mismo camino, cada perfil necesitó el suyo.</p>
+          <p class="role-line" data-reveal><b>Mi papel</b>Idea, producto, UX/UI y marca. La construí con IA y la uso a diario para ajustarla.</p>
+
+          <div class="mine story-label"><h4>Lo que resuelve</h4></div>
         <ol class="steps" style="list-style:none;padding:0">
           <li class="step">
             <span class="n" aria-hidden="true">01</span>
             <p><b>Del PDF a la cocina:</b> importa el menú del entrenador y lo convierte en menú del día, lista de la compra y avisos.</p>
-            <div class="shots" role="region" tabindex="0" aria-label="Capturas de Sandow: del PDF a la cocina">
+            <div class="shots" role="region" tabindex="0" aria-label="Capturas de Sandow: del PDF a la cocina (se desplazan con ratón, dedo o flechas del teclado)">
               <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-pdf.jpg" alt="Pantalla para importar el menú en PDF" width="412" height="890" loading="lazy"></div></div><figcaption>Importar el menú</figcaption></figure>
               <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-2.jpg" alt="Menú del día" width="412" height="890" loading="lazy"></div></div><figcaption>Menú del día</figcaption></figure>
               <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-compra.jpg" alt="Lista de la compra" width="412" height="890" loading="lazy"></div></div><figcaption>Lista de la compra</figcaption></figure>
@@ -632,7 +612,7 @@ main:focus{outline:none}
           <li class="step">
             <span class="n" aria-hidden="true">02</span>
             <p><b>Progreso de verdad:</b> peso, medidas y fotos comparadas mes a mes. Los cambios se muestran en color neutro, sin juzgar.</p>
-            <div class="shots" role="region" tabindex="0" aria-label="Capturas de Sandow: progreso">
+            <div class="shots" role="region" tabindex="0" aria-label="Capturas de Sandow: progreso (se desplazan con ratón, dedo o flechas del teclado)">
               <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-3.jpg" alt="Progreso" width="412" height="890" loading="lazy"></div></div><figcaption>Progreso</figcaption></figure>
               <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-medidas.jpg" alt="Comparación de medidas mes a mes" width="412" height="890" loading="lazy"></div></div><figcaption>Comparar medidas</figcaption></figure>
               <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-timelapse.jpg" alt="Timelapse de fotos de progreso" width="412" height="890" loading="lazy"></div></div><figcaption>Timelapse</figcaption></figure>
@@ -642,7 +622,7 @@ main:focus{outline:none}
           <li class="step">
             <span class="n" aria-hidden="true">03</span>
             <p><b>Cada perfil, su camino:</b> plan con entrenador, entrenos o un seguimiento médico. Cada uno ve solo lo suyo.</p>
-            <div class="shots" role="region" tabindex="0" aria-label="Capturas de Sandow: perfiles">
+            <div class="shots" role="region" tabindex="0" aria-label="Capturas de Sandow: perfiles (se desplazan con ratón, dedo o flechas del teclado)">
               <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-perfiles.jpg" alt="Selección de perfiles" width="412" height="890" loading="lazy"></div></div><figcaption>Perfiles</figcaption></figure>
               <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-1.jpg" alt="Pantalla de bienvenida" width="412" height="915" loading="lazy"></div></div><figcaption>Bienvenida</figcaption></figure>
               <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-4.jpg" alt="Vitrina de logros" width="412" height="890" loading="lazy"></div></div><figcaption>Logros</figcaption></figure>
@@ -650,6 +630,7 @@ main:focus{outline:none}
             </div>
           </li>
         </ol>
+        </div>
         <div class="device-col" aria-hidden="true">
           <div class="device" data-par="0">
             <div class="mock-frame"><i class="island"></i><div class="screen mock-screen"></div></div>
@@ -662,21 +643,32 @@ main:focus{outline:none}
 
       <div class="sandow-foot">
         <div class="mine extras">
+          <h4>Otras decisiones</h4>
           <ul data-stagger>
             <li><b>Privacidad total:</b> sin cuentas ni nube. Las copias de seguridad son un archivo que guardas tú.</li>
             <li><b>«No es una app de gimnasio»:</b> nada de mancuernas ni llamas, sino un tono friki y juguetón con logros y rachas.</li>
           </ul>
-          <div class="facts" data-stagger><div><b>2</b><span>personas la usan</span></div><div><b>15</b><span>versiones en 3 semanas</span></div><div><b>103</b><span>decisiones documentadas</span></div></div>
-          <div class="chips" data-reveal><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Marca</span><span>Expo / React Native</span><span>SQLite</span><span>Health Connect</span></div>
+          <p class="fact-line" data-reveal>La usamos mi pareja y yo. En tres semanas salieron 15 versiones, y su registro recoge 103 decisiones de diseño documentadas.</p>
+          <div class="chips" data-reveal><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Marca</span><span>Construida con IA</span></div>
         </div>
         <div>
           <div class="decision" data-reveal><h4>Decisión clave</h4><p>Los cambios del cuerpo se muestran en un color neutro, nunca en verde o rojo: el progreso no es "bueno" o "malo", es tuyo.</p></div>
           <p class="case-link" data-reveal><a class="btn ghost" href="sandow.html">Ver caso de estudio de Sandow →</a></p>
         </div>
       </div>
-      <p class="ia-note"><b>Mi parte:</b> idea, producto, UX/UI, marca y las reglas que sigue la IA · <b>La IA:</b> escribe el código bajo esas reglas; yo pruebo y valido el resultado.</p>
     </div>
   </article>
+  <div class="wrap"><div class="enmarcha" data-reveal>
+    <p><b>En marcha · RUVAK.</b> Una app web para reunir en un mapa los sitios que guardas en TikTok, Instagram o Google Maps, y descubrir planes nuevos en Gijón. Ahora mismo estoy con el documento de producto, los requisitos y el sistema de diseño. Esta es su identidad, todavía en exploración:</p>
+    <div class="ruvak">
+      <img class="r-wide" src="img/ruvak-cabecera.webp" alt="Ilustración de cabecera de RUVAK: tejados de una ciudad de noche con ventanas encendidas en verde lima, luna llena y un grajo sobre una chimenea" width="2000" height="667" loading="lazy">
+      <img src="img/ruvak-logo.webp" alt="Propuesta de logo de RUVAK: un gato negro y un grajo de perfil, rodeados por un trazo verde lima" width="1536" height="1024" loading="lazy">
+      <img src="img/ruvak-iconos.webp" alt="Set de iconos de RUVAK en negro, crema y verde lima: mapa, búsqueda, filtros, favoritos, categorías de lugares y acciones" width="1536" height="1024" loading="lazy">
+      <img src="img/ruvak-pegatinas.webp" alt="Pegatinas de RUVAK: brújula, mapa con ruta, pin con huella, prismáticos, montaña, señales y coordenadas de Gijón" width="1536" height="1024" loading="lazy">
+    </div>
+  
+    <p class="case-link" style="margin:20px 0 0"><a class="btn ghost" href="ruvak.html">Ver el caso de RUVAK →</a></p>
+  </div></div>
 </section>
 
 <section id="trayectoria" class="path-sec">
@@ -686,82 +678,104 @@ main:focus{outline:none}
     </div>
     <div class="path">
       <div class="path-main">
-      <ol class="timeline" data-stagger>
-        <li class="now"><time>2026</time><b>Productos propios con IA</b><span>Belladonna y Sandow, de la idea a la app: marca, UX/UI y desarrollo con Claude Code. En Futari, ideas de producto y diseño.</span></li>
-        <li><time>jul 2021 – actualidad</time><b>Product Designer · Econocom Products &amp; Solutions</b><span>Defino y diseño herramientas internas, desde la necesidad hasta la interfaz. Reviso que el desarrollo del equipo cumpla el diseño y la funcionalidad (Design QA), defino tareas, propongo mejoras de producto y colaboro en definir procesos, sobre todo en qué mejorar con IA.</span><span>Antes, en la misma empresa: interfaces para aplicaciones Angular, coherencia de marca con marketing (RRSS, banners, documentación) y la web corporativa en WordPress.</span></li>
-        <li><time>jun 2018 – jul 2021</time><b>Front End Designer · Techpump</b><span>Maquetación HTML, CSS y JS, y propuestas de diseño para nuevas funcionalidades y productos.</span></li>
-        <li><time>abr 2017 – may 2018</time><b>Front End Developer · Vorago Tecnología / Talento Corporativo</b><span>Del diseño al código: responsive y compatibilidad entre navegadores.</span></li>
-      </ol>
-      <p class="conf-note">Mi trabajo en empresa es confidencial; encantada de contarlo en una conversación.</p>
+        <article class="now-role" data-reveal>
+          <time>jul 2021 – actualidad · más de cinco años</time>
+          <h3>Product Designer · Econocom Products &amp; Solutions</h3>
+          <p>Llevo más de cinco años en el mismo equipo. Empecé centrada en la maquetación (interfaces para aplicaciones Angular, la web corporativa en WordPress, coherencia de marca con marketing) y en ayudar a mejorar la experiencia de productos que necesitaban más atención al diseño y a la usabilidad.</p>
+          <p>Con el tiempo mi trabajo ha ido evolucionando. Ahora participo también en definir mejor las necesidades, concretar requisitos que a veces llegan poco desarrollados, diseñar cómo debería funcionar una solución y llevarla a la interfaz. Después colaboro con desarrollo y reviso que lo implementado funcione como estaba previsto y resulte cómodo para quien lo usa.</p>
+          <p>Es la parte que más me gusta y en la que quiero seguir creciendo: entender qué necesita quien usa el producto, ayudar a decidir cómo resolverlo y asegurarme de que lo que se construye tiene sentido.</p>
+          <ul class="resp" aria-label="Responsabilidades actuales">
+            <li>Refinar necesidades y requisitos poco definidos</li>
+            <li>Analizar propuestas e interfaces y detectar oportunidades de mejora</li>
+            <li>Proponer soluciones y diseñar cambios visuales y funcionales</li>
+            <li>Maquetar y desarrollar interfaces</li>
+            <li>Colaborar con el equipo de desarrollo y revisar que lo implementado responde a lo definido</li>
+            <li>Participar en documentación y flujos de trabajo con IA</li>
+          </ul>
+        </article>
+        <ul class="prev" data-stagger aria-label="Experiencia anterior">
+          <li><time>jun 2018 – jul 2021</time><div><b>Front End Designer · Techpump</b><span>Maquetación HTML, CSS y JS, y propuestas de diseño para nuevas funcionalidades y productos.</span></div></li>
+          <li><time>abr 2017 – may 2018</time><div><b>Front End Developer · Vorago Tecnología / Talento Corporativo</b><span>Del diseño al código: responsive y compatibilidad entre navegadores.</span></div></li>
+        </ul>
+        <p class="conf-note">Mi trabajo en empresa es confidencial; encantada de contarlo en una conversación.</p>
       </div>
-      <div data-stagger>
-        <div class="box"><h4>Herramientas</h4><div class="chips"><span>Figma</span><span>Claude Code</span><span>HTML / CSS</span><span>React / React Native</span><span>Next.js</span><span>Angular</span><span>Tailwind</span><span>Supabase</span><span>Firebase</span><span>Git</span></div></div>
-        <div class="box"><h4>Formación</h4><ul><li>Google UX Design Professional Certificate (2021)</li><li>UX Writing: diseño de contenido (2023)</li><li>Ingeniería Informática, Universidad de Oviedo (a falta del último semestre)</li></ul></div>
-        <div class="box"><h4>Idiomas</h4><ul><li>Español: nativo</li><li>Inglés: nivel medio</li></ul></div>
-        <div class="box"><h4>Archivo</h4><a href="https://www.behance.net/albaff" target="_blank" rel="noopener">Trabajos de una etapa anterior en Behance →<span class="sr-only">, se abre en otra pestaña</span></a></div>
+      <div class="side">
+        <div class="ai-mini" data-reveal>
+          <h3>Cómo trabajo con IA</h3>
+          <p>Le pido que investigue y proponga un plan, contrasto la propuesta con otros modelos o agentes, busco huecos y contradicciones, y refino hasta que encaja. No doy por buena la primera respuesta: la IA es una herramienta muy potente, pero hay que saber conducirla.</p>
+          <p>Tengo base de frontend: HTML, CSS y JavaScript. En mis proyectos personales la IA escribe la mayor parte del código; yo dirijo, pruebo y valido el resultado.</p>
+        </div>
+        <dl class="mini-dl" data-reveal>
+          <div><dt>Herramientas</dt><dd><div class="chips"><span class="role">HTML</span><span class="role">CSS</span><span class="role">JavaScript (vanilla)</span><span>Figma</span><span>Photoshop</span><span>WordPress</span><span>Git</span><span>Claude Code</span><span>ChatGPT</span><span class="minor">Angular (nociones básicas)</span></div></dd></div>
+          <div><dt>Formación</dt><dd><ul><li>Ingeniería Informática, Universidad de Oviedo (a falta del último semestre)</li><li>Google UX Design Professional Certificate (2021)</li><li>UX Writing: diseño de contenido (2023)</li></ul></dd></div>
+          <div><dt>Idiomas</dt><dd>Español nativo · Inglés medio</dd></div>
+          <div><dt>Archivo</dt><dd><a href="https://www.behance.net/albaff" target="_blank" rel="noopener">Trabajos anteriores en Behance →<span class="sr-only">, se abre en otra pestaña</span></a></dd></div>
+        </dl>
       </div>
     </div>
+    <article class="free-role" id="molorramo" data-reveal>
+      <div class="fr-text">
+        <time>2025 · freelance</time>
+        <h3>Rediseño web · Molorramo</h3>
+        <p>Una empresa de mesas y encimeras de piedra de Madrid que cumplía 40 años. Me llegó una web en WordPress desactualizada y rota, con los plugins caducados, y las fotos de producto que el cliente me mandó por email.</p>
+        <p>Preparé una identidad visual, retoqué las fotos en Photoshop, reescribí los textos (aquí me ayudó mucho mi formación en UX writing) y ordené el catálogo para que se entendieran precios, medidas y formas de entrega. Lo diseñé en Figma, explicando al cliente qué hacía cada bloque y por qué, y después lo pulí directamente sobre la web.</p>
+        <p class="fr-cta"><a class="btn ghost" href="https://www.molorramo.com/" target="_blank" rel="noopener">Ver molorramo.com →<span class="sr-only">, se abre en otra pestaña</span></a></p>
+      </div>
+      <div class="mv" data-viewer>
+        <div class="mv-tabs" role="tablist" aria-label="Vistas del rediseño de Molorramo">
+          <button type="button" role="tab" id="mv-tab-figma" class="mv-tab" data-key="figma" data-cap="El diseño en Figma: paleta, componentes y las cuatro páginas" aria-selected="false" aria-controls="mv-p-figma" tabindex="-1">Figma</button>
+          <button type="button" role="tab" id="mv-tab-web" class="mv-tab" data-key="web" data-rot data-cap="La web publicada · monitor de 32&quot;" aria-selected="true" aria-controls="mv-p-web" tabindex="0">Web</button>
+          <button type="button" role="tab" id="mv-tab-catalogo" class="mv-tab" data-key="catalogo" data-rot data-cap="Catálogo: fotos retocadas, medidas y precios claros" aria-selected="false" aria-controls="mv-p-catalogo" tabindex="-1">Catálogo</button>
+          <button type="button" role="tab" id="mv-tab-cliente" class="mv-tab" data-key="cliente" data-rot data-cap="El diseño en Figma, anotado para el cliente · desplázate para ver más" aria-selected="false" aria-controls="mv-p-cliente" tabindex="-1">Para el cliente</button>
+        </div>
+        <div class="mv-stage">
+          <div class="mv-frame">
+            <div class="mv-bar" aria-hidden="true"><i></i><i></i><i></i><span class="mv-url">molorramo.com</span></div>
+            <div class="mv-screen">
+              <div class="mv-panel" id="mv-p-figma" role="tabpanel" aria-labelledby="mv-tab-figma" aria-hidden="true" inert>
+                <img src="img/molorramo-figma-paginas.webp" alt="Vista general del diseño en Figma: paleta de color, componente de tarjeta y las cuatro páginas de Molorramo (inicio, mesas, contacto y empresa)" width="1369" height="1036" loading="lazy">
+                <button type="button" class="mv-live" hidden data-pending="figma-publico" data-src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F2PqQHJQ4Ikp9ZcrsJfDje3%2FMolorramo%3Fnode-id%3D0-1">Explorar el Figma en vivo</button>
+              </div>
+              <div class="mv-panel is-active" id="mv-p-web" role="tabpanel" aria-labelledby="mv-tab-web">
+                <img src="img/molorramo-escritorio.jpg" alt="Portada publicada de molorramo.com en un monitor de 32 pulgadas: «40 años transformando la piedra en espacios con alma»" width="1600" height="900" loading="lazy">
+              </div>
+              <div class="mv-panel" id="mv-p-catalogo" role="tabpanel" aria-labelledby="mv-tab-catalogo" aria-hidden="true" inert>
+                <img src="img/molorramo-catalogo.jpg" alt="Catálogo de mesas de molorramo.com con fotos de producto retocadas, medidas y precios" width="1600" height="900" loading="lazy">
+              </div>
+              <div class="mv-panel scroll" id="mv-p-cliente" role="tabpanel" aria-labelledby="mv-tab-cliente" aria-hidden="true" inert tabindex="0">
+                <img src="img/molorramo-figma.jpg" alt="Diseño en Figma de la página de mesas de Molorramo, con anotaciones que explican al cliente para qué sirve cada bloque" width="496" height="620" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <figure class="mv-phone">
+            <div class="mock-frame"><div class="mock-screen"><img class="shot" src="img/molorramo-movil.jpg" alt="Portada de molorramo.com en móvil" width="412" height="892" loading="lazy"></div></div>
+          </figure>
+        </div>
+        <div class="mv-foot">
+          <p class="mv-cap">La web publicada · monitor de 32"</p>
+          <a class="mv-open" hidden data-pending="figma-publico" href="https://www.figma.com/design/2PqQHJQ4Ikp9ZcrsJfDje3/Molorramo?node-id=0-1" target="_blank" rel="noopener">Abrir en Figma ↗<span class="sr-only">, se abre en otra pestaña</span></a>
+        </div>
+      </div>
+    </article>
   </div>
 </section>
 
 <section id="sobre-mi" class="about-sec">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow rule"><span class="sec-n">§ 3</span>Sobre mí</p><h2 class="display" data-split>Cómo trabajo</h2></div>
+      <div><p class="eyebrow rule"><span class="sec-n">§ 3</span>Sobre mí</p><h2 class="display" data-split>Sobre mí</h2></div>
     </div>
     <div class="about">
-      <div class="about-intro">
-        <div data-stagger>
-          <p>Soy Alba, diseñadora de producto y una persona con más ideas de las que caben en una lista.</p>
-          <p>Llevo <strong>más de 8 años diseñando y dando forma a interfaces</strong>, explorando cómo hacer que los productos digitales sean más claros, útiles y agradables de utilizar.</p>
-          <p>Soy curiosa por naturaleza, bastante detallista y me cuesta dejar una idea sin explorar. Me gusta entender cómo funcionan las cosas, preguntarme por qué funcionan así y experimentar con distintas herramientas hasta encontrar la forma de convertir una idea en algo tangible.</p>
-          <p>Combino UX/UI, diseño visual y frontend, y utilizo la IA para ampliar lo que puedo crear y llevar mis proyectos más lejos: desde una primera intuición hasta un producto que puedo utilizar de verdad. No necesito entender cada línea de código: sé exactamente qué tiene que hacer, cómo tiene que verse y por qué.</p>
-          <p><strong>Me gusta imaginar lo que podría existir y tener las herramientas para hacerlo realidad.</strong></p>
-        </div>
+      <div class="about-intro" data-stagger>
+        <p>Soy curiosa, metódica, bastante detallista y me cuesta dejar una idea sin explorar. Me gusta entender cómo funcionan las cosas y encontrar formas de hacerlas mejor.</p>
+        <p>Fuera del trabajo, suelo estar leyendo, haciendo fotos, organizando algún viaje o empezando otro proyecto creativo. Y casi siempre tengo algún gato cerca.</p>
       </div>
       <div class="about-notes">
         <figure class="about-art" data-reveal>
-          <img src="img/about-dibujo.png" alt="Dibujo a lápiz de Alba abrazando a su gato negro, con un pequeño corazón" width="1000" height="667" loading="lazy">
-          <figcaption>Fuera del trabajo: leer, fotografiar, viajar, dibujar y mis gatos.</figcaption>
+          <img src="img/about-dibujo.png" alt="Dibujo a lápiz de Alba abrazando a Floki, su gato negro, con un pequeño corazón" width="1000" height="667" loading="lazy">
+          <figcaption>Floki y yo</figcaption>
         </figure>
       </div>
-      <div class="traits" data-stagger>
-        <div class="trait"><b>Curiosa</b><p>Me gusta entender cómo funcionan las cosas y descubrir cómo podrían funcionar mejor.</p><small>Quería leer en mi e-reader Xteink sin perder el hilo del club, así que investigué qué protocolos habla ya (KOReader Sync y OPDS) y estoy conectándolo con Belladonna sin tocar su firmware.</small></div>
-        <div class="trait"><b>Metódica</b><p>Las buenas decisiones no deberían depender de la memoria ni de la intuición.</p><small>Sandow tiene un registro de 103 decisiones de diseño, cada una documentada con su fecha y su motivo.</small></div>
-        <div class="trait"><b>Detallista</b><p>Me fijo en lo que casi nadie ve, pero que cambia cómo se siente un producto.</p><small>Sustituí unas 90 alertas del sistema por un modal propio para mantener la coherencia visual, también en modo oscuro.</small></div>
-        <div class="trait"><b>Inquieta</b><p>No suelo quedarme en la idea. Me gusta investigar, probar y construir.</p><small>Belladonna empezó como un problema en un chat de Telegram. Dos meses después es una app para Android y web que usamos cuatro socias, con su identidad, su lector y sus sellos.</small></div>
-        <p class="honest">Pienso en las personas que utilizan lo que diseño: accesibilidad desde el principio, privacidad por defecto y textos que acompañan, nunca juzgan.</p>
-      </div>
-    </div>
-
-    <div class="ai" aria-labelledby="ia-t">
-      <h3 id="ia-t" class="display" data-split>Cómo uso la IA</h3>
-      <p class="ai-intro" data-reveal>Lo confieso: soy un poco mandona. Y con la IA eso es una virtud. No escribo el código ni entiendo cada línea, pero sé exactamente qué tiene que hacer, cómo tiene que verse y por qué. Pido, pruebo, corrijo y vuelvo a pedir, hasta que encaja con mi vida.</p>
-      <ol class="ai-flow" data-stagger>
-        <li><span>1</span><b>Necesidad real</b></li>
-        <li><span>2</span><b>Diseño</b><small>identidad, pantallas, qué entra y qué no</small></li>
-        <li><span>3</span><b>Reglas para la IA</b></li>
-        <li><span>4</span><b>La IA construye</b></li>
-        <li><span>5</span><b>Reviso, pruebo y uso</b></li>
-      </ol>
-      <div class="ai-cols">
-        <div data-reveal>
-          <h4>Las reglas que le pongo</h4>
-          <blockquote class="rule"><p>«Nada de <code>git push</code> ni compilaciones sin aprobación expresa.»</p><cite>— CLAUDE.md de Sandow</cite></blockquote>
-          <blockquote class="rule"><p>«Mantén esta documentación al día en el mismo commit que cualquier cambio de comportamiento, estructura o decisión.»</p><cite>— CLAUDE.md de Sandow</cite></blockquote>
-          <blockquote class="rule"><p>«Antes de dar algo por terminado: <code>tsc</code>, <code>lint</code> y que el bundle de Android compile.»</p><cite>— CLAUDE.md de Sandow</cite></blockquote>        </div>
-        <div data-reveal>
-          <h4>Lo que no delego</h4>
-          <ul>
-            <li><b>Las decisiones de producto y diseño.</b> Qué se hace y qué se queda fuera lo decido yo.</li>
-            <li><b>El visto bueno.</b> Pruebo cada cambio en mi día a día y no doy nada por bueno hasta que hace exactamente lo que pedí.</li>
-            <li><b>Los textos y el tono.</b> Que suenen a mí y acompañen, nunca juzguen.</li>
-          </ul>
-          <h4 class="ai-craft-t">La IA no sustituye el oficio</h4>
-          <p class="ai-craft">Siempre me han encantado las manualidades y aprender a hacer cosas, pero me gustan tantas que no me daría la vida para dominarlas todas. La IA me deja crear lo que no sabría hacer a mano, como un logo o una ilustración, sin quitarle valor a quien sí sabe: lo admiro. Lo que pongo yo es el criterio. Nunca me quedo con la primera propuesta: la refino una y otra vez hasta que es exactamente lo que buscaba.</p>
-        </div>
-      </div>
-      <p class="ai-tools">Herramientas: Claude Code · ChatGPT (imagen y logos) · Figma · Git</p>
     </div>
   </div>
 </section>
@@ -771,13 +785,13 @@ main:focus{outline:none}
   <section class="contact" id="contacto">
     <div class="wrap">
       <h2 class="display" data-split>¿Te encaja cómo trabajo?</h2>
+      <p class="lede" data-reveal>Si tienes una oportunidad o una colaboración en mente, cuéntamela.</p>
       <p class="avail" data-reveal>Abierta a nuevos retos · Solo en remoto 100%</p>
       <div class="contact-cta" data-reveal>
-        <a class="btn" href="https://www.linkedin.com/in/albaff/" target="_blank" rel="noopener">Escríbeme en LinkedIn →<span class="sr-only">, se abre en otra pestaña</span></a>
-        <a class="btn alt" href="mailto:ffernandezalba@gmail.com">Escríbeme un email</a>
-        <a class="btn alt" href="Alba-Fernandez-CV.pdf" download>Descargar CV (PDF)</a>
+        <a class="btn" href="mailto:ffernandezalba@gmail.com">ffernandezalba@gmail.com</a>
+        <a class="btn alt" href="https://www.linkedin.com/in/albaff/" target="_blank" rel="noopener">LinkedIn →<span class="sr-only">, se abre en otra pestaña</span></a>
       </div>
-      <p class="contact-mail" data-reveal>O directamente a <a href="mailto:ffernandezalba@gmail.com">ffernandezalba@gmail.com</a></p>
+      <p class="contact-mail" data-reveal><a href="Alba-Fernandez-CV.pdf" download>Descargar CV (PDF)</a></p>
     </div>
   </section>
   <footer class="foot">
@@ -790,8 +804,8 @@ main:focus{outline:none}
           <a href="Alba-Fernandez-CV.pdf" download>CV<span class="sr-only"> (PDF)</span></a>
         </nav>
       </div>
-      <p class="sig">HECHO A MANO (Y CON IA) · GIJÓN · EN REMOTO</p>
-      <p class="foot-small">© <span id="year">2026</span> Alba Fernández · Diseñada por mí y construida con IA, como todo lo de aquí.</p>
+      <p class="sig">GIJÓN (ASTURIAS) · REMOTO 100%</p>
+      <p class="foot-small">© <span id="year">2026</span> Alba Fernández · Diseñada por mí y construida con IA.</p>
     </div>
   </footer>
 </div>
@@ -892,19 +906,22 @@ main:focus{outline:none}
   function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(frame);}}
 
   /* 5. Scrollytelling de Sandow */
-  var st=doc.querySelector('.story'), steps=[], seq=[], imgs=[], cap=null, mq=window.matchMedia('(min-width: 901px)');
+  var st=doc.querySelector('.story'), steps=[], seq=[], imgs=[], cap=null, intro=null, mq=window.matchMedia('(min-width: 901px)');
   if(st){
     var screen=st.querySelector('.screen'); cap=st.querySelector('.device-cap');
     steps=$$('.step',st);
     steps.forEach(function(s,si){
       seq[si]=[];
       $$('.shots figure',s).forEach(function(f){
-        var im=f.querySelector('img'), c=doc.createElement('img');
-        c.src=im.getAttribute('src'); c.alt=''; c.width=+im.getAttribute('width')||412; c.height=+im.getAttribute('height')||890; c.loading='lazy';
+        var im=f.querySelector('img'), c=doc.createElement('img'), isIntro=/sandow-1\.jpg$/.test(im.getAttribute('src'));
+        c.loading=isIntro?'eager':'lazy'; c.src=im.getAttribute('src'); c.alt=''; c.width=+im.getAttribute('width')||412; c.height=+im.getAttribute('height')||890;
         screen.appendChild(c); imgs.push(c);
-        seq[si].push({i:imgs.length-1,cap:f.querySelector('figcaption').textContent});
+        var entry={i:imgs.length-1,cap:f.querySelector('figcaption').textContent};
+        seq[si].push(entry);
+        if(isIntro) intro=entry;
       });
     });
+    if(!intro) intro=seq[0][0];
     var setMode=function(){st.classList.toggle('scrolly',mq.matches);frame();};
     (mq.addEventListener?mq.addEventListener('change',setMode):mq.addListener(setMode));
     setMode();
@@ -912,17 +929,24 @@ main:focus{outline:none}
   var lastImg=-1;
   function story(){
     if(!st||!st.classList.contains('scrolly')) return;
-    var mid=window.innerHeight*.5, act=-1, p=0;
+    var vh=window.innerHeight, mid=vh*.5, act=-1, p=0, on=-1, pick;
     steps.forEach(function(s,i){
       var r=s.getBoundingClientRect();
       if(r.top<=mid&&r.bottom>mid){act=i;p=(mid-r.top)/r.height;}
     });
-    if(act<0){ if(st.getBoundingClientRect().top>0){act=0;p=0;} else {act=steps.length-1;p=.999;} }
-    var list=seq[act], k=Math.min(list.length-1,Math.floor(p*list.length)), idx=list[k].i;
-    steps.forEach(function(s,i){s.classList.toggle('on',i===act);});
-    if(idx!==lastImg){
-      imgs.forEach(function(im,i){im.classList.toggle('on',i===idx);});
-      cap.textContent=list[k].cap; lastImg=idx;
+    if(act>=0){
+      var list=seq[act], k=Math.min(list.length-1,Math.floor(p*list.length));
+      pick=list[k]; on=act;
+    } else if(steps[0].getBoundingClientRect().top>mid){
+      /* Cabecera a la vista, aún antes del paso 01: pantalla de bienvenida */
+      pick=intro; on=steps[0].getBoundingClientRect().top<vh*.8?0:-1;
+    } else {
+      var last=seq[steps.length-1]; pick=last[last.length-1]; on=steps.length-1;
+    }
+    steps.forEach(function(s,i){s.classList.toggle('on',i===on);});
+    if(pick.i!==lastImg){
+      imgs.forEach(function(im,i){im.classList.toggle('on',i===pick.i);});
+      cap.textContent=pick.cap; lastImg=pick.i;
     }
   }
 
@@ -968,10 +992,83 @@ main:focus{outline:none}
       near();
     }
   });
+  /* 7. Visor de Molorramo: pestañas, rotación suave y Figma bajo demanda */
+  $$('[data-viewer]').forEach(function(v){
+    var tabs=$$('[role="tab"]',v), panels=tabs.map(function(t){return doc.getElementById(t.getAttribute('aria-controls'));});
+    var cap=v.querySelector('.mv-cap'), stage=v.querySelector('.mv-stage'), live=v.querySelector('.mv-live');
+    var rots=[], cur=0, hov=false, foc=false, vis=true, stopped=false, timer=null, rmq=window.matchMedia('(prefers-reduced-motion: reduce)');
+    tabs.forEach(function(t,i){ if(t.hasAttribute('data-rot')) rots.push(i); if(t.getAttribute('aria-selected')==='true') cur=i; });
+    function canRun(){return !stopped&&!hov&&!foc&&vis&&!doc.hidden&&!rmq.matches&&rots.indexOf(cur)>-1;}
+    function schedule(){
+      clearTimeout(timer);
+      if(!canRun()) return;
+      timer=setTimeout(function(){
+        if(!canRun()) return;
+        select(rots[(rots.indexOf(cur)+1)%rots.length],false);
+      },4000);
+    }
+    function select(i,user,focus){
+      cur=i;
+      tabs.forEach(function(t,j){
+        var on=j===i;
+        t.setAttribute('aria-selected',String(on)); t.tabIndex=on?0:-1;
+        panels[j].classList.toggle('is-active',on);
+        panels[j].setAttribute('aria-hidden',String(!on)); panels[j].inert=!on;
+      });
+      if(panels[i].classList.contains('scroll')) panels[i].scrollTop=0;
+      cap.textContent=tabs[i].getAttribute('data-cap');
+      v.classList.toggle('is-figma',tabs[i].getAttribute('data-key')==='figma');
+      if(focus) tabs[i].focus();
+      if(user) stopped=true;
+      schedule();
+    }
+    tabs.forEach(function(t,i){
+      t.addEventListener('click',function(){select(i,true);});
+      t.addEventListener('keydown',function(e){
+        var n=-1;
+        if(e.key==='ArrowRight') n=(i+1)%tabs.length;
+        else if(e.key==='ArrowLeft') n=(i-1+tabs.length)%tabs.length;
+        else if(e.key==='Home') n=0;
+        else if(e.key==='End') n=tabs.length-1;
+        if(n<0) return;
+        e.preventDefault(); select(n,true,true);
+      });
+    });
+    v.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse'){hov=true;clearTimeout(timer);}});
+    v.addEventListener('pointerleave',function(e){if(e.pointerType==='mouse'){hov=false;schedule();}});
+    v.addEventListener('focusin',function(){foc=true;clearTimeout(timer);});
+    v.addEventListener('focusout',function(e){if(!v.contains(e.relatedTarget)){foc=false;schedule();}});
+    doc.addEventListener('visibilitychange',schedule);
+    if(rmq.addEventListener) rmq.addEventListener('change',schedule);
+    if(hasIO){
+      new IntersectionObserver(function(es){vis=es[es.length-1].isIntersecting;if(es.some(function(e){return e.isIntersecting;})) $$('img',v).forEach(function(i){i.loading='eager';});schedule();},{threshold:.25}).observe(v);
+    }
+    /* Inclinación sutil al pasar el ratón (solo sin reduced-motion y sin Figma en vivo) */
+    function tilt(e){
+      if(rmq.matches||e.pointerType!=='mouse'||stage.classList.contains('live')) return;
+      var r=stage.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      stage.style.setProperty('--ry',(x*3).toFixed(2)+'deg'); stage.style.setProperty('--rx',(-y*2.4).toFixed(2)+'deg');
+    }
+    function untilt(){stage.style.removeProperty('--rx');stage.style.removeProperty('--ry');}
+    stage.addEventListener('pointermove',tilt);
+    stage.addEventListener('pointerleave',untilt);
+    /* Figma: el iframe no existe hasta pulsar el botón */
+    if(live) live.addEventListener('click',function(){
+      var panel=live.parentNode;
+      if(panel.querySelector('iframe')) return;
+      var f=doc.createElement('iframe');
+      f.className='mv-iframe'; f.title='Diseño de Molorramo en Figma'; f.loading='lazy';
+      f.setAttribute('allowfullscreen',''); f.src=live.getAttribute('data-src');
+      panel.classList.add('live'); stage.classList.add('live'); untilt();
+      panel.appendChild(f); f.focus();
+    });
+    select(cur,false);
+  });
+
   /* 8. Tema claro/oscuro: por defecto el del sistema; se guarda la elección */
   var tbtn=doc.getElementById('theme-toggle'), tmq=window.matchMedia('(prefers-color-scheme: dark)');
   function isDark(){var t=root.getAttribute('data-theme');return t?t==='dark':tmq.matches;}
-  function syncTheme(){if(tbtn)tbtn.setAttribute('aria-pressed',String(isDark()));}
+  function syncTheme(){if(!tbtn)return;var d=isDark();tbtn.setAttribute('aria-label',d?'Cambiar a modo claro':'Cambiar a modo oscuro');tbtn.setAttribute('data-dark',String(d));}
   if(tbtn){
     tbtn.addEventListener('click',function(){
       var n=isDark()?'light':'dark'; root.setAttribute('data-theme',n);

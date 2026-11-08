@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Futari · Caso de estudio · Alba Fernández</title>
+<meta name="description" content="Caso de estudio de Futari, una app de finanzas en pareja: auditoría, arquitectura de información, jerarquía del dashboard, sistema de diseño e ilustración. Por Alba Fernández, diseñadora de producto.">
+<link rel="canonical" href="https://alffer.github.io/futari.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://alffer.github.io/futari.html">
+<meta property="og:title" content="Futari · Caso de estudio · Alba Fernández">
+<meta property="og:description" content="De una hoja que había que cuadrar a mano a un mes que se cierra con un gesto. Rediseño, arquitectura de información, sistema visual e ilustración de una app de finanzas en pareja.">
+<meta property="og:image" content="https://alffer.github.io/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Alba Fernández. Algunas ideas merecen salir de la cabeza. Product Designer / UX/UI / AI-assisted workflows & Design QA">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%23171717'/%3E%3Ctext x='32' y='41' font-family='Gloock,Georgia,serif' font-size='30' text-anchor='middle' fill='%23FFFFFF'%3EAF%3C/text%3E%3Cpath d='M12 49H52' stroke='%23FFFFFF' stroke-width='1.5'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== Tokens (mismos que el portfolio) ===== */
+:root{
+  color-scheme:light;
+  --bg:#FFFFFF; --alt:#F4F3F0; --surface:#F4F3F0; --text:#171717; --text-2:#292929; --muted:#6B6B6B; --line:#DCDCDC; --line-strong:#171717;
+  --mid:#777777; --on-text:#FFFFFF;
+  --block:#171717; --on-block:#FFFFFF; --on-block-muted:#B8B8B8; --block-line:#444444;
+  --font-display:Gloock,Georgia,serif;
+  --font-body:"DM Sans",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r-sm:2px; --r-md:4px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#171717; --alt:#222222; --surface:#222222; --text:#FFFFFF; --text-2:#E6E6E6; --muted:#B8B8B8; --line:#444444; --line-strong:#FFFFFF;
+    --mid:#777777; --on-text:#171717;
+    --block:#0C0C0C; --on-block:#FFFFFF; --on-block-muted:#B8B8B8; --block-line:#444444;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#171717; --alt:#222222; --surface:#222222; --text:#FFFFFF; --text-2:#E6E6E6; --muted:#B8B8B8; --line:#444444; --line-strong:#FFFFFF;
+  --mid:#777777; --on-text:#171717;
+  --block:#0C0C0C; --on-block:#FFFFFF; --on-block-muted:#B8B8B8; --block-line:#444444;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:16px/1.65 var(--font-body);-webkit-font-smoothing:antialiased;overflow-x:clip;transition:background-color .4s ease,color .4s ease}
+img{display:block;max-width:100%;height:auto}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--text);outline-offset:3px;border-radius:var(--r-sm)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+.display{font-family:var(--font-display);font-weight:400;letter-spacing:-.01em;line-height:1.04}
+.eyebrow{display:flex;align-items:center;gap:12px;font:500 .74rem/1.5 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.eyebrow .sec-n{color:var(--text)}
+.eyebrow.rule::after{content:"";flex:0 0 clamp(32px,6vw,72px);height:1px;background:var(--line-strong);opacity:.5}
+.sig{display:flex;align-items:center;gap:14px;font:400 .72rem/1.5 var(--font-mono);letter-spacing:.08em}
+.sig::before{content:"";flex:0 0 28px;height:1px;background:currentColor;opacity:.6}
+
+/* Nav */
+nav.top{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line);transition:background-color .4s ease,border-color .4s ease}
+nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:inline-flex;align-items:center;gap:12px;font:600 .98rem var(--font-body);text-decoration:none;min-height:44px;margin-right:auto}
+.brand svg{width:44px;height:32px;flex:0 0 auto}
+.back{display:inline-flex;align-items:center;min-height:44px;font-size:.93rem;text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 calc(50% + 12px)/0 1px no-repeat;transition:background-size .3s var(--ease)}
+.back:hover{background-size:100% 1px}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;padding:10px 16px;background:var(--text);color:var(--bg);text-decoration:none;font-weight:600;border-radius:var(--r-sm)}
+.skip:focus{top:12px}
+main:focus{outline:none}
+.theme-btn{display:inline-grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);border-radius:var(--r-sm);background:transparent;color:var(--text);cursor:pointer;transition:background-color .25s,border-color .25s}
+.theme-btn:hover{border-color:var(--text)}
+.theme-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5}
+.theme-btn svg path{fill:currentColor;stroke:none}
+.theme-btn[data-dark="true"] svg{transform:scaleX(-1)}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:var(--r-sm);font:500 .95rem var(--font-body);text-decoration:none;border:1px solid var(--text);transition:background-color .25s,color .25s,transform .25s var(--ease)}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+
+/* Secciones */
+.sec{padding:clamp(48px,6.5vw,92px) 0;border-top:1px solid var(--line);background:var(--bg)}
+.sec.alt{background:var(--alt)}
+.sec-top{margin-bottom:clamp(28px,4vw,48px)}
+.sec-top h2{font-size:clamp(2.1rem,4.4vw,3.5rem);margin-top:14px;max-width:20ch}
+.prose{max-width:68ch}
+.prose p{font-size:clamp(1.02rem,1.3vw,1.15rem);color:var(--text-2)}
+.prose p+p{margin-top:1em}
+.prose strong{color:var(--text);font-weight:600}
+.lab{font:500 .74rem/1.5 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* Hero */
+.hero{padding:clamp(36px,5vw,72px) 0 clamp(44px,6vw,80px);background:var(--bg)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(28px,5vw,80px);align-items:center}
+.p-num{display:flex;align-items:center;gap:12px;font:500 .78rem/1.4 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.p-num::before{content:"";flex:0 0 auto;width:9px;height:9px;border-radius:50%;background:#27D6CC}
+.p-num::after{content:"";flex:1 1 40px;max-width:200px;height:1px;background:var(--line-strong);opacity:.35}
+.hero h1{font:800 clamp(3.6rem,10vw,7.4rem)/.9 "Bricolage Grotesque",sans-serif;letter-spacing:-.045em;margin:20px 0 20px}
+.tagline{font:400 clamp(1.4rem,2.5vw,2.1rem)/1.25 var(--font-display);color:var(--text-2);max-width:30ch}
+.ficha{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;margin-top:clamp(24px,3.5vw,40px);border-top:1px solid var(--line-strong)}
+.ficha div{padding:12px 0;border-bottom:1px solid var(--line)}
+.ficha dt{font:400 .68rem/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.ficha dd{font:400 .84rem/1.5 var(--font-mono);letter-spacing:.01em}
+.ficha .wide{grid-column:1/-1}
+.hero-mock{justify-self:center;width:100%;max-width:290px}
+
+/* Móvil (componente del portfolio) */
+.mock{--mw:250px;width:var(--mw);margin:0;position:relative}
+.mock-frame{position:relative;padding:10px;border-radius:44px;background:#111;box-shadow:0 0 0 1px rgba(0,0,0,.25),0 8px 20px -14px rgba(0,0,0,.45)}
+.island{position:absolute;top:20px;left:50%;translate:-50% 0;width:29%;height:24px;border-radius:14px;background:#000;z-index:3}
+.mock-screen{position:relative;overflow:hidden;background:#0B1014}
+.mock-frame .mock-screen{aspect-ratio:412/890;border-radius:34px;background:var(--sb,#0B1014)}
+.mock-screen>img.shot{position:absolute;left:0;top:40px;width:100%;height:calc(100% - 40px);object-fit:contain;object-position:top}
+.mock.sm{--mw:210px}.mock.sm .mock-frame{padding:8px;border-radius:36px}.mock.sm .mock-frame .mock-screen{border-radius:28px}.mock.sm .island{top:16px;height:18px}
+.mock figcaption{text-align:center;font:400 .72rem/1.4 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;margin-top:16px;color:var(--muted)}
+
+/* Contacto + footer */
+.contact-wrap{background:var(--block);color:var(--on-block)}
+.contact-wrap :focus-visible{outline-color:#fff}
+.contact{padding:clamp(64px,9vw,120px) 0 clamp(56px,8vw,100px);background:var(--block);color:var(--on-block)}
+.contact h2{font-size:clamp(2.8rem,7.4vw,6.2rem);max-width:12ch;letter-spacing:-.015em;line-height:1;margin-bottom:20px}
+.contact .lede{max-width:52ch;color:var(--on-block-muted);font-size:1.08rem}
+.contact-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.contact .btn{border-color:#fff;background:#fff;color:#171717;padding:14px 26px;min-height:48px}
+.contact .btn:hover{background:#E6E6E6}
+.contact .btn.alt{background:transparent;color:#fff}
+.contact .btn.alt:hover{background:#fff;color:#171717}
+.contact-mail{margin-top:20px;font-size:1rem;color:var(--on-block-muted)}
+.contact-mail a,.foot a{color:var(--on-block);text-underline-offset:4px;text-decoration-thickness:1px;transition:opacity .25s}
+.contact-mail a{font-weight:600}
+.contact-mail a:hover,.foot a:hover{opacity:.7}
+.foot{color:var(--on-block);padding:0 0 clamp(32px,5vw,48px)}
+.foot-inner{display:flex;flex-direction:column;gap:22px;padding-top:clamp(32px,5vw,48px);border-top:1px solid var(--block-line)}
+.foot-top{display:flex;align-items:center;justify-content:space-between;gap:20px 32px;flex-wrap:wrap}
+.foot-mark{display:inline-flex;color:var(--on-block)}
+.foot-mark svg{width:64px;height:46px}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:.98rem}
+.foot-links a{font-weight:500;display:inline-flex;align-items:center;min-height:44px}
+.foot .sig{color:var(--on-block-muted)}
+.foot-small{font-size:.84rem;color:var(--on-block-muted)}
+/* ===== Futari ===== */
+.hero h1{font:800 clamp(3.2rem,9vw,6.6rem)/.95 Nunito,sans-serif;letter-spacing:-.04em;margin:20px 0 20px}
+.hero h1 span{font-weight:700;letter-spacing:0}
+.p-num::before{background:#C97868}
+.checks li::before{background:#C97868}
+.mock{--sb:#C97868}
+.sec-top h2{max-width:24ch}
+.big-q{margin:clamp(24px,4vw,40px) 0 0;padding:20px 24px;border-left:2px solid var(--line-strong);background:var(--alt);max-width:68ch}
+.sec.alt .big-q{background:var(--bg)}
+.big-q p{font:400 clamp(1.3rem,2.2vw,1.8rem)/1.25 var(--font-display);color:var(--text)}
+.big-q small{display:block;margin-top:10px;font:500 .72rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cards4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px clamp(16px,2.5vw,32px);list-style:none;padding:0;counter-reset:n}
+.cards4 li{counter-increment:n;border-top:1px solid var(--line-strong);padding-top:16px}
+.cards4 li::before{content:"0" counter(n);display:block;font:400 clamp(2.4rem,3.6vw,3.2rem)/1 var(--font-display);margin-bottom:12px}
+.cards4 b{display:block;font-size:1.08rem;line-height:1.3;margin-bottom:8px}
+.cards4 p{font-size:.95rem;color:var(--text-2)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(28px,5vw,72px);align-items:start}
+.split>*{min-width:0}
+.pair-mocks{display:flex;gap:clamp(16px,3vw,32px);flex-wrap:wrap;justify-content:center}
+.pair-mocks .mock{--mw:210px}
+.pair-mocks .mock .mock-frame{padding:8px;border-radius:36px}
+.pair-mocks .mock .mock-screen{border-radius:28px!important}
+.pair-mocks .island{top:16px;height:18px}
+.ia-root{display:flex;justify-content:center}
+.ia-root span{display:inline-block;padding:8px 22px;border-radius:999px;background:var(--text);color:var(--on-text);font:800 1rem Nunito,sans-serif;letter-spacing:.02em}
+.ia-stem{width:1px;height:20px;background:var(--line-strong);margin:0 auto}
+.ia-bar{height:1px;background:var(--line-strong);margin:0 10%}
+.ia{list-style:none;padding:0;margin:0 0 clamp(20px,3vw,32px);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.ia li{border:1px solid var(--line-strong);border-radius:var(--r-md);padding:14px 14px 16px;background:var(--bg);position:relative;margin-top:12px}
+.ia li::before{content:"";position:absolute;left:50%;top:-13px;width:1px;height:12px;background:var(--line-strong)}
+.ia li b{display:block;font:400 1.35rem/1.15 var(--font-display);margin-bottom:6px}
+.ia li span{display:block;font-size:.88rem;line-height:1.45;color:var(--text-2)}
+.ia li .q{margin-top:8px;font:400 .76rem/1.45 var(--font-mono);color:var(--muted)}
+.ia-extra{display:flex;flex-wrap:wrap;gap:8px 14px;margin-bottom:clamp(24px,4vw,40px);align-items:center;font-size:.94rem;color:var(--text-2)}
+.tag-mine{display:inline-block;padding:2px 10px;border:1px dashed var(--line-strong);border-radius:var(--r-sm);font:500 .72rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--text)}
+.hier{list-style:none;padding:0;margin:0;counter-reset:h;max-width:56ch}
+.hier li{counter-increment:h;display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 16px;padding:14px 0;border-top:1px solid var(--line)}
+.hier li:first-child{border-top:1px solid var(--line-strong)}
+.hier li::before{content:counter(h);grid-row:span 2;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--text);color:var(--on-text);font:500 .82rem var(--font-mono)}
+.hier b{font-size:1.04rem;line-height:1.3}
+.hier span{font-size:.94rem;color:var(--text-2);grid-column:2}
+.pin{position:absolute;left:6px;z-index:4;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#171717;color:#fff;border:2px solid #fff;font:500 .78rem var(--font-mono)}
+.note{font-size:.92rem;color:var(--muted);max-width:56ch;margin-top:16px}
+.feat{list-style:none;padding:0;margin-top:20px}
+.feat li{padding:14px 0;border-top:1px solid var(--line)}
+.feat li:first-child{border-top:1px solid var(--line-strong)}
+.feat b{display:block;font-size:1.04rem;margin-bottom:2px}
+.feat span{font-size:.96rem;color:var(--text-2)}
+.calc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:20px;border:1px solid var(--line-strong);border-radius:var(--r-md);overflow:hidden;background:var(--bg)}
+.calc div{padding:12px 14px;border-left:1px solid var(--line)}
+.calc div:first-child{border-left:0}
+.calc dt{font:500 .68rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.calc dd{font-size:.88rem;margin-top:4px;color:var(--text-2)}
+.bunnies{list-style:none;padding:0;margin:clamp(24px,4vw,40px) 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,20px)}
+.bunnies figure{margin:0;height:100%}
+.bunnies .tile{display:grid;place-items:center;aspect-ratio:4/3;padding:18px;background:#FFF1DF;border:1px solid #EED3C4;border-radius:var(--r-md)}
+.bunnies img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.bunnies figcaption{margin-top:10px;font-size:.9rem;line-height:1.45;color:var(--text-2)}
+.bunnies figcaption b{display:block;font:500 .72rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin-bottom:2px}
+.rules-ill{list-style:none;padding:0;margin-top:clamp(20px,3vw,32px);display:flex;flex-wrap:wrap;gap:8px}
+.rules-ill li{font-size:.84rem;padding:4px 11px;border-radius:var(--r-sm);border:1px solid var(--line-strong)}
+.pal-set+.pal-set{margin-top:28px}
+.pal-set h3{font:400 clamp(1.3rem,2vw,1.6rem)/1.15 var(--font-display);margin-bottom:12px}
+.pal{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;list-style:none;padding:0}
+.pal li{font:400 .68rem/1.4 var(--font-mono);letter-spacing:.02em;color:var(--muted)}
+.pal i{display:block;aspect-ratio:1;border-radius:var(--r-sm);border:1px solid var(--line);margin-bottom:8px}
+.pal b{display:block;font-weight:500;color:var(--text)}
+.sys2{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,72px);align-items:start}
+.sys2>*{min-width:0}
+.type-spec{border:1px solid var(--line-strong);border-radius:var(--r-md);padding:20px 22px;background:var(--bg)}
+.type-spec .big{font:800 clamp(2.4rem,5vw,3.6rem)/1 Nunito,sans-serif;letter-spacing:-.03em}
+.type-spec ul{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:6px}
+.type-spec li{display:flex;justify-content:space-between;gap:16px;font:400 1.1rem/1.3 Nunito,sans-serif;border-top:1px solid var(--line);padding-top:6px}
+.type-spec li small{font:400 .72rem var(--font-mono);color:var(--muted);letter-spacing:.06em;white-space:nowrap;align-self:center}
+.bgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+.bgs figure{margin:0}
+.bgs img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--r-md);border:1px solid var(--line)}
+.bgs figcaption{font:400 .72rem/1.4 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.sys-block+.sys-block{margin-top:clamp(28px,4vw,44px)}
+.sys-block h3{font:400 clamp(1.5rem,2.2vw,1.9rem)/1.15 var(--font-display);margin-bottom:12px}
+.six{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px clamp(16px,2.5vw,32px);counter-reset:d}
+.six li{counter-increment:d;border-top:1px solid var(--line-strong);padding-top:14px}
+.six li::before{content:"0" counter(d);display:block;font:500 .78rem var(--font-mono);letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.six b{display:block;font:400 clamp(1.3rem,1.8vw,1.55rem)/1.15 var(--font-display);margin-bottom:6px}
+.six p{font-size:.94rem;color:var(--text-2)}
+.next{list-style:none;padding:0;display:grid;gap:12px;max-width:68ch}
+.next li{padding-left:24px;position:relative;color:var(--text-2)}
+.next li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border:1px solid var(--line-strong)}
+.reflex{margin-top:clamp(28px,4vw,44px);padding-top:16px;border-top:1px solid var(--line-strong)}
+.reflex p{font:400 clamp(1.6rem,3vw,2.5rem)/1.2 var(--font-display);max-width:28ch;letter-spacing:-.01em}
+@media (max-width:1000px){.ia{grid-template-columns:repeat(3,minmax(0,1fr))}.ia-bar,.ia-stem,.ia li::before{display:none}.cards4{grid-template-columns:repeat(2,minmax(0,1fr))}.six{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.hero-grid,.split,.sys2{grid-template-columns:1fr}.hero-mock{justify-self:start}.bunnies{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){
+  nav.top .wrap{gap:12px}
+  .brand span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .ficha{grid-template-columns:1fr}
+  .ia,.cards4,.six{grid-template-columns:1fr}
+  .bunnies .tile{padding:10px}
+  .pal{gap:6px}.pal li{font-size:.58rem}
+  .calc{grid-template-columns:1fr}.calc div{border-left:0;border-top:1px solid var(--line)}.calc div:first-child{border-top:0}
+  .mock{--mw:230px}
+  .mock-frame{border-radius:38px;padding:8px}
+  .mock-frame .mock-screen{border-radius:30px}
+  .island{top:16px}
+  .foot .sig{font-size:.66rem;letter-spacing:.04em}
+  .foot .sig::before{display:none}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .btn:hover{transform:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="af-mark" viewBox="0 0 72 52"><text x="36" y="38" text-anchor="middle" font-family="Gloock,Georgia,serif" font-size="40" fill="currentColor">AF</text><path d="M7 46.5H65" stroke="currentColor" stroke-width="1.2" fill="none"/></symbol></defs></svg>
+
+
+<nav class="top" aria-label="Principal"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="Alba Fernández, inicio"><svg viewBox="0 0 72 52" aria-hidden="true" focusable="false"><use href="#af-mark"/></svg><span>Alba Fernández</span></a>
+  <a class="back" href="index.html#futari">← Volver al portfolio</a>
+  <button class="theme-btn" id="theme-toggle" type="button" aria-label="Cambiar a modo oscuro" data-dark="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z"/></svg></button>
+</div></nav>
+
+<main id="contenido" tabindex="-1">
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="p-num">Caso de estudio / 02 · Personal Finance</p>
+      <h1>Futari <span lang="ja">ふたり</span></h1>
+      <p class="tagline">De una hoja que había que cuadrar a mano a un mes que se cierra con un gesto.</p>
+      <dl class="ficha">
+        <div class="wide"><dt>Rol</dt><dd>La base la construyó mi pareja. Yo hice la reorganización, el rediseño y las ilustraciones, y construí con IA la sección de Viajes.</dd></div>
+        <div class="wide"><dt>Mis cambios</dt><dd>Rediseño, ilustraciones, estados vacíos, sección Viajes, PWA, accesibilidad y menú móvil</dd></div>
+        <div><dt>Plataforma</dt><dd>Web / PWA</dd></div>
+        <div><dt>Periodo</dt><dd>3–4 nov 2026 (mi parte)</dd></div>
+        <div><dt>Estado</dt><dd>Uso privado en pareja</dd></div>
+        <div><dt>Herramientas</dt><dd>Claude Code (Viajes), ChatGPT (ilustración)</dd></div>
+      </dl>
+    </div>
+    <figure class="mock hero-mock" style="--mw:290px">
+      <div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/futari-app-1.jpg" alt="Inicio de Futari: saludo, selector de mes con el botón Cerrar mes, total ahorrado de 12.460,80 euros, el reparto entre Sora, Mika y el bote común y dos conejitos abrazando una hucha" width="600" height="1208"></div></div>
+      <figcaption>Inicio · datos ficticios</figcaption>
+    </figure>
+  </div>
+</header>
+
+<section class="sec" id="reto" aria-labelledby="h-reto">
+  <div class="wrap">
+    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 1</span>Contexto y reto</p><h2 class="display" id="h-reto">Muchas funciones, ninguna jerarquía</h2></div>
+    <div class="prose">
+      <p>Mi pareja y yo llevábamos nuestras cuentas y ahorros en Notion, y actualizarlo era muy manual. Queríamos algo más visual e interactivo, así que mi pareja construyó la base de Futari. Yo me encargué de reorganizar cómo funciona, de rediseñarla, de ilustrarla y de construir con IA la sección de Viajes.</p>
+      <p>Cuando llegué, la app ya hacía mucho: patrimonio, cuentas, aportaciones, fondo común, huchas, gastos fijos y acumulativos, objetivos, simulador, historial y evolución. Pero todo estaba repartido sin un orden claro de importancia.</p>
+    </div>
+    <div class="big-q"><p>¿Cómo convertir un conjunto de herramientas financieras en una experiencia unificada, comprensible y pensada para dos?</p><small>La pregunta de diseño</small></div>
+  </div>
+</section>
+
+<section class="sec" id="viajes" aria-labelledby="h-viajes">
+  <div class="wrap">
+    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 2</span>Lo que añadí</p><h2 class="display" id="h-viajes">Viajes, de principio a fin</h2></div>
+    <div class="split">
+      <div>
+        <div class="prose"><p>Es la parte de Futari que diseñé y construí con IA: una sección entera para planificar un viaje en pareja sin salir de la app, del primer presupuesto a los gastos reales. Los viajes están en euros y los pasados quedan guardados en la barra lateral.</p></div>
+        <ul class="feat">
+          <li><b>Presupuesto por partidas</b><span>Vuelos, alojamiento, transporte… Cada partida tiene su estimado, lo pagado y la diferencia.</span></li>
+          <li><b>Diario del viaje</b><span>Un sitio para anotar qué pasó, junto al dinero.</span></li>
+          <li><b>Registro de gastos</b><span>Lo que se gasta durante el viaje se apunta en el propio viaje.</span></li>
+          <li><b>Dinero que sale de una hucha</b><span>Cada viaje puede financiarse con dinero de una hucha, sin hacer cuentas aparte.</span></li>
+        </ul>
+        <dl class="calc" aria-label="Cómo se calcula una partida">
+          <div><dt>Estimado</dt><dd>Lo que pensamos gastar</dd></div>
+          <div><dt>Pagado</dt><dd>Lo que ya hemos pagado</dd></div>
+          <div><dt>Diferencia</dt><dd>Lo que queda, en euros y en %</dd></div>
+        </dl>
+        <p class="note">La construí con IA y la fui probando yo, desde el presupuesto hasta el registro de gastos y la financiación con una hucha.</p>
+      </div>
+      <figure class="mock" style="--mw:250px"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/futari-app-3.jpg" alt="Partidas de un viaje: tarjetas de Vuelos, Alojamiento y Transporte con su estimado, pagado propio y diferencia, y una etiqueta que indica si está dentro del estimado" width="600" height="1208" loading="lazy"></div></div><figcaption>Partidas de un viaje</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="identidad" aria-labelledby="h-identidad">
+  <div class="wrap">
+    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 3</span>Identidad e ilustración</p><h2 class="display" id="h-identidad">Finanzas en pareja que no parecen una hoja de cálculo</h2></div>
+    <div class="prose">
+      <p>Quería una identidad cálida, ligeramente japonesa y precisa. «Futari» significa «dos personas» en japonés, y la mascota nació de un viaje a Japón.</p>
+      <p>Buscaba algo que evocara el dinero, como un gato de la suerte. Pasamos por un templo con conejitos de la abundancia y nos compramos las figuritas. Las convertí en la mascota, como recuerdo de ese viaje.</p>
+    </div>
+    <ul class="bunnies" aria-label="Ilustraciones de los conejitos">
+      <li><figure><div class="tile"><img src="img/cs-futari-mascota-principal.png" alt="Los dos conejitos, uno crema y otro color cacao, abrazados con los ojos cerrados y un lazo rojo entre ambos" width="300" height="274" loading="lazy"></div><figcaption><b>La pareja</b>La mascota principal.</figcaption></figure></li>
+      <li><figure><div class="tile"><img src="img/cs-futari-vacio-huchas.webp" alt="Los dos conejitos abrazan juntos una hucha rosa con forma de cerdito" width="480" height="394" loading="lazy"></div><figcaption><b>Estado vacío</b>Aún no hay huchas: invita a crear la primera.</figcaption></figure></li>
+      <li><figure><div class="tile"><img src="img/cs-futari-celebracion-trofeo.webp" alt="Los dos conejitos sostienen riendo un trofeo dorado con una estrella, entre confeti" width="480" height="367" loading="lazy"></div><figcaption><b>Logro</b>Un objetivo cumplido se celebra.</figcaption></figure></li>
+      <li><figure><div class="tile"><img src="img/cs-futari-error-conexion.webp" alt="Un conejito preocupado ante un portátil, con una nube gris y el icono de wifi tachado" width="480" height="460" loading="lazy"></div><figcaption><b>Sin conexión</b>El error se explica con calma.</figcaption></figure></li>
+      <li><figure><div class="tile"><img src="img/cs-futari-cargando.webp" alt="Un conejito duerme arropado con una manta de cuadros, con un libro y una taza de café" width="480" height="364" loading="lazy"></div><figcaption><b>Carga</b>Esperar también puede ser agradable.</figcaption></figure></li>
+      <li><figure><div class="tile"><img src="img/cs-futari-conejitos-durmiendo.webp" alt="Los dos conejitos durmiendo juntos, acurrucados entre destellos" width="768" height="512" loading="lazy"></div><figcaption><b>Escena completa</b>Los conejitos, a pantalla completa en los momentos tranquilos.</figcaption></figure></li>
+    </ul>
+    <ul class="rules-ill" aria-label="Reglas de la ilustración">
+      <li>Contorno cacao</li><li>Formas redondeadas</li><li>Estética sticker</li><li>Transparencia real</li><li>Acompañan, nunca sustituyen la información</li>
+    </ul>
+    <p class="note" style="margin-top:20px">Las ilustraciones las generé y refiné con ChatGPT bajo estas reglas; la dirección la puse yo.</p>
+  </div>
+</section>
+
+
+</main>
+
+<div class="contact-wrap">
+  <section class="contact" id="contacto" aria-labelledby="h-contacto">
+    <div class="wrap">
+      <h2 class="display" id="h-contacto">¿Hablamos?</h2>
+      <p class="lede">Si te interesa cómo detecto problemas, documento decisiones y cuido los detalles, me encantará contártelo.</p>
+      <div class="contact-cta">
+        <a class="btn" href="mailto:ffernandezalba@gmail.com">Escríbeme un email</a>
+        <a class="btn alt" href="https://www.linkedin.com/in/albaff/" target="_blank" rel="noopener">LinkedIn →<span class="sr-only">, se abre en otra pestaña</span></a>
+        <a class="btn alt" href="index.html#futari">← Volver al portfolio</a>
+      </div>
+    </div>
+  </section>
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <div class="foot-top">
+        <a class="foot-mark" href="index.html" aria-label="Alba Fernández, volver al portfolio"><svg viewBox="0 0 72 52" aria-hidden="true" focusable="false"><use href="#af-mark"/></svg></a>
+        <nav class="foot-links" aria-label="Contacto">
+          <a href="mailto:ffernandezalba@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/albaff/" target="_blank" rel="noopener">LinkedIn<span class="sr-only">, se abre en otra pestaña</span></a>
+          <a href="index.html">Portfolio</a>
+        </nav>
+      </div>
+      <p class="sig">GIJÓN (ASTURIAS) · REMOTO 100%</p>
+      <p class="foot-small">© <span id="year">2026</span> Alba Fernández · Diseñada por mí y construida con IA.</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var tbtn=document.getElementById('theme-toggle'), tmq=window.matchMedia('(prefers-color-scheme: dark)');
+  function isDark(){var t=root.getAttribute('data-theme');return t?t==='dark':tmq.matches;}
+  function syncTheme(){if(!tbtn)return;var d=isDark();tbtn.setAttribute('aria-label',d?'Cambiar a modo claro':'Cambiar a modo oscuro');tbtn.setAttribute('data-dark',String(d));}
+  if(tbtn){
+    tbtn.addEventListener('click',function(){
+      var n=isDark()?'light':'dark'; root.setAttribute('data-theme',n);
+      try{localStorage.setItem('theme',n);}catch(e){}
+      syncTheme();
+    });
+    (tmq.addEventListener?tmq.addEventListener('change',syncTheme):tmq.addListener(syncTheme));
+    syncTheme();
+  }
+  var yr=document.getElementById('year'); if(yr) yr.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

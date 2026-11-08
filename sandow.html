@@ -77,7 +77,7 @@ main:focus{outline:none}
 .theme-btn:hover{border-color:var(--text)}
 .theme-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5}
 .theme-btn svg path{fill:currentColor;stroke:none}
-.theme-btn[aria-pressed="true"] svg{transform:scaleX(-1)}
+.theme-btn[data-dark="true"] svg{transform:scaleX(-1)}
 
 /* Botones */
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:var(--r-sm);font:500 .95rem var(--font-body);text-decoration:none;border:1px solid var(--text);transition:background-color .25s,color .25s,transform .25s var(--ease)}
@@ -344,7 +344,7 @@ main:focus{outline:none}
 <nav class="top" aria-label="Principal"><div class="wrap">
   <a class="brand" href="index.html" aria-label="Alba Fernández, inicio"><svg viewBox="0 0 72 52" aria-hidden="true" focusable="false"><use href="#af-mark"/></svg><span>Alba Fernández</span></a>
   <a class="back" href="index.html#sandow">← Volver al portfolio</a>
-  <button class="theme-btn" id="theme-toggle" type="button" aria-label="Modo oscuro" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z"/></svg></button>
+  <button class="theme-btn" id="theme-toggle" type="button" aria-label="Cambiar a modo oscuro" data-dark="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z"/></svg></button>
 </div></nav>
 
 <main id="contenido" tabindex="-1">
@@ -356,11 +356,11 @@ main:focus{outline:none}
       <h1>Sandow</h1>
       <p class="tagline">Hice que el progreso se cuente sin juzgar: qué cambia de verdad y qué es solo ruido.</p>
       <dl class="ficha">
-        <div class="wide"><dt>Rol</dt><dd>Idea, producto, UX/UI, marca y desarrollo con IA</dd></div>
+        <div class="wide"><dt>Rol</dt><dd>Idea, producto, UX/UI, marca y construcción con IA</dd></div>
         <div><dt>Plataforma</dt><dd>Android</dd></div>
         <div><dt>Periodo</dt><dd>oct – nov 2026</dd></div>
         <div><dt>Estado</dt><dd>Uso privado · solo Android · sin Play Store (de momento es nuestra)</dd></div>
-        <div><dt>Herramientas</dt><dd>Expo / React Native, SQLite, Health Connect, Claude Code</dd></div>
+        <div><dt>Herramientas</dt><dd>Claude Code, ChatGPT (imagen y logos)</dd></div>
       </dl>
     </div>
     <figure class="mock hero-mock" style="--mw:290px">
@@ -386,138 +386,20 @@ main:focus{outline:none}
   </div>
 </section>
 
-<section class="sec alt" id="necesidades" aria-labelledby="h-necesidades">
+
+<section class="sec" id="a-mi-medida" aria-labelledby="h-medida">
   <div class="wrap">
-    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 2</span>Lo que necesitábamos</p><h2 class="display" id="h-necesidades">Cuatro cosas concretas</h2></div>
-    <ol class="needs">
-      <li><b>Del PDF a la cocina</b><p>Importar el menú del entrenador y convertirlo en menú del día, lista de la compra y avisos.</p></li>
-      <li><b>Una compra de fiar</b><p>Que la lista no invente cantidades que el menú no puede garantizar.</p></li>
-      <li><b>Progreso sin juicio</b><p>Peso, medidas y fotos comparadas mes a mes, distinguiendo cambio real de ruido.</p></li>
-      <li><b>Cada perfil, lo suyo, y en privado</b><p>Que cada persona vea solo lo que sigue y que los datos no salgan del móvil.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section class="sec" id="decisiones" aria-labelledby="h-decisiones">
-  <div class="wrap">
-    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 3</span>Decisiones clave</p><h2 class="display" id="h-decisiones">Seis decisiones, con su fecha y su porqué</h2></div>
-    <div class="prose" style="margin-bottom:clamp(20px,3vw,32px)"><p>El registro de la app recoge 103 decisiones. Estas seis son las que mejor cuentan cómo pienso.</p></div>
-
-    <article class="dec">
-      <div class="dec-body">
-        <p class="dec-meta"><b>01</b><time datetime="2026-10-16">16 oct 2026</time><span>Progreso</span></p>
-        <h3>Los cambios, en color neutro</h3>
-        <p>Los cambios del cuerpo no van en verde ni en rojo. Se muestran en un color neutro, con su signo (+, − o ±0). Subir o bajar no es bueno o malo: depende del objetivo de cada persona, y la app no tiene por qué opinar.</p>
-        <div class="decision"><h4>Por qué</h4><p>El sistema de diseño pide que <q>no se juzgan como buenos o malos</q> los cambios físicos. Lo escribí como regla para que la IA no lo rompa.</p></div>
-      </div>
-      <figure class="mock sm"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-3.jpg" alt="Pantalla Progreso: «Tu fase», con cambios de masa grasa y masa magra en color neutro" width="412" height="890" loading="lazy"></div></div><figcaption>Progreso: sin verde ni rojo</figcaption></figure>
-    </article>
-
-    <article class="dec">
-      <div class="dec-body">
-        <p class="dec-meta"><b>02</b><time datetime="2026-10-16">16 oct 2026</time><span>Comparar medidas</span></p>
-        <h3>Ruido de medida = «sin cambio relevante»</h3>
-        <p>Una cinta métrica no mide igual dos días seguidos. Si la diferencia es menor que el error normal, la app lo dice tal cual, en vez de presentarlo como avance o retroceso. Con la misma idea, la gráfica no une puntos separados por más de 35 días (24 oct) y la tendencia prevista solo aparece con 4 registros en 3 semanas (21 oct).</p>
-        <div class="decision"><h4>Por qué</h4><p>Para <q>evitar leer ruido como progreso o retroceso</q>. Prefiero que la app diga menos a que prometa más de lo que se midió.</p></div>
-      </div>
-      <figure class="mock sm"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-medidas.jpg" alt="Comparar medidas: resumen de lo que sube, lo que baja y lo que tiene «sin cambio relevante», con su explicación" width="412" height="890" loading="lazy"></div></div><figcaption>Comparar: lo que cambia y lo que no</figcaption></figure>
-    </article>
-
-    <article class="dec">
-      <div class="dec-body">
-        <p class="dec-meta"><b>03</b><time datetime="2026-10-17">17 oct 2026</time><span>Lista de la compra</span></p>
-        <h3>«Al menos» en vez de inventar cantidades</h3>
-        <p>Primero decidí que la lista exacta solo salía con la semana completa elegida: <q>cantidades fiables o ninguna</q>. Ese mismo día la sustituí por «al menos»: lo que es común a todas las opciones de una comida sin elegir, con la cantidad menor. Después añadí comidas «Por defecto» para que la lista siempre llevara cantidades, marcadas como «aprox.».</p>
-        <div class="decision"><h4>Por qué</h4><p>Saber el mínimo aunque no se haya elegido todo, sin inventar un dato que el menú no da. En la misma línea, decidí no calcular macros por opción: el PDF solo da objetivos diarios (16 oct).</p></div>
-      </div>
-      <figure class="mock sm"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-compra.jpg" alt="Lista de la compra con cantidades aproximadas por alimento y la aclaración de qué comidas incluye" width="412" height="890" loading="lazy"></div></div><figcaption>Compra con «aprox.»</figcaption></figure>
-    </article>
-
-    <article class="dec">
-      <div class="dec-body">
-        <p class="dec-meta"><b>04</b><time datetime="2026-10-16">16 oct 2026</time><span>Privacidad</span></p>
-        <h3>Datos solo en el móvil, copia en un archivo</h3>
-        <p>No hay servidor ni cuentas. Las copias de seguridad son un archivo .zip que cada persona guarda donde quiera. El precio es que la app tiene que ayudar a no olvidarse: el 17 de octubre añadí un aviso de copia desde la bienvenida a los 30 días.</p>
-        <div class="decision"><h4>Por qué</h4><p><q>Sin servidor ni cuentas: privacidad y simplicidad.</q> Son datos de cuerpo y fotos, y viven solo en el móvil.</p></div>
-      </div>
-      <figure class="mock sm"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/cs-sandow-perfiles.jpg" alt="Pantalla Perfiles con un perfil Demo activo y un formulario cuyo texto aclara que año y sexo no salen del móvil" width="412" height="890" loading="lazy"></div></div><figcaption>Perfiles: «no salen del móvil»</figcaption></figure>
-    </article>
-
-    <article class="dec">
-      <div class="dec-body">
-        <p class="dec-meta"><b>05</b><time datetime="2026-10-17">17 oct 2026</time><span>Tono y mascota</span></p>
-        <h3>«No es una app de gimnasio»</h3>
-        <p>Ni mancuernas, ni bíceps, ni llamas. Sandow tiene un gato de mascota, bienvenida diaria en tono friki y juguetón, logros y rachas. Pero la mascota acompaña solo donde no estorba: nunca en las tarjetas del Menú, los registros ni los ajustes de uso diario.</p>
-        <div class="decision"><h4>Por qué</h4><p>Porque <q>las pantallas de uso diario deben seguir limpias</q> y AAA. El juego vive en los momentos de celebrar, no en los de apuntar.</p></div>
-      </div>
-      <figure class="mock sm"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/cs-sandow-menu.jpg" alt="Menú del día con un banner del gato que dice «Falta 1 comida»; las tarjetas de las comidas quedan sin mascota" width="412" height="890" loading="lazy"></div></div><figcaption>Un aviso con gato; las comidas, limpias</figcaption></figure>
-    </article>
-
-    <article class="dec">
-      <div class="dec-body">
-        <p class="dec-meta"><b>06</b><time datetime="2026-11-03">3 nov 2026</time><span>Perfiles</span></p>
-        <h3>Cada perfil, su camino</h3>
-        <p>Cada persona elige al crear su perfil qué sigue: menú, cinta, fotos o entrenos. El peso siempre. Lo que no se sigue se oculta, no se borra. Sin plan nutricional, por ejemplo, desaparece la pestaña Menú y la app abre en Progreso. Y los perfiles anteriores a esta versión conservan todo activo, para que a nadie le desaparezca nada al actualizar.</p>
-        <div class="decision"><h4>Por qué</h4><p>Cada persona sigue su objetivo de una forma distinta y <q>la app no debe enseñar lo que no usa</q>.</p></div>
-      </div>
-      <div class="dec-card" role="group" aria-label="Esquema de módulos por perfil">
-        <h4>Qué sigo</h4>
-        <div class="chips"><span class="role">Peso · siempre</span><span>Menú</span><span>Cinta</span><span>Fotos</span><span>Entrenos</span></div>
-        <p>Cada perfil activa los suyos. Ocultan, no borran.</p>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="sec alt" id="a-mi-medida" aria-labelledby="h-medida">
-  <div class="wrap">
-    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 4</span>Hecha a mi medida</p><h2 class="display" id="h-medida">Lo que no existía, lo hice yo</h2></div>
-
-    <article class="dec">
-      <div class="dec-body">
-        <p class="dec-meta"><b>A</b><time datetime="2026-10-24">24 oct – 4 nov 2026</time><span>La báscula</span></p>
-        <h3>Todos los datos, en un solo sitio</h3>
-        <p>Antes miraba el peso en la app de la báscula. Pero en mi seguimiento me pedían datos que la báscula no guardaba, y los acababa apuntando de cualquier manera en una nota de Google Keep.</p>
-        <div class="quote"><p>La báscula da muchos datos que están muy guays y quería tenerlo todo bien registrado.</p><small>Alba · por qué</small></div>
-        <ul class="dated">
-          <li><time datetime="2026-10-24">24 oct · 1.8.0</time><span>Health Connect para la báscula Renpho y los entrenos.</span></li>
-          <li><time datetime="2026-10-24">24 oct</time><span>API de Hevy para series, récords y volumen semanal.</span></li>
-          <li><time datetime="2026-11-03">3 nov · 1.10.0</time><span>Importar desde Google Keep, para recuperar la nota de siempre.</span></li>
-          <li><time datetime="2026-11-04">4 nov · 1.13.0</time><span>Importar el CSV de Renpho, con cinco datos nuevos de la báscula.</span></li>
-          <li><time>Siempre</time><span>Aviso «La báscula lleva N días sin llegar» si no llegan datos.</span></li>
-        </ul>
-      </div>
-      <div class="dec-card" role="group" aria-label="Fuentes de datos de Sandow">
-        <h4>De dónde llegan</h4>
-        <div class="chips"><span class="role">Health Connect</span><span>Renpho (CSV)</span><span>Hevy</span><span>Google Keep</span></div>
-        <p>Todo acaba en el mismo registro.</p>
-      </div>
-    </article>
-
-    <article class="dec">
-      <div class="dec-body">
-        <p class="dec-meta"><b>B</b><time datetime="2026-10-24">24 oct – 3 nov 2026</time><span>Informe para el entrenador</span></p>
-        <h3>Un botón para mandar el mes</h3>
-        <p>Yo no tengo entrenador: lo hice para mi pareja, que sí. Cada mes tiene que mandarle cuatro fotos (frente, espalda y los dos perfiles) y sus medidas. Quise recogerlo todo en la app, darle más datos, por ejemplo si el menú le está funcionando, y un botón muy sencillo para compartirle los resultados cada mes.</p>
-        <div class="quote"><p>Un botón muy sencillo para compartirle los resultados cada mes.</p><small>Alba · por qué</small></div>
-        <ul class="dated">
-          <li><time datetime="2026-10-24">24 oct</time><span>Informe de la dieta para el entrenador.</span></li>
-          <li><time datetime="2026-11-03">3 nov</time><span>Informe con medidas inicial y final, y fotos.</span></li>
-          <li><time>Después</time><span>Informe más corto y un solo modo de compartir, con fotos.</span></li>
-        </ul>
-      </div>
-      <div class="dec-card" role="group" aria-label="Contenido del informe mensual">
-        <h4>Cada mes</h4>
-        <div class="chips"><span class="role">Medidas</span><span>Frente</span><span>Espalda</span><span>Perfil</span><span>Perfil</span></div>
-        <p>Cuatro fotos y las medidas, en un solo envío.</p>
-      </div>
-    </article>
+    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 2</span>Hecha a mi medida</p><h2 class="display" id="h-medida">Lo que no existía, lo hice yo</h2></div>
+    <div class="dec-body">
+      <p>Antes miraba el peso en la app de la báscula, pero los datos que me pedían no estaban allí y los apuntaba en una nota de Google Keep. Así que conecté la báscula (Renpho), los entrenos (Hevy) y la nota antigua, y todo acaba en un mismo registro.</p>
+      <p>Para mi pareja, que tiene entrenador, añadí un informe mensual con cuatro fotos y las medidas, en un solo envío.</p>
+    </div>
   </div>
 </section>
 
 <section class="sec" id="menos-datos" aria-labelledby="h-menos">
   <div class="wrap">
-    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 5</span>Menos datos, más claros</p><h2 class="display" id="h-menos">Lo que más le pido a la IA es quitar</h2></div>
+    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 3</span>Menos datos, más claros</p><h2 class="display" id="h-menos">Lo que más le pido a la IA es quitar</h2></div>
     <div class="prose" style="margin-bottom:clamp(28px,4vw,48px)">
       <p>Al principio intentaba mostrar el máximo de información posible, y al final no aportaba nada y metía más ruido. Ahora lo que más le pido a la IA es rehacer quitando: que no haya demasiados datos, que se entienda, que no sea redundante, que sea muy usable y sencillo.</p>
     </div>
@@ -528,40 +410,16 @@ main:focus{outline:none}
     <p class="lab" style="text-align:center;margin-top:18px">Capturas con datos de demostración</p>
   </div>
 </section>
-
 <section class="sec alt" id="identidad" aria-labelledby="h-identidad">
   <div class="wrap">
-    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 6</span>Identidad</p><h2 class="display" id="h-identidad">De una letra a un personaje</h2></div>
-
-    <article class="idn solo">
-      <div>
-        <h3>El territorio</h3>
-        <p>Quería que Sandow se sintiera tecnológica, que hablara de transformación y que tuviera fuerza y carácter. Y que no pareciera una app de dietas ni cayera en los tópicos del fitness: pesas, bíceps, siluetas.</p>
-      </div>
-    </article>
-
+    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 4</span>Identidad</p><h2 class="display" id="h-identidad">De una letra a un personaje</h2></div>
     <article class="idn">
       <div>
-        <h3>Primero, una S</h3>
-        <p>Dibujé una S geométrica, como una cinta tridimensional que se pliega y cambia de dirección. Era mi forma de hablar de transformación continua y de progreso acumulativo.</p>
-        <p>Pedí una cosa: que se reconociera a 24 × 24 px.</p>
+        <h3>Un gato, no una S</h3>
+        <p>Empecé con una S metálica, pero una letra no acompañaba. Propuse un felino robótico, tecnológico pero cercano, para que seguir tu cuerpo fuera menos frío. Sin fitness de pesas ni siluetas.</p>
       </div>
-      <figure class="idn-fig"><img src="img/cs-sandow-antes-icono.png" alt="Icono antiguo de Sandow: una «S» metálica en forma de cinta plegada, con reflejos turquesa sobre fondo oscuro" width="240" height="240" loading="lazy"><figcaption>Antes · la «S» metálica</figcaption></figure>
+      <figure class="idn-fig"><img src="img/cs-sandow-icono-gato.png" alt="Icono actual de Sandow: un gato negro robótico con casco blanco y cobre, ojos ámbar y cola turquesa, en una baldosa oscura con borde turquesa" width="360" height="360" loading="lazy"><figcaption>El icono · el gato</figcaption></figure>
     </article>
-
-    <article class="idn">
-      <div>
-        <h3>Después, un personaje</h3>
-        <p>Me di cuenta de que una letra no acompañaba. Propuse una mascota que fuera el identificador: un felino robótico, tecnológico pero cercano, para que seguir tu cuerpo fuera menos frío.</p>
-        <ul class="traits" aria-label="Rasgos del personaje">
-          <li>Compacto</li><li>Cabeza grande</li><li>Ojos ámbar</li><li>Casco y armadura blancos</li><li>Detalles de cobre</li><li>Cola turquesa de energía</li>
-        </ul>
-        <div class="quote"><p>Probé también a fusionar la S con el gato; en la app me quedé con el gato solo.</p></div>
-        <p style="margin-top:1em">Solo se recorta y se escala, nunca se redibuja. Y no tiene icono monocromo de Android porque el gato no tiene una silueta limpia que se pueda tintar.</p>
-      </div>
-      <figure class="idn-fig"><img src="img/cs-sandow-icono-gato.png" alt="Icono actual de Sandow: un gato negro robótico con casco blanco y cobre, ojos ámbar y cola turquesa, en una baldosa oscura con borde turquesa" width="360" height="360" loading="lazy"><figcaption>Ahora · el gato</figcaption></figure>
-    </article>
-
     <div class="poses">
       <h3>Un personaje para cada momento</h3>
       <p>El gato no es solo el icono: cambia de pose según lo que pasa en la app. Estas son ocho de las que ya la acompañan.</p>
@@ -576,152 +434,27 @@ main:focus{outline:none}
         <li><div class="img"><img src="img/cs-sandow-mascota-logro.webp" alt="El gato levanta un trofeo de cobre con los ojos cerrados de alegría, entre chispas doradas y turquesas" width="600" height="567" loading="lazy"></div><span>Logro</span></li>
       </ul>
     </div>
-
-    <div class="idn-how">
-      <p class="lab">Cómo trabajé la identidad</p>
-      <p>Las imágenes las generé y refiné con ChatGPT, sin quedarme con la primera propuesta. La dirección la puse yo: el territorio, los criterios y qué se descarta. Es la idea de siempre: <a href="index.html#ia-t">la IA no sustituye el oficio</a>.</p>
-    </div>
   </div>
 </section>
 
-<section class="sec" id="sistema" aria-labelledby="h-sistema">
-  <div class="wrap">
-    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 7</span>El sistema</p><h2 class="display" id="h-sistema">Un sistema con el contraste medido</h2></div>
-    <div class="sys">
-      <div>
-        <div class="sys-block">
-          <h3>Paleta y contraste</h3>
-          <ul class="palette" aria-label="Paleta de la app">
-            <li><i style="background:#0B1014"></i><b>obsidian</b>#0B1014</li>
-            <li><i style="background:#151E24"></i><b>graphite</b>#151E24</li>
-            <li><i style="background:#27D6CC"></i><b>electricTeal</b>#27D6CC</li>
-            <li><i style="background:#A7F3EB"></i><b>iceMint</b>#A7F3EB</li>
-            <li><i style="background:#B85C38"></i><b>cobre</b>#B85C38</li>
-          </ul>
-          <ul class="pairs" aria-label="Contrastes medidos">
-            <li class="pair"><div class="smp" style="background:#0B1014;color:#F2F5F6" aria-hidden="true">Aa</div><div class="cap"><b>17,5:1</b>iceWhite sobre obsidian</div></li>
-            <li class="pair"><div class="smp" style="background:#0B1014;color:#A8B3BA" aria-hidden="true">Aa</div><div class="cap"><b>8,9:1</b>Texto secundario #A8B3BA sobre obsidian</div></li>
-            <li class="pair"><div class="smp" style="background:#0B1014;color:#27D6CC" aria-hidden="true">Aa</div><div class="cap"><b>10,5:1</b>electricTeal sobre obsidian</div></li>
-            <li class="pair"><div class="smp" style="background:#27D6CC;color:#0B1014" aria-hidden="true">Aa</div><div class="cap"><b>10,5:1</b>Texto obsidian sobre botón turquesa</div></li>
-            <li class="pair"><div class="smp" style="background:#151E24;color:#E89B78" aria-hidden="true">Aa</div><div class="cap"><b>7,5:1</b>Texto cobre #E89B78 sobre graphite</div></li>
-            <li class="pair no"><div class="smp" style="background:#27D6CC;color:#FFFFFF" aria-hidden="true">Aa</div><div class="cap"><b>1,8:1</b>Blanco sobre electricTeal<span class="tagno">Prohibido</span></div></li>
-          </ul>
-        </div>
-        <div class="sys-block">
-          <h3>Accesibilidad AAA</h3>
-          <ul class="checks">
-            <li><b>Texto a 7:1 o más.</b> Escribí una regla: contraste AAA en texto y bordes de controles a 3:1 como mínimo.</li>
-            <li><b>Áreas táctiles de 48 dp</b> en botones, chips y botones de icono.</li>
-            <li><b>Etiquetas para TalkBack,</b> y la mascota siempre decorativa: el texto de al lado lleva el significado.</li>
-            <li><b>Nunca solo color:</b> el perfil activo lleva texto, y la foto elegida, borde y la palabra «Después».</li>
-            <li><b>Una decisión concreta (16 oct):</b> el texto secundario es #A8B3BA y no el gris acero, porque el gris solo llega a AA y el objetivo es AAA.</li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <div class="sys-block">
-          <h3>Tipografía y tono</h3>
-          <p class="prose" style="color:var(--text-2);font-size:1rem">Cifras grandes con su unidad y en cifras tabulares. Los banners llevan un título de unos 15 caracteres en negrita (17 px) y una línea de apoyo (13,5 px). El tono es friki y juguetón, con vocabulario de partida (logros, combos, niveles, misiones) y sin adjetivos con género.</p>
-          <table class="tone">
-            <caption class="sr-only">Ejemplos de títulos de banner y su longitud</caption>
-            <thead><tr><th scope="col">Texto de la app</th><th scope="col">Caracteres</th></tr></thead>
-            <tbody>
-              <tr><td>«¡Hito nuevo!»</td><td>12</td></tr>
-              <tr><td>«Falta 1 comida»</td><td>14</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="sys-block">
-          <h3>La mascota</h3>
-          <div class="mascot-row">
-            <img src="img/sandow-logo.png" alt="Icono de Sandow: el gato de la mascota, con sudadera blanca y auriculares turquesa" width="160" height="160" loading="lazy">
-            <p style="color:var(--text-2);font-size:1rem">Un gato con sudadera. Acompaña en la bienvenida, los estados vacíos, el bloqueo, la compra, los logros y los avisos. El 3 nov 2026 sustituí el icono de la «S» metálica por el gato; sin icono monocromo, porque el gato no tiene una silueta limpia que tintar.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="sys-shots" style="margin-top:clamp(36px,5vw,60px)">
-      <figure class="mock"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-1.jpg" alt="Bienvenida diaria: el gato con un banner «¡Hito nuevo!» sobre un fondo oscuro con destellos turquesa y cobre" width="412" height="915" loading="lazy"></div></div><figcaption>Bienvenida con banner</figcaption></figure>
-      <figure class="mock"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-4.jpg" alt="Vitrina de logros con nivel, insignias conseguidas y bloqueadas, y acentos en cobre" width="412" height="890" loading="lazy"></div></div><figcaption>Vitrina de logros</figcaption></figure>
-    </div>
-    <p class="lab" style="text-align:center;margin-top:18px">Capturas con datos de demostración</p>
-  </div>
-</section>
 
-<section class="sec alt" id="evolucion" aria-labelledby="h-evolucion">
-  <div class="wrap">
-    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 8</span>Cómo evolucionó</p><h2 class="display" id="h-evolucion">Tres semanas, de un comparador a un menú</h2></div>
-    <div class="path">
-      <ol class="timeline">
-        <li><time datetime="2026-10-16">16 oct 2026</time><b>Fase 1: perfiles, medidas y comparador</b><span>Perfiles, medidas, cámara con silueta guía y comparador de fotos. Ese día quedó también la marca, con el objetivo de accesibilidad AAA.</span></li>
-        <li><time datetime="2026-10-16">16 oct 2026 · 1.4.0</time><b>El menú del entrenador</b><span>Importar el PDF y convertirlo en menú. Es lo que más se usa.</span></li>
-        <li><time datetime="2026-10-17">17 oct 2026 · 1.5.0</time><b>El menú, en el centro; la compra</b><span>El Menú pasa a ser la pantalla de inicio y aparece la lista de la compra con «al menos».</span></li>
-        <li><time datetime="2026-10-17">17 oct 2026 · 1.6.0</time><b>Llega la mascota y los logros</b><span>El gato en la bienvenida y la Vitrina de logros, con 11 insignias y 7 niveles.</span></li>
-        <li><time datetime="2026-10-21">21 oct 2026 · 1.7.0</time><b>Progreso que explica</b><span>El cambio de cada medida por tramo de dieta y «Tu fase», para responder si lo que cambia es grasa o músculo.</span></li>
-        <li class="now"><time datetime="2026-11-03">3 nov 2026 · 1.10.0</time><b>Cada perfil, su camino</b><span>Módulos por perfil y el icono de la app pasa a ser el gato.</span></li>
-      </ol>
-      <div class="aside-note">
-        <p class="lab">Qué me enseñó el uso</p>
-        <p>Varias decisiones vienen de usar la app, no de planificarla. El 17 de octubre hice un «repaso como usuario»: el Menú era demasiado largo y lo más motivador, la trayectoria, estaba escondido en Ajustes. La pasé a Progreso.</p>
-        <p>En total, 15 versiones en 3 semanas, hasta la v1.15.0.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="sec" id="metodo" aria-labelledby="h-metodo">
-  <div class="wrap">
-    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 9</span>Método</p><h2 class="display" id="h-metodo">Cómo documento, y cómo dirijo a la IA</h2></div>
-    <div class="prose" style="margin-bottom:clamp(24px,3vw,36px)"><p><strong>Soy un poco mandona, y con la IA eso es una virtud: sé exactamente qué quiero, por qué y cuándo está bien.</strong> Yo pruebo la app y valido el resultado. Cada decisión se anota con su fecha y su motivo, la más reciente arriba. Así no depende de mi memoria ni de la de la IA. Esto es un extracto real del registro.</p></div>
-    <div class="method">
-      <table class="log">
-        <caption>Extracto de decisiones.md</caption>
-        <thead><tr><th scope="col">Fecha</th><th scope="col">Decisión</th><th scope="col">Motivo</th></tr></thead>
-        <tbody>
-          <tr><td data-label="Fecha">2026-10-24</td><td data-label="Decisión">La línea no cruza huecos de más de 35 días</td><td data-label="Motivo">Unir dos puntos con meses en medio sugiere una tendencia que no se midió</td></tr>
-          <tr><td data-label="Fecha">2026-10-16</td><td data-label="Decisión">Cambios por debajo del error de medida = «sin cambio relevante»</td><td data-label="Motivo">Evitar leer ruido como progreso o retroceso</td></tr>
-          <tr><td data-label="Fecha">2026-10-16</td><td data-label="Decisión">Copia de seguridad en .zip compartido, sin nube</td><td data-label="Motivo">Sin servidor ni cuentas: privacidad y simplicidad</td></tr>
-          <tr><td data-label="Fecha">2026-10-16</td><td data-label="Decisión">Texto secundario #A8B3BA en vez de steelGrey</td><td data-label="Motivo">steelGrey solo llega a AA y el objetivo es AAA</td></tr>
-        </tbody>
-      </table>
-      <div>
-        <p class="lab" style="margin-bottom:12px">Reglas de mi CLAUDE.md</p>
-        <ul class="rules">
-          <li><q>Mantén esta documentación al día en el mismo commit que cualquier cambio de comportamiento, estructura o decisión.</q><small>Documentación</small></li>
-          <li><q>Colores, espaciado y tipografía solo desde src/lib/tokens.ts; nada de HEX sueltos.</q><small>Sistema</small></li>
-          <li><q>No se inventan datos ni tendencias.</q><small>Datos</small></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="sec alt" id="resultado" aria-labelledby="h-resultado">
   <div class="wrap">
-    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 10</span>Resultado</p><h2 class="display" id="h-resultado">Una app que ya se usa</h2></div>
+    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 5</span>Resultado</p><h2 class="display" id="h-resultado">Una app que ya se usa</h2></div>
     <div class="stats">
       <div><b>2</b><span>personas la usan: mi pareja y yo</span></div>
       <div><b>15</b><span>versiones en 3 semanas</span></div>
       <div><b>103</b><span>decisiones documentadas</span></div>
       <div><b>AAA</b><span>objetivo de accesibilidad: texto a 7:1 o más</span></div>
     </div>
-    <div class="chips result-chips"><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Marca</span><span>Expo / React Native</span><span>SQLite</span><span>Health Connect</span><span>Claude Code</span></div>
+    <div class="chips result-chips"><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Marca</span><span>Construida con IA</span></div>
     <div class="prose" style="margin-top:28px"><p><strong>En el día a día:</strong> organizar las comidas es mucho más fácil. Ya no improvisamos sobre la marcha («esto no lo tengo descongelado», «esto no lo tengo»): todo está planificado y ahorramos mucho tiempo.</p></div>
     <p class="prose" style="margin-top:20px;font-size:.95rem;color:var(--text-2)">Uso privado, solo Android y sin Play Store: de momento es nuestra y no quiero anunciarla ni venderla. Los datos viven solo en el móvil y se instala con un archivo .apk.</p>
   </div>
 </section>
 
-<section class="sec" id="aprendizajes" aria-labelledby="h-aprendizajes">
-  <div class="wrap">
-    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 11</span>Aprendizajes</p><h2 class="display" id="h-aprendizajes">Lo que me llevo</h2></div>
-    <ul class="learn">
-      <li><b>Escribir el porqué, ahí mismo</b><p>Cada decisión, con su motivo el día que la tomo.</p></li>
-      <li><b>Usarla cambia el diseño</b><p>Los mejores cambios salieron de usarla cada día.</p></li>
-      <li><b>Decir menos da confianza</b><p>«Sin cambio relevante», «al menos» y «aprox.» enseñan lo que se sabe y lo que no.</p></li>
-      <li><b>Menos datos, más claros</b><p>Al principio quería enseñarlo todo y metía ruido. Quitar mejora más que añadir.</p></li>
-    </ul>
-  </div>
-</section>
 
 </main>
 
@@ -735,7 +468,6 @@ main:focus{outline:none}
         <a class="btn alt" href="https://www.linkedin.com/in/albaff/" target="_blank" rel="noopener">LinkedIn →<span class="sr-only">, se abre en otra pestaña</span></a>
         <a class="btn alt" href="index.html#sandow">← Volver al portfolio</a>
       </div>
-      <p class="contact-mail">O directamente a <a href="mailto:ffernandezalba@gmail.com">ffernandezalba@gmail.com</a></p>
     </div>
   </section>
   <footer class="foot">
@@ -748,8 +480,8 @@ main:focus{outline:none}
           <a href="index.html">Portfolio</a>
         </nav>
       </div>
-      <p class="sig">HECHO A MANO (Y CON IA) · GIJÓN · EN REMOTO</p>
-      <p class="foot-small">© <span id="year">2026</span> Alba Fernández · Diseñada por mí y construida con IA, como todo lo de aquí.</p>
+      <p class="sig">GIJÓN (ASTURIAS) · REMOTO 100%</p>
+      <p class="foot-small">© <span id="year">2026</span> Alba Fernández · Diseñada por mí y construida con IA.</p>
     </div>
   </footer>
 </div>
@@ -759,7 +491,7 @@ main:focus{outline:none}
   var root=document.documentElement;
   var tbtn=document.getElementById('theme-toggle'), tmq=window.matchMedia('(prefers-color-scheme: dark)');
   function isDark(){var t=root.getAttribute('data-theme');return t?t==='dark':tmq.matches;}
-  function syncTheme(){if(tbtn)tbtn.setAttribute('aria-pressed',String(isDark()));}
+  function syncTheme(){if(!tbtn)return;var d=isDark();tbtn.setAttribute('aria-label',d?'Cambiar a modo claro':'Cambiar a modo oscuro');tbtn.setAttribute('data-dark',String(d));}
   if(tbtn){
     tbtn.addEventListener('click',function(){
       var n=isDark()?'light':'dark'; root.setAttribute('data-theme',n);
