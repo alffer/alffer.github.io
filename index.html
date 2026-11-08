@@ -248,6 +248,19 @@ main:focus{outline:none}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .about-art img{background:#F4F3F0;padding:4%}}
 .about-art figcaption{font:400 .72rem/1.5 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:12px}
 
+.proj-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center;margin-bottom:clamp(28px,4vw,48px)}
+.proj-row>*{min-width:0}
+.sec-head h2.proj-h2{font-size:clamp(1.5rem,2.4vw,2.1rem);margin-top:10px;line-height:1.15;max-width:none;color:var(--text-2);letter-spacing:-.02em}
+.proj-shots{display:flex;gap:clamp(10px,1.6vw,20px);justify-content:flex-end;align-items:flex-end}
+.proj-shots .mock{--mw:clamp(120px,15vw,190px);margin:0;flex:1 1 0;width:auto;min-width:0;max-width:var(--mw)}
+.proj-shots .mock:nth-child(2){margin-bottom:28px}
+.proj-shots .mock figcaption{display:none}
+.proj-wide{margin:0}
+.proj-wide img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:var(--r-sm)}
+.proj-row .mine ul{margin-bottom:0}
+.proj-row .case-link{margin:clamp(28px,3.4vw,40px) 0 0}
+.proj-row .mine{margin-top:clamp(24px,3vw,36px)}
+@media (max-width:800px){.proj-row{grid-template-columns:1fr}.proj-shots{justify-content:flex-start}.proj-shots .mock{--mw:clamp(104px,31vw,150px)}}
 .case-link{margin:0 0 28px}
 .chips+.case-link,.decision+.case-link,.fact-line+.case-link{margin-top:28px}
 
@@ -503,7 +516,7 @@ main:focus{outline:none}
   <div class="proj-intro">
     <div class="wrap">
       <div class="sec-head">
-        <div><p class="eyebrow rule"><span class="sec-n">§ 1</span>Proyectos</p><h2 class="display" data-split>Problemas de mi vida, apps a medida</h2></div>
+        <div><p class="eyebrow rule"><span class="sec-n">§ 1</span>Proyectos</p><h2 class="display proj-h2" data-split>Problemas de mi vida, apps a medida</h2></div>
         <p data-reveal>«Las apps genéricas están hechas para todo el mundo. Las mías, para alguien concreto.»</p>
       </div>
     </div>
@@ -512,43 +525,23 @@ main:focus{outline:none}
   <!-- BELLADONNA -->
   <article class="project" id="belladonna">
     <div class="wrap">
-      <div class="p-top">
+      <div class="proj-row">
         <div>
           <p class="p-num" data-reveal>01 / READING &amp; COMMUNITY</p>
           <div class="p-head" data-reveal><img src="img/belladonna-icon.png" alt="" width="160" height="160" loading="lazy"><span class="tag">App móvil · Android y web</span></div>
           <h3 data-split>Belladonna Society</h3>
-          <p class="tagline" data-reveal>Un club de lectura sin spoilers: los comentarios son sellos que rompes cuando decides.</p>
-        </div>
-      </div>
-      <div class="grid solo">
-        <div>
-          <p class="why" data-reveal>Antes, mi club de lectura vivía en un grupo de Telegram, y los comentarios sobre el libro se perdían entre el resto de la charla.</p>
-          <p class="role-line" data-reveal><b>Mi papel</b>Idea, producto, UX/UI y marca. La construí con IA: yo dirijo, pruebo y valido el resultado.</p>
-          <div class="mine">
-            <h4>Decisiones de producto</h4>
+          <p class="tagline" data-reveal>Un club de lectura donde comentar sin destripar el libro: los comentarios son sellos que rompes cuando decides.</p>
+          <div class="mine" data-reveal>
             <ul data-stagger>
-              <li><b>Comentarios anclados a la línea.</b> Cada nota queda en la línea exacta del libro a la que se refiere, y todas las socias reciben una notificación cuando alguien la deja.</li>
-              <li><b>Todo el club en un sitio.</b> Fases o hitos por porcentaje de lectura, debates y votación de la próxima lectura. Lo que compartes solo lo ven las socias del club.</li>
-              <li><b>Sin club, una biblioteca.</b> La web es pública, pero si no estás en un club solo ves los libros que subes tú.</li>
+              <li><b>Comentarios anclados a la línea.</b> Todas las socias reciben una notificación cuando alguien deja una nota.</li>
+              <li><b>Fases o hitos</b> por porcentaje de lectura, con debates y votación de la próxima lectura.</li>
             </ul>
           </div>
-          <div class="decision" data-reveal><h4>La decisión clave · los sellos</h4><p>Llamamos sellos a los spoilers, por el lore de sociedad secreta del club. No quería que las socias tuvieran que acordarse de no hacer spoilers; quería que la app los evitara por ellas. Los comentarios sobre partes que aún no has leído quedan sellados hasta que decides romperlos.</p></div>
-          <p class="fact-line" data-reveal>Desde nov 2026 la usamos las 4 socias del club, y llevamos 23 versiones publicadas.</p>
-          <div class="chips" data-reveal><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Marca</span><span>Construida con IA</span></div>
         </div>
-      </div>
-      <div class="gallery" role="region" data-gallery data-mode="night" data-reveal aria-label="Galería de capturas de Belladonna Society">
-        <div class="gal-bar">
-          <p class="gal-label">Capturas <span class="gal-hint">· se desplazan con ratón, dedo o teclado (Tab y flechas)</span></p>
-          <div class="theme-toggle" role="group" aria-label="Tema de las capturas">
-            <button type="button" data-mode="night" aria-pressed="true">Noche</button>
-            <button type="button" data-mode="day" aria-pressed="false">Día</button>
-          </div>
-        </div>
-        <div class="gal-track" tabindex="0" role="group" aria-label="Capturas de Belladonna: se desplazan con ratón, dedo o teclado">
-          <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot night" src="img/belladonna-app-1.jpg" alt="Inicio de Belladonna: libros en curso (tema oscuro)" width="600" height="1208" loading="lazy"><img class="shot day" aria-hidden="true" src="img/belladonna-app-4.jpg" alt="Inicio de Belladonna: libros en curso (tema claro)" width="600" height="1208" loading="lazy"></div></div><figcaption>Inicio</figcaption></figure>
-          <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot night" src="img/belladonna-app-2.jpg" alt="Club: próximas lecturas y votación (tema oscuro)" width="600" height="1208" loading="lazy"><img class="shot day" aria-hidden="true" src="img/belladonna-app-5.jpg" alt="Club: próximas lecturas y votación (tema claro)" width="600" height="1208" loading="lazy"></div></div><figcaption>Club: próximas lecturas</figcaption></figure>
-          <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot night" src="img/belladonna-app-3.jpg" alt="Ficha de libro: seguir leyendo (tema oscuro)" width="600" height="1208" loading="lazy"><img class="shot day" aria-hidden="true" src="img/belladonna-app-6.jpg" alt="Ficha de libro: seguir leyendo (tema claro)" width="600" height="1208" loading="lazy"></div></div><figcaption>Ficha de libro</figcaption></figure>
+        <div class="proj-shots" data-reveal>
+          <figure class="mock"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/belladonna-app-1.jpg" alt="Inicio de Belladonna: libros en curso" width="600" height="1208" loading="lazy"></div></div></figure>
+          <figure class="mock"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/belladonna-app-2.jpg" alt="Club: próximas lecturas y votación" width="600" height="1208" loading="lazy"></div></div></figure>
+          <figure class="mock"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/belladonna-app-3.jpg" alt="Ficha de libro: seguir leyendo" width="600" height="1208" loading="lazy"></div></div></figure>
         </div>
       </div>
     </div>
@@ -557,132 +550,75 @@ main:focus{outline:none}
   <!-- FUTARI -->
   <article class="project" id="futari">
     <div class="wrap">
-      <div class="p-top">
+      <div class="proj-row">
         <div>
           <p class="p-num" data-reveal>02 / PERSONAL FINANCE</p>
           <div class="p-head" data-reveal><img src="img/futari-logo.png" alt="" width="160" height="160" loading="lazy"><span class="tag">Web · PWA · <span class="collab">En pareja: la base es suya</span></span></div>
           <h3 data-split>Futari ふたり</h3>
-          <p class="tagline" data-reveal>De una hoja que había que cuadrar a mano a un mes que se cierra con un gesto.</p>
-        </div>
-      </div>
-      <div class="grid solo">
-        <div>
-          <p class="why" data-reveal>Mi pareja y yo llevábamos las cuentas y los ahorros en Notion, y actualizarlo era muy manual. Queríamos algo más visual e interactivo.</p>
-          <p class="role-line credit" data-reveal><b>Quién hizo qué</b>La base la construyó mi pareja. Yo hice la reorganización, el rediseño y las ilustraciones, y construí con IA la sección de Viajes.</p>
-          <div class="mine">
-            <h4>Decisiones</h4>
+          <p class="tagline" data-reveal>Las cuentas de la pareja en un solo sitio, sin el Notion que había que actualizar a mano.</p>
+          <div class="mine" data-reveal>
             <ul data-stagger>
-              <li><b>Reorganizar lo que ya había.</b> La app ya hacía mucho, pero sin un orden claro de importancia. Propuse cómo agrupar gastos fijos, huchas, viajes y cierres mensuales para que consultar y cerrar el mes fuera más rápido.</li>
-              <li><b>Una mascota que no parece de banco.</b> Los conejitos de la abundancia que compramos en un templo de Japón, ilustrados también para los estados vacíos y los logros.</li>
-              <li><b>Viajes, de principio a fin.</b> Presupuesto por partidas, diario y dinero que sale de una hucha.</li>
+              <li><b>Espacios claros</b> para gastos fijos, huchas, viajes y el cierre del mes.</li>
+              <li><b>Viajes de principio a fin</b>, construidos con IA.</li>
+              <li><b>Conejitos de la abundancia</b> como mascota y para los estados vacíos.</li>
             </ul>
           </div>
-          <div class="decision" data-reveal><h4>Decisión clave</h4><p>Pasar de un Notion que había que actualizar a mano a una app que agrupa gastos, huchas, viajes y el cierre de cada mes. «La claridad financiera tiene prioridad sobre la decoración.»</p></div>
-          <div class="chips" data-reveal><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Ilustración</span><span>Viajes construida con IA</span></div>
           <p class="case-link" data-reveal><a class="btn ghost" href="futari.html">Ver caso de estudio de Futari →</a></p>
         </div>
-      </div>
-      <div class="gallery" role="region" data-gallery data-reveal aria-label="Galería de capturas de Futari">
-        <p class="gal-label">Capturas <span class="gal-hint">· se desplazan con ratón, dedo o teclado (Tab y flechas)</span></p>
-        <div class="gal-track" tabindex="0" role="group" aria-label="Capturas de Futari: se desplazan con ratón, dedo o teclado">
-          <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot " src="img/futari-app-1.jpg" alt="Inicio de Futari: así van nuestras finanzas" width="600" height="1208" loading="lazy"></div></div><figcaption>Inicio</figcaption></figure>
-          <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot " src="img/futari-app-2.jpg" alt="Gastos y movimientos" width="600" height="1208" loading="lazy"></div></div><figcaption>Gastos y movimientos</figcaption></figure>
-          <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot " src="img/futari-app-3.jpg" alt="Partidas de un viaje" width="600" height="1208" loading="lazy"></div></div><figcaption>Partidas de un viaje</figcaption></figure>
-          <figure class="mock" tabindex="0"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot " src="img/futari-app-4.jpg" alt="Menú lateral de Futari" width="600" height="1208" loading="lazy"></div></div><figcaption>Menú lateral</figcaption></figure>
+        <div class="proj-shots" data-reveal>
+          <figure class="mock"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/futari-app-1.jpg" alt="Inicio de Futari: así van nuestras finanzas" width="600" height="1208" loading="lazy"></div></div></figure>
+          <figure class="mock"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/futari-app-3.jpg" alt="Partidas de un viaje" width="600" height="1208" loading="lazy"></div></div></figure>
+          <figure class="mock"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/futari-app-2.jpg" alt="Gastos y movimientos" width="600" height="1208" loading="lazy"></div></div></figure>
         </div>
       </div>
+      <p class="note" data-reveal>Capturas con datos ficticios.</p>
     </div>
   </article>
 
   <!-- SANDOW -->
   <article class="project" id="sandow">
     <div class="wrap">
-      <div class="story">
-        <div class="story-main">
-          <div class="p-top">
-            <div>
-              <p class="p-num" data-reveal>03 / HEALTH &amp; ROUTINES</p>
-              <div class="p-head" data-reveal><img src="img/sandow-logo.png" alt="" width="160" height="160" loading="lazy"><span class="tag">App Android</span></div>
-              <h3 data-split>Sandow</h3>
-              <p class="tagline" data-reveal>Hice que el progreso se cuente sin juzgar: qué cambia de verdad y qué es solo ruido.</p>
-            </div>
-          </div>
-          <p class="why" data-reveal style="max-width:72ch">Empezó en casa. Mi pareja comenzó un plan nutricional con un entrenador y el menú llegaba en PDF, así que cada día era un lío: qué toca comer, si lo tenemos, qué comprar, qué dejar preparado. Luego llegaron las revisiones mensuales (peso, medidas y fotos) y, como no todos seguimos el mismo camino, cada perfil necesitó el suyo.</p>
-          <p class="role-line" data-reveal><b>Mi papel</b>Idea, producto, UX/UI y marca. La construí con IA y la uso a diario para ajustarla.</p>
-
-          <div class="mine story-label"><h4>Lo que resuelve</h4></div>
-        <ol class="steps" style="list-style:none;padding:0">
-          <li class="step">
-            <span class="n" aria-hidden="true">01</span>
-            <p><b>Del PDF a la cocina:</b> importa el menú del entrenador y lo convierte en menú del día, lista de la compra y avisos.</p>
-            <div class="shots" role="region" tabindex="0" aria-label="Capturas de Sandow: del PDF a la cocina (se desplazan con ratón, dedo o flechas del teclado)">
-              <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-pdf.jpg" alt="Pantalla para importar el menú en PDF" width="412" height="890" loading="lazy"></div></div><figcaption>Importar el menú</figcaption></figure>
-              <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-2.jpg" alt="Menú del día" width="412" height="890" loading="lazy"></div></div><figcaption>Menú del día</figcaption></figure>
-              <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-compra.jpg" alt="Lista de la compra" width="412" height="890" loading="lazy"></div></div><figcaption>Lista de la compra</figcaption></figure>
-              <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-cocinar.jpg" alt="Pantalla de cocinar" width="412" height="890" loading="lazy"></div></div><figcaption>Cocinar</figcaption></figure>
-              <span class="hint" aria-hidden="true">Desliza</span>
-            </div>
-          </li>
-          <li class="step">
-            <span class="n" aria-hidden="true">02</span>
-            <p><b>Progreso de verdad:</b> peso, medidas y fotos comparadas mes a mes. Los cambios se muestran en color neutro, sin juzgar.</p>
-            <div class="shots" role="region" tabindex="0" aria-label="Capturas de Sandow: progreso (se desplazan con ratón, dedo o flechas del teclado)">
-              <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-3.jpg" alt="Progreso" width="412" height="890" loading="lazy"></div></div><figcaption>Progreso</figcaption></figure>
-              <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-medidas.jpg" alt="Comparación de medidas mes a mes" width="412" height="890" loading="lazy"></div></div><figcaption>Comparar medidas</figcaption></figure>
-              <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-timelapse.jpg" alt="Timelapse de fotos de progreso" width="412" height="890" loading="lazy"></div></div><figcaption>Timelapse</figcaption></figure>
-              <span class="hint" aria-hidden="true">Desliza</span>
-            </div>
-          </li>
-          <li class="step">
-            <span class="n" aria-hidden="true">03</span>
-            <p><b>Cada perfil, su camino:</b> plan con entrenador, entrenos o un seguimiento médico. Cada uno ve solo lo suyo.</p>
-            <div class="shots" role="region" tabindex="0" aria-label="Capturas de Sandow: perfiles (se desplazan con ratón, dedo o flechas del teclado)">
-              <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-perfiles.jpg" alt="Selección de perfiles" width="412" height="890" loading="lazy"></div></div><figcaption>Perfiles</figcaption></figure>
-              <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-1.jpg" alt="Pantalla de bienvenida" width="412" height="915" loading="lazy"></div></div><figcaption>Bienvenida</figcaption></figure>
-              <figure class="phone"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-4.jpg" alt="Vitrina de logros" width="412" height="890" loading="lazy"></div></div><figcaption>Logros</figcaption></figure>
-              <span class="hint" aria-hidden="true">Desliza</span>
-            </div>
-          </li>
-        </ol>
-        </div>
-        <div class="device-col" aria-hidden="true">
-          <div class="device" data-par="0">
-            <div class="mock-frame"><i class="island"></i><div class="screen mock-screen"></div></div>
-            <span class="device-cap" aria-hidden="true"></span>
-          </div>
-        </div>
-      </div>
-
-      <p class="note">Capturas con datos de demostración.</p>
-
-      <div class="sandow-foot">
-        <div class="mine extras">
-          <h4>Otras decisiones</h4>
-          <ul data-stagger>
-            <li><b>Privacidad total:</b> sin cuentas ni nube. Las copias de seguridad son un archivo que guardas tú.</li>
-            <li><b>«No es una app de gimnasio»:</b> nada de mancuernas ni llamas, sino un tono friki y juguetón con logros y rachas.</li>
-          </ul>
-          <p class="fact-line" data-reveal>La usamos mi pareja y yo. En tres semanas salieron 15 versiones, y su registro recoge 103 decisiones de diseño documentadas.</p>
-          <div class="chips" data-reveal><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Marca</span><span>Construida con IA</span></div>
-        </div>
+      <div class="proj-row">
         <div>
-          <div class="decision" data-reveal><h4>Decisión clave</h4><p>Los cambios del cuerpo se muestran en un color neutro, nunca en verde o rojo: el progreso no es "bueno" o "malo", es tuyo.</p></div>
+          <p class="p-num" data-reveal>03 / HEALTH &amp; ROUTINES</p>
+          <div class="p-head" data-reveal><img src="img/sandow-logo.png" alt="" width="160" height="160" loading="lazy"><span class="tag">App Android</span></div>
+          <h3 data-split>Sandow</h3>
+          <p class="tagline" data-reveal>Menú, compra y progreso en una app, para que cada día deje de ser un lío de PDF y apuntes.</p>
+          <div class="mine" data-reveal>
+            <ul data-stagger>
+              <li><b>Del PDF del entrenador</b> al menú del día y la lista de la compra.</li>
+              <li><b>Progreso mes a mes</b>, con los cambios en color neutro.</li>
+              <li><b>Cada perfil, su camino</b>, con todos los datos en el móvil.</li>
+            </ul>
+          </div>
           <p class="case-link" data-reveal><a class="btn ghost" href="sandow.html">Ver caso de estudio de Sandow →</a></p>
         </div>
+        <div class="proj-shots" data-reveal>
+          <figure class="mock"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-2.jpg" alt="Menú del día" width="412" height="890" loading="lazy"></div></div></figure>
+          <figure class="mock"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-3.jpg" alt="Progreso" width="412" height="890" loading="lazy"></div></div></figure>
+          <figure class="mock"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-4.jpg" alt="Vitrina de logros" width="412" height="890" loading="lazy"></div></div></figure>
+        </div>
+      </div>
+      <p class="note" data-reveal>Capturas con datos de demostración.</p>
+    </div>
+  </article>
+
+  <!-- RUVAK -->
+  <article class="project" id="ruvak">
+    <div class="wrap">
+      <div class="proj-row">
+        <div>
+          <p class="p-num" data-reveal>04 / LOCAL DISCOVERY</p>
+          <div class="p-head" data-reveal><span class="tag">En construcción · proyecto propio</span></div>
+          <h3 data-split>RUVAK</h3>
+          <p class="tagline" data-reveal>Un mapa para lo que guardas y planes nuevos en Gijón, porque lo guardado se pierde entre apps.</p>
+          <p class="case-link" data-reveal><a class="btn ghost" href="ruvak.html">Ver el caso de RUVAK →</a></p>
+        </div>
+        <figure class="proj-wide" data-reveal><img src="img/ruvak-portada.jpg" alt="Portada del sistema de diseño de RUVAK: el logotipo, un gato y un grajo con ojos amarillo lima sobre una ciudad de noche" width="800" height="190" loading="lazy"></figure>
       </div>
     </div>
   </article>
-  <div class="wrap"><div class="enmarcha" data-reveal>
-    <p><b>En marcha · RUVAK.</b> Una app web para reunir en un mapa los sitios que guardas en TikTok, Instagram o Google Maps, y descubrir planes nuevos en Gijón. Ahora mismo estoy con el documento de producto, los requisitos y el sistema de diseño. Esta es su identidad, todavía en exploración:</p>
-    <div class="ruvak">
-      <img class="r-wide" src="img/ruvak-cabecera.webp" alt="Ilustración de cabecera de RUVAK: tejados de una ciudad de noche con ventanas encendidas en verde lima, luna llena y un grajo sobre una chimenea" width="2000" height="667" loading="lazy">
-      <img src="img/ruvak-logo.webp" alt="Propuesta de logo de RUVAK: un gato negro y un grajo de perfil, rodeados por un trazo verde lima" width="1536" height="1024" loading="lazy">
-      <img src="img/ruvak-iconos.webp" alt="Set de iconos de RUVAK en negro, crema y verde lima: mapa, búsqueda, filtros, favoritos, categorías de lugares y acciones" width="1536" height="1024" loading="lazy">
-      <img src="img/ruvak-pegatinas.webp" alt="Pegatinas de RUVAK: brújula, mapa con ruta, pin con huella, prismáticos, montaña, señales y coordenadas de Gijón" width="1536" height="1024" loading="lazy">
-    </div>
-  
-    <p class="case-link" style="margin:20px 0 0"><a class="btn ghost" href="ruvak.html">Ver el caso de RUVAK →</a></p>
-  </div></div>
+
 </section>
 
 <section id="trayectoria" class="path-sec">
