@@ -232,6 +232,10 @@ main:focus{outline:none}
 .next{list-style:none;padding:0;display:grid;gap:12px;max-width:68ch}
 .next li{padding-left:24px;position:relative;color:var(--text-2)}
 .next li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border:1px solid var(--line-strong)}
+.sub{margin-top:clamp(32px,4.5vw,52px);max-width:68ch}
+.sub h3{font:400 clamp(1.5rem,2.2vw,1.9rem)/1.15 var(--font-display);margin-bottom:10px}
+.sub .note{margin-top:0}
+.feat strong{color:var(--text);font-weight:600}
 .reflex{margin-top:clamp(28px,4vw,44px);padding-top:16px;border-top:1px solid var(--line-strong)}
 .reflex p{font:400 clamp(1.6rem,3vw,2.5rem)/1.2 var(--font-display);max-width:28ch;letter-spacing:-.01em}
 @media (max-width:1000px){.ia{grid-template-columns:repeat(3,minmax(0,1fr))}.ia-bar,.ia-stem,.ia li::before{display:none}.cards4{grid-template-columns:repeat(2,minmax(0,1fr))}.six{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -287,6 +291,7 @@ main:focus{outline:none}
         <div class="wide"><dt>Rol</dt><dd>Idea, producto, UX/UI, marca y desarrollo con IA</dd></div>
         <div><dt>Plataforma</dt><dd>Android y web</dd></div>
         <div><dt>Estado</dt><dd>En desarrollo, con fases cerradas</dd></div>
+        <div><dt>Uso</dt><dd>Pendiente de medir</dd></div>
         <div class="wide"><dt>Herramientas</dt><dd>Claude Code</dd></div>
       </dl>
     </div>
@@ -325,12 +330,25 @@ main:focus{outline:none}
   <div class="wrap">
     <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 3</span>Cómo lo trabajé</p><h2 class="display" id="h-trabajo">Fases pequeñas, cada una verificada</h2></div>
     <ul class="checks">
-      <li>Decidí por fases pequeñas, y cada fase se verificaba antes de seguir.</li>
-      <li>Cada pantalla cambiada pasaba por una revisión de diseño, y se aplicaban todas sus correcciones, no solo algunas.</li>
+      <li>Trabajé por fases pequeñas y verifiqué cada una antes de seguir.</li>
+      <li>Cada pantalla cambiada pasaba una revisión de diseño, y se aplicaban todas sus correcciones, no solo algunas.</li>
       <li>Pedí maquetas antes de aprobar cambios de estructura, como la barra inferior.</li>
       <li>Prioricé lo que puede costar una cuenta o a una persona (cerrar sesión, el acceso) por encima del pulido visual.</li>
-      <li>Corregí el rumbo cuando algo no encajaba. Por ejemplo: tener la barra inferior y el menú a la vez era redundante, y eso cambió cómo repartimos las funciones entre los dos.</li>
+      <li>Corregí el rumbo cuando algo no encajaba. Por ejemplo, tener a la vez la barra inferior y el menú era redundante, y eso cambió cómo repartimos las funciones entre los dos.</li>
     </ul>
+    <div class="sub">
+      <h3>Qué cambió al probar</h3>
+      <p class="note">Los fallos más caros no estaban en la lógica de negocio, sino en el estado y en el tamaño de pantalla.</p>
+      <ul class="feat">
+        <li><b>Acceso en la web</b><span><strong>Antes:</strong> un indicador global de carga quitaba el formulario de la pantalla en cada intento de entrar, y se perdía lo escrito. <strong>Después:</strong> separé la carga al abrir la app del formulario de entrada; el formulario se queda en pantalla y llega a Inicio.</span></li>
+        <li><b>Biblioteca en escritorio</b><span><strong>Antes:</strong> la cuadrícula calculaba sus columnas con el ancho de la ventana, no con el de la columna web, y pedía 8 columnas en unos 450 px. <strong>Después:</strong> mide el ancho real. Lo he verificado por cálculo, no visualmente.</span></li>
+        <li><b>Móvil</b><span><strong>Antes:</strong> las actualizaciones automáticas no llegaban de forma fiable y el teléfono seguía con una versión anterior de Inicio. <strong>Después:</strong> instalé la versión nueva de la app.</span></li>
+      </ul>
+    </div>
+    <div class="big-q">
+      <p>Lo que mejor funcionó: revisar cada pantalla antes de dar el cambio por bueno. Así salieron fallos reales, como el cierre de sesión al pulsar atrás en Android.</p>
+      <small>Aprendizaje provisional</small>
+    </div>
   </div>
 </section>
 
@@ -339,7 +357,18 @@ main:focus{outline:none}
     <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 4</span>Estado</p><h2 class="display" id="h-estado">Lo cerrado y lo que falta</h2></div>
     <div class="prose">
       <p>Están cerradas las fases de acceso, navegación, subida de archivos, tamaños mínimos y el primer rediseño de Inicio.</p>
-      <p>Quedan la pestaña Sociedad, las paletas fijas, la ficha del libro y la sección de cuenta. La prueba final en el móvil sigue pendiente.</p>
+      <p>Quedan la pestaña Sociedad, las paletas fijas, la ficha del libro y la sección de cuenta. La prueba final en el móvil sigue pendiente, y el uso real, pendiente de medir.</p>
+    </div>
+    <div class="sub">
+      <h3>Qué no sé todavía</h3>
+      <ul class="next">
+        <li>Cómo se ven en un móvil real la barra de cuatro secciones y el lector. Solo los he visto en la web y en el código.</li>
+        <li>Cómo funcionan con datos reales la línea de estado de cada sociedad y «Sigue leyendo».</li>
+        <li>Cómo se ve la biblioteca con libros reales.</li>
+        <li>Si el aviso de arranque sale cuando toca.</li>
+        <li>La accesibilidad con lector de pantalla. Solo he revisado las etiquetas en el código.</li>
+        <li>El cambio de contraseña aún no pide la contraseña actual. Es un pendiente de seguridad.</li>
+      </ul>
     </div>
   </div>
 </section>
