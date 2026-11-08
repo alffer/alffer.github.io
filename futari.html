@@ -242,7 +242,7 @@ main:focus{outline:none}
   .ficha{grid-template-columns:1fr}
   .ia,.cards4,.six{grid-template-columns:1fr}
   .bunnies .tile{padding:10px}
-  .pal{gap:6px}.pal li{font-size:.58rem}
+  .pal{gap:6px}.pal li{font-size:.75rem}
   .calc{grid-template-columns:1fr}.calc div{border-left:0;border-top:1px solid var(--line)}.calc div:first-child{border-top:0}
   .mock{--mw:230px}
   .mock-frame{border-radius:38px;padding:8px}
@@ -278,7 +278,7 @@ main:focus{outline:none}
       <h1>Futari <span lang="ja">ふたり</span></h1>
       <p class="tagline">De una hoja que había que cuadrar a mano a un mes que se cierra con un gesto.</p>
       <dl class="ficha">
-        <div class="wide"><dt>Rol</dt><dd>La base la construyó mi pareja. Yo hice la reorganización, el rediseño y las ilustraciones, y construí con IA la sección de Viajes.</dd></div>
+        <div class="wide"><dt>Rol</dt><dd>Base de mi pareja; yo hice la reorganización, el rediseño, las ilustraciones y la sección de Viajes con IA.</dd></div>
         <div class="wide"><dt>Mis cambios</dt><dd>Rediseño, ilustraciones, estados vacíos, sección Viajes, PWA, accesibilidad y menú móvil</dd></div>
         <div><dt>Plataforma</dt><dd>Web / PWA</dd></div>
         <div><dt>Periodo</dt><dd>3–4 nov 2026 (mi parte)</dd></div>
@@ -287,7 +287,7 @@ main:focus{outline:none}
       </dl>
     </div>
     <figure class="mock hero-mock" style="--mw:290px">
-      <div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/futari-app-1.jpg" alt="Inicio de Futari: saludo, selector de mes con el botón Cerrar mes, total ahorrado de 12.460,80 euros, el reparto entre Sora, Mika y el bote común y dos conejitos abrazando una hucha" width="600" height="1208"></div></div>
+      <div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/futari-app-1.jpg" alt="Futari: inicio con el saldo del mes" width="600" height="1208"></div></div>
       <figcaption>Inicio · datos ficticios</figcaption>
     </figure>
   </div>
@@ -306,22 +306,21 @@ main:focus{outline:none}
 
 <section class="sec" id="viajes" aria-labelledby="h-viajes">
   <div class="wrap">
-    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 2</span>Lo que añadí</p><h2 class="display" id="h-viajes">Viajes, de principio a fin</h2></div>
+    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 2</span>Lo que añadí</p><h2 class="display" id="h-viajes">Viajes de principio a fin</h2></div>
     <div class="split">
       <div>
-        <div class="prose"><p>Es la parte de Futari que diseñé y construí con IA: una sección entera para planificar un viaje en pareja sin salir de la app, del primer presupuesto a los gastos reales. Los viajes están en euros y los pasados quedan guardados en la barra lateral.</p></div>
+        <div class="prose"><p>Es la parte de Futari que diseñé y construí con IA: una sección entera para planificar un viaje en pareja sin salir de la app, del primer presupuesto a los gastos reales. Los importes van en euros y los viajes terminados se guardan en la barra lateral.</p></div>
         <ul class="feat">
           <li><b>Presupuesto por partidas</b><span>Vuelos, alojamiento, transporte… Cada partida tiene su estimado, lo pagado y la diferencia.</span></li>
           <li><b>Diario del viaje</b><span>Un sitio para anotar qué pasó, junto al dinero.</span></li>
           <li><b>Registro de gastos</b><span>Lo que se gasta durante el viaje se apunta en el propio viaje.</span></li>
-          <li><b>Dinero que sale de una hucha</b><span>Cada viaje puede financiarse con dinero de una hucha, sin hacer cuentas aparte.</span></li>
+          <li><b>Dinero que sale de una hucha</b><span>Cada viaje puede pagarse con una hucha, sin hacer cuentas aparte.</span></li>
         </ul>
         <dl class="calc" aria-label="Cómo se calcula una partida">
           <div><dt>Estimado</dt><dd>Lo que pensamos gastar</dd></div>
           <div><dt>Pagado</dt><dd>Lo que ya hemos pagado</dd></div>
           <div><dt>Diferencia</dt><dd>Lo que queda, en euros y en %</dd></div>
         </dl>
-        <p class="note">La construí con IA y la fui probando yo, desde el presupuesto hasta el registro de gastos y la financiación con una hucha.</p>
       </div>
       <figure class="mock" style="--mw:250px"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/futari-app-3.jpg" alt="Partidas de un viaje: tarjetas de Vuelos, Alojamiento y Transporte con su estimado, pagado propio y diferencia, y una etiqueta que indica si está dentro del estimado" width="600" height="1208" loading="lazy"></div></div><figcaption>Partidas de un viaje</figcaption></figure>
     </div>
@@ -337,7 +336,7 @@ main:focus{outline:none}
     </div>
     <ul class="bunnies" aria-label="Ilustraciones de los conejitos">
       <li><figure><div class="tile"><img src="img/cs-futari-mascota-principal.png" alt="Los dos conejitos, uno crema y otro color cacao, abrazados con los ojos cerrados y un lazo rojo entre ambos" width="300" height="274" loading="lazy"></div><figcaption><b>La pareja</b>La mascota principal.</figcaption></figure></li>
-      <li><figure><div class="tile"><img src="img/cs-futari-vacio-huchas.webp" alt="Los dos conejitos abrazan juntos una hucha rosa con forma de cerdito" width="480" height="394" loading="lazy"></div><figcaption><b>Estado vacío</b>Aún no hay huchas: invita a crear la primera.</figcaption></figure></li>
+      <li><figure><div class="tile"><img src="img/cs-futari-vacio-huchas.webp" alt="Los dos conejitos abrazan una hucha rosa con forma de cerdito" width="480" height="394" loading="lazy"></div><figcaption><b>Estado vacío</b>Aún no hay huchas: invita a crear la primera.</figcaption></figure></li>
       <li><figure><div class="tile"><img src="img/cs-futari-celebracion-trofeo.webp" alt="Los dos conejitos sostienen riendo un trofeo dorado con una estrella, entre confeti" width="480" height="367" loading="lazy"></div><figcaption><b>Logro</b>Un objetivo cumplido se celebra.</figcaption></figure></li>
       <li><figure><div class="tile"><img src="img/cs-futari-error-conexion.webp" alt="Un conejito preocupado ante un portátil, con una nube gris y el icono de wifi tachado" width="480" height="460" loading="lazy"></div><figcaption><b>Sin conexión</b>El error se explica con calma.</figcaption></figure></li>
       <li><figure><div class="tile"><img src="img/cs-futari-cargando.webp" alt="Un conejito duerme arropado con una manta de cuadros, con un libro y una taza de café" width="480" height="364" loading="lazy"></div><figcaption><b>Carga</b>Esperar también puede ser agradable.</figcaption></figure></li>
@@ -361,8 +360,11 @@ main:focus{outline:none}
       <div class="contact-cta">
         <a class="btn" href="mailto:ffernandezalba@gmail.com">Escríbeme un email</a>
         <a class="btn alt" href="https://www.linkedin.com/in/albaff/" target="_blank" rel="noopener">LinkedIn →<span class="sr-only">, se abre en otra pestaña</span></a>
-        <a class="btn alt" href="index.html#futari">← Volver al portfolio</a>
       </div>
+      <nav class="contact-cta" aria-label="Navegación entre casos">
+        <a class="btn ghost alt" href="index.html#futari">← Volver al portfolio</a>
+        <a class="btn ghost alt" href="sandow.html">Siguiente caso: Sandow →</a>
+      </nav>
     </div>
   </section>
   <footer class="foot">

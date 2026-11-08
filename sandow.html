@@ -9,7 +9,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://alffer.github.io/sandow.html">
 <meta property="og:title" content="Sandow · Caso de estudio · Alba Fernández">
-<meta property="og:description" content="Hice que el progreso se cuente sin juzgar: qué cambia de verdad y qué es solo ruido. Caso de estudio de una app Android con 103 decisiones documentadas.">
+<meta property="og:description" content="Seguir el progreso sin juzgar: lo que cambia de verdad, separado del ruido. Caso de estudio de una app Android con 103 decisiones documentadas.">
 <meta property="og:image" content="https://alffer.github.io/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -309,7 +309,7 @@ main:focus{outline:none}
   .ficha{grid-template-columns:1fr}
   .needs,.pains{grid-template-columns:1fr}
   .palette{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
-  .palette li{font-size:.6rem}
+  .palette li{font-size:.75rem}
   .pairs{grid-template-columns:1fr}
   .mock{--mw:230px}
   .sys-shots .mock{--mw:220px}
@@ -354,18 +354,18 @@ main:focus{outline:none}
     <div>
       <p class="p-num">Caso de estudio / 03 · Health &amp; Routines</p>
       <h1>Sandow</h1>
-      <p class="tagline">Hice que el progreso se cuente sin juzgar: qué cambia de verdad y qué es solo ruido.</p>
+      <p class="tagline">Seguir el progreso sin juzgar: lo que cambia de verdad, separado del ruido.</p>
       <dl class="ficha">
         <div class="wide"><dt>Rol</dt><dd>Idea, producto, UX/UI, marca y construcción con IA</dd></div>
         <div><dt>Plataforma</dt><dd>Android</dd></div>
         <div><dt>Periodo</dt><dd>oct – nov 2026</dd></div>
-        <div><dt>Estado</dt><dd>Uso privado · solo Android · sin Play Store (de momento es nuestra)</dd></div>
+        <div><dt>Estado</dt><dd>Uso privado · sin Play Store</dd></div>
         <div><dt>Herramientas</dt><dd>Claude Code, ChatGPT (imagen y logos)</dd></div>
       </dl>
     </div>
     <figure class="mock hero-mock" style="--mw:290px">
       <div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-2.jpg" alt="Sandow, pantalla Menú del día con las comidas y sus opciones" width="412" height="890"></div></div>
-      <figcaption>Menú del día · datos de demostración</figcaption>
+      <figcaption>Menú del día · datos ficticios</figcaption>
     </figure>
   </div>
 </header>
@@ -374,8 +374,8 @@ main:focus{outline:none}
   <div class="wrap">
     <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 1</span>El problema</p><h2 class="display" id="h-problema">Cada día era un lío</h2></div>
     <div class="prose">
-      <p>Empezó en casa. Mi pareja empezó un plan nutricional con un entrenador y el menú llegaba en PDF. Para algo tan simple como comer, cada día había que resolver cuatro cosas a la vez.</p>
-      <p>Luego llegaron las revisiones mensuales y quisimos guardar también el peso, las medidas y las fotos. Y como no todos seguimos el mismo camino hacia un objetivo, cada perfil necesitó el suyo.</p>
+      <p>Empezó en casa. Mi pareja empezó un plan de comidas con su entrenador y el menú llegaba en PDF. Para algo tan simple como comer, cada día había que resolver cuatro cosas a la vez.</p>
+      <p>Luego llegó el seguimiento mensual y quisimos guardar también el peso, las medidas y las fotos. Y como no todos seguimos el mismo camino hacia un objetivo, cada perfil necesitó el suyo.</p>
     </div>
     <ul class="pains">
       <li><b>¿Qué toca hoy?</b><span>El menú estaba en un PDF, no en el día a día.</span></li>
@@ -391,7 +391,7 @@ main:focus{outline:none}
   <div class="wrap">
     <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 2</span>Hecha a mi medida</p><h2 class="display" id="h-medida">Lo que no existía, lo hice yo</h2></div>
     <div class="dec-body">
-      <p>Antes miraba el peso en la app de la báscula, pero los datos que me pedían no estaban allí y los apuntaba en una nota de Google Keep. Así que conecté la báscula (Renpho), los entrenos (Hevy) y la nota antigua, y todo acaba en un mismo registro.</p>
+      <p>Antes miraba el peso en la app de la báscula, pero no guardaba los datos que necesitaba y los apuntaba en una nota de Google Keep. Así que conecté la báscula (Renpho), los entrenos (Hevy) y la nota antigua, y todo acaba en un mismo registro.</p>
       <p>Para mi pareja, que tiene entrenador, añadí un informe mensual con cuatro fotos y las medidas, en un solo envío.</p>
     </div>
   </div>
@@ -401,13 +401,13 @@ main:focus{outline:none}
   <div class="wrap">
     <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 3</span>Menos datos, más claros</p><h2 class="display" id="h-menos">Lo que más le pido a la IA es quitar</h2></div>
     <div class="prose" style="margin-bottom:clamp(28px,4vw,48px)">
-      <p>Al principio intentaba mostrar el máximo de información posible, y al final no aportaba nada y metía más ruido. Ahora lo que más le pido a la IA es rehacer quitando: que no haya demasiados datos, que se entienda, que no sea redundante, que sea muy usable y sencillo.</p>
+      <p>Al principio mostraba toda la información posible, y al final no aportaba nada. Ahora quito lo que sobra hasta que cada pantalla se entienda de un vistazo.</p>
     </div>
     <div class="ba">
       <figure class="mock sm"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/cs-sandow-antes-progreso.jpg" alt="Antes: Progreso de la v1.5.0, una lista plana con el peso, un gráfico y un historial de registros" width="412" height="890" loading="lazy"></div></div><figcaption>Antes · v1.5.0, 17 oct</figcaption></figure>
       <figure class="mock sm"><div class="mock-frame"><i class="island"></i><div class="mock-screen"><img class="shot" src="img/sandow-3.jpg" alt="Después: Progreso actual con tu fase, tu enfoque, la tendencia por semana y un enlace a cómo se calcula" width="412" height="890" loading="lazy"></div></div><figcaption>Ahora · fase, enfoque y tendencia</figcaption></figure>
     </div>
-    <p class="lab" style="text-align:center;margin-top:18px">Capturas con datos de demostración</p>
+    <p class="lab" style="text-align:center;margin-top:18px">Capturas con datos ficticios</p>
   </div>
 </section>
 <section class="sec alt" id="identidad" aria-labelledby="h-identidad">
@@ -416,13 +416,13 @@ main:focus{outline:none}
     <article class="idn">
       <div>
         <h3>Un gato, no una S</h3>
-        <p>Empecé con una S metálica, pero una letra no acompañaba. Propuse un felino robótico, tecnológico pero cercano, para que seguir tu cuerpo fuera menos frío. Sin fitness de pesas ni siluetas.</p>
+        <p>Empecé con una S metálica, pero una letra no transmitía lo que quería. Propuse un felino robótico, tecnológico pero cercano, para que el seguimiento no resultara frío. Nada de pesas ni siluetas de gimnasio.</p>
       </div>
       <figure class="idn-fig"><img src="img/cs-sandow-icono-gato.png" alt="Icono actual de Sandow: un gato negro robótico con casco blanco y cobre, ojos ámbar y cola turquesa, en una baldosa oscura con borde turquesa" width="360" height="360" loading="lazy"><figcaption>El icono · el gato</figcaption></figure>
     </article>
     <div class="poses">
       <h3>Un personaje para cada momento</h3>
-      <p>El gato no es solo el icono: cambia de pose según lo que pasa en la app. Estas son ocho de las que ya la acompañan.</p>
+      <p>El gato no es solo el icono: cambia de pose según lo que pasa en la app. Estas son ocho de sus poses actuales.</p>
       <ul class="pose-band" aria-label="Poses de la mascota">
         <li><div class="img"><img src="img/cs-sandow-mascota-hola.webp" alt="El gato saluda alegre con una pata levantada, rodeado de burbujas y una estela turquesa" width="600" height="547" loading="lazy"></div><span>Bienvenida</span></li>
         <li><div class="img"><img src="img/cs-sandow-mascota-escaner.webp" alt="El gato mira a través de una lupa grande mientras una cinta métrica de cobre se enrosca a su alrededor" width="600" height="537" loading="lazy"></div><span>Medidas</span></li>
@@ -450,8 +450,8 @@ main:focus{outline:none}
       <div><b>AAA</b><span>objetivo de accesibilidad: texto a 7:1 o más</span></div>
     </div>
     <div class="chips result-chips"><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Marca</span><span>Construida con IA</span></div>
-    <div class="prose" style="margin-top:28px"><p><strong>En el día a día:</strong> organizar las comidas es mucho más fácil. Ya no improvisamos sobre la marcha («esto no lo tengo descongelado», «esto no lo tengo»): todo está planificado y ahorramos mucho tiempo.</p></div>
-    <p class="prose" style="margin-top:20px;font-size:.95rem;color:var(--text-2)">Uso privado, solo Android y sin Play Store: de momento es nuestra y no quiero anunciarla ni venderla. Los datos viven solo en el móvil y se instala con un archivo .apk.</p>
+    <div class="prose" style="margin-top:28px"><p><strong>En el día a día:</strong> organizar las comidas es mucho más fácil. Ya no improvisamos sobre la marcha («esto no lo tengo descongelado», «esto no lo tengo»): todo está planificado.</p></div>
+    <p class="prose" style="margin-top:20px;font-size:.95rem;color:var(--text-2)">Uso privado, solo en Android y sin Play Store: de momento la usamos solo nosotros. Los datos se quedan en el móvil, y la app se instala con un archivo .apk.</p>
   </div>
 </section>
 
@@ -466,8 +466,11 @@ main:focus{outline:none}
       <div class="contact-cta">
         <a class="btn" href="mailto:ffernandezalba@gmail.com">Escríbeme un email</a>
         <a class="btn alt" href="https://www.linkedin.com/in/albaff/" target="_blank" rel="noopener">LinkedIn →<span class="sr-only">, se abre en otra pestaña</span></a>
-        <a class="btn alt" href="index.html#sandow">← Volver al portfolio</a>
       </div>
+      <nav class="contact-cta" aria-label="Navegación entre casos">
+        <a class="btn ghost alt" href="index.html#sandow">← Volver al portfolio</a>
+        <a class="btn ghost alt" href="futari.html">Siguiente caso: Futari →</a>
+      </nav>
     </div>
   </section>
   <footer class="foot">
