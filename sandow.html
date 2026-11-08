@@ -335,6 +335,23 @@ main:focus{outline:none}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .btn:hover{transform:none!important}
 }
+/* Imágenes generadas: tamaño contenido (icono 120px, poses en miniatura 104px) */
+.idn,.idn:first-of-type{grid-template-columns:minmax(0,1fr) 120px;align-items:start}
+.idn-fig{max-width:120px;justify-self:end}
+.idn-fig img{border-radius:18px}
+.idn-fig figcaption{margin-top:8px;font-size:.64rem}
+.pose-band{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;gap:10px;padding:12px;scrollbar-width:thin}
+.pose-band li{flex:0 0 104px;min-width:0;gap:8px;padding:8px 6px 10px}
+.pose-band span{font-size:.6rem;letter-spacing:.04em}
+@media (max-width:860px){
+  .pose-band{grid-template-columns:none}
+}
+@media (max-width:620px){
+  .idn,.idn:first-of-type{grid-template-columns:minmax(0,1fr) 88px;gap:16px}
+  .idn-fig{max-width:88px}
+  .pose-band li{flex-basis:96px}
+}
+.res-learn{margin-top:20px;font-size:.95rem;color:var(--text-2)}
 </style>
 </head>
 <body>
@@ -452,6 +469,7 @@ main:focus{outline:none}
     <div class="chips result-chips"><span class="role">Producto</span><span class="role">UX/UI</span><span class="role">Marca</span><span>Construida con IA</span></div>
     <div class="prose" style="margin-top:28px"><p><strong>En el día a día:</strong> organizar las comidas es mucho más fácil. Ya no improvisamos sobre la marcha («esto no lo tengo descongelado», «esto no lo tengo»): todo está planificado.</p></div>
     <p class="prose" style="margin-top:20px;font-size:.95rem;color:var(--text-2)">Uso privado, solo en Android y sin Play Store: de momento la usamos solo nosotros. Los datos se quedan en el móvil, y la app se instala con un archivo .apk.</p>
+    <p class="prose res-learn"><strong>Lo que me llevo:</strong> mostrar toda la información posible no aportaba nada; quitar lo que sobra hizo que cada pantalla se entienda de un vistazo. Y en la marca, una letra no bastaba: hacía falta un personaje.</p>
   </div>
 </section>
 

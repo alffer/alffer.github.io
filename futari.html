@@ -256,6 +256,12 @@ main:focus{outline:none}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .btn:hover{transform:none!important}
 }
+/* Imágenes generadas: fila de 3 miniaturas */
+.bunnies,.bunnies[class]{display:flex;flex-wrap:wrap;gap:16px;grid-template-columns:none}
+.bunnies li{flex:0 1 150px;min-width:0}
+.bunnies .tile{aspect-ratio:1;padding:10px;max-width:120px}
+.bunnies figcaption{font-size:.82rem}
+@media (max-width:620px){.bunnies{gap:10px}.bunnies li{flex:1 1 0}.bunnies .tile{max-width:100%;padding:8px}.bunnies figcaption{font-size:.76rem}}
 </style>
 </head>
 <body>
@@ -338,9 +344,6 @@ main:focus{outline:none}
       <li><figure><div class="tile"><img src="img/cs-futari-mascota-principal.png" alt="Los dos conejitos, uno crema y otro color cacao, abrazados con los ojos cerrados y un lazo rojo entre ambos" width="300" height="274" loading="lazy"></div><figcaption><b>La pareja</b>La mascota principal.</figcaption></figure></li>
       <li><figure><div class="tile"><img src="img/cs-futari-vacio-huchas.webp" alt="Los dos conejitos abrazan una hucha rosa con forma de cerdito" width="480" height="394" loading="lazy"></div><figcaption><b>Estado vacío</b>Aún no hay huchas: invita a crear la primera.</figcaption></figure></li>
       <li><figure><div class="tile"><img src="img/cs-futari-celebracion-trofeo.webp" alt="Los dos conejitos sostienen riendo un trofeo dorado con una estrella, entre confeti" width="480" height="367" loading="lazy"></div><figcaption><b>Logro</b>Un objetivo cumplido se celebra.</figcaption></figure></li>
-      <li><figure><div class="tile"><img src="img/cs-futari-error-conexion.webp" alt="Un conejito preocupado ante un portátil, con una nube gris y el icono de wifi tachado" width="480" height="460" loading="lazy"></div><figcaption><b>Sin conexión</b>El error se explica con calma.</figcaption></figure></li>
-      <li><figure><div class="tile"><img src="img/cs-futari-cargando.webp" alt="Un conejito duerme arropado con una manta de cuadros, con un libro y una taza de café" width="480" height="364" loading="lazy"></div><figcaption><b>Carga</b>Esperar también puede ser agradable.</figcaption></figure></li>
-      <li><figure><div class="tile"><img src="img/cs-futari-conejitos-durmiendo.webp" alt="Los dos conejitos durmiendo juntos, acurrucados entre destellos" width="768" height="512" loading="lazy"></div><figcaption><b>Escena completa</b>Los conejitos, a pantalla completa en los momentos tranquilos.</figcaption></figure></li>
     </ul>
     <ul class="rules-ill" aria-label="Reglas de la ilustración">
       <li>Contorno cacao</li><li>Formas redondeadas</li><li>Estética sticker</li><li>Transparencia real</li><li>Acompañan, nunca sustituyen la información</li>
@@ -349,6 +352,15 @@ main:focus{outline:none}
   </div>
 </section>
 
+<section class="sec" id="resultado" aria-labelledby="h-resultado">
+  <div class="wrap">
+    <div class="sec-top"><p class="eyebrow rule"><span class="sec-n">§ 4</span>Resultado y estado</p><h2 class="display" id="h-resultado">En uso, solo para nosotros</h2></div>
+    <div class="prose">
+      <p>Futari es de uso privado en pareja: la usamos mi pareja y yo, en web y como PWA.</p>
+      <p>Sobre la base de mi pareja, lo que cambié yo: el rediseño, las ilustraciones, los estados vacíos, la sección de Viajes, la PWA, la accesibilidad y el menú móvil.</p>
+    </div>
+  </div>
+</section>
 
 </main>
 
