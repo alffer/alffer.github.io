@@ -83,7 +83,14 @@ section{padding:0}
 nav.top{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line);transition:background-color .4s ease,border-color .4s ease}
 nav.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
 .brand{display:inline-flex;align-items:center;gap:12px;font:600 .98rem var(--font-body);text-decoration:none;min-height:44px;margin-right:auto}
-.brand svg{width:44px;height:32px;flex:0 0 auto}
+.brand .af-sig{flex:0 0 auto;font-size:1.3rem}
+/* Firma "___ AF.": adjetivo (Gloock) rotando en una celda de grid cuyo ancho fija la palabra más larga; "AF." fijo detrás */
+.af-sig{display:inline-flex;align-items:baseline;gap:.3em;line-height:1;white-space:nowrap}
+.af-words{display:inline-grid;justify-items:start;font-family:var(--font-display);font-weight:400;letter-spacing:-.01em}
+.af-w{grid-area:1/1;opacity:0;translate:0 .3em}
+.af-w.is-on{opacity:1;translate:none;transition:opacity .45s var(--ease) .3s,translate .45s var(--ease) .3s}
+.af-w.is-out{opacity:0;translate:0 -.3em;transition:opacity .3s ease,translate .3s ease}
+.af-af{font:500 .62em/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase}
 .links{display:flex;gap:26px;align-items:center;font-size:.93rem}
 .links a{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:2px;transition:background-size .3s var(--ease)}
 .links a:hover,.links a[aria-current="true"]{background-size:100% 1px}
@@ -342,7 +349,7 @@ main:focus{outline:none}
 .foot-inner{display:flex;flex-direction:column;gap:22px;padding-top:clamp(32px,5vw,48px);border-top:1px solid var(--block-line)}
 .foot-top{display:flex;align-items:center;justify-content:space-between;gap:20px 32px;flex-wrap:wrap}
 .foot-mark{display:inline-flex;color:var(--on-block)}
-.foot-mark svg{width:64px;height:46px}
+.foot-mark .af-sig{font-size:1.9rem}
 .foot-links{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:.98rem}
 .foot-links a{font-weight:500}
 .foot .sig{color:var(--on-block-muted)}
@@ -400,7 +407,7 @@ main:focus{outline:none}
   html{scroll-padding-top:110px}
   nav.top .wrap{flex-wrap:wrap;height:auto;gap:0 12px;padding-top:6px}
   .brand{font-size:.95rem}
-  .brand svg{width:40px;height:30px}
+  .brand .af-sig{font-size:1.2rem}
   .theme-btn{order:2}
   .links{order:3;width:100%;gap:0;font-size:.9rem;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .links::-webkit-scrollbar{display:none}
@@ -423,6 +430,9 @@ main:focus{outline:none}
   .eyebrow{font-size:.7rem}
   .foot .sig{font-size:.66rem;letter-spacing:.04em}
   .foot .sig::before{display:none}
+  .brand{gap:10px}
+  .brand .af-sig{font-size:1.02rem}
+  .foot-mark .af-sig{font-size:1.6rem}
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -436,16 +446,17 @@ main:focus{outline:none}
   [data-par]{transform:none!important}
   .mv-stage{transform:none!important}
   #progress{display:none}
+  .af-w{opacity:0!important;translate:none!important}
+  .af-w:first-child{opacity:1!important}
 }
 </style>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="af-mark" viewBox="0 0 72 52"><text x="36" y="38" text-anchor="middle" font-family="Gloock,Georgia,serif" font-size="40" fill="currentColor">AF</text><path d="M7 46.5H65" stroke="currentColor" stroke-width="1.2" fill="none"/></symbol></defs></svg>
 <div id="progress" aria-hidden="true"></div>
 
 <nav class="top" aria-label="Principal"><div class="wrap">
-  <a class="brand" href="#" aria-label="Alba Fernández, inicio"><svg viewBox="0 0 72 52" aria-hidden="true" focusable="false"><use href="#af-mark"/></svg><span>Alba Fernández</span></a>
+  <a class="brand" href="#" aria-label="Alba Fernández, inicio"><span class="af-sig" data-af><span class="sr-only">Creative AF.</span><span class="af-words" aria-hidden="true"><span class="af-w is-on">Creative</span><span class="af-w">Curious</span><span class="af-w">Inventive</span><span class="af-w">Nerdy</span><span class="af-w">Hands-on</span><span class="af-w">Thoughtful</span><span class="af-w">Resourceful</span><span class="af-w">Restless</span></span><span class="af-af" aria-hidden="true">AF.</span></span><span>Alba Fernández</span></a>
   <div class="links">
     <a href="#contenido">Inicio</a>
     <a href="#proyectos">Proyectos</a>
@@ -798,7 +809,7 @@ main:focus{outline:none}
   <footer class="foot">
     <div class="wrap foot-inner">
       <div class="foot-top">
-        <a class="foot-mark" href="#" aria-label="Alba Fernández, volver arriba"><svg viewBox="0 0 72 52" aria-hidden="true" focusable="false"><use href="#af-mark"/></svg></a>
+        <a class="foot-mark" href="#" aria-label="Alba Fernández, volver arriba"><span class="af-sig" data-af><span class="sr-only">Creative AF.</span><span class="af-words" aria-hidden="true"><span class="af-w is-on">Creative</span><span class="af-w">Curious</span><span class="af-w">Inventive</span><span class="af-w">Nerdy</span><span class="af-w">Hands-on</span><span class="af-w">Thoughtful</span><span class="af-w">Resourceful</span><span class="af-w">Restless</span></span><span class="af-af" aria-hidden="true">AF.</span></span></a>
         <nav class="foot-links" aria-label="Contacto">
           <a href="mailto:ffernandezalba@gmail.com">Email</a>
           <a href="https://www.linkedin.com/in/albaff/" target="_blank" rel="noopener">LinkedIn<span class="sr-only">, se abre en otra pestaña</span></a>
@@ -1079,6 +1090,26 @@ main:focus{outline:none}
     (tmq.addEventListener?tmq.addEventListener('change',syncTheme):tmq.addListener(syncTheme));
     syncTheme();
   }
+  /* Firma "___ AF.": rota el adjetivo cada 2,4 s (todas las firmas a la vez); nada con reduced-motion */
+  (function(){
+    var sigs=$$('[data-af] .af-words'), n=0, i=0, mq=window.matchMedia('(prefers-reduced-motion: reduce)');
+    if(!sigs.length) return;
+    n=sigs[0].children.length;
+    (function tick(){
+      setTimeout(function(){
+        if(!mq.matches&&!doc.hidden){
+          var prev=i; i=(i+1)%n;
+          sigs.forEach(function(s){
+            var w=s.children;
+            for(var k=0;k<n;k++) w[k].classList.remove('is-out');
+            w[prev].classList.remove('is-on'); w[prev].classList.add('is-out');
+            w[i].classList.add('is-on');
+          });
+        }
+        tick();
+      },2400);
+    })();
+  })();
   var yr=doc.getElementById('year'); if(yr) yr.textContent=new Date().getFullYear();
   window.addEventListener('scroll',onScroll,{passive:true});
   window.addEventListener('resize',onScroll);
